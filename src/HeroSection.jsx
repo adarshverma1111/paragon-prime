@@ -29,7 +29,7 @@ const HeroSection = () => {
         md:top-6 md:left-20 md:right-20 
         md:rounded-[40px] shadow-xl"
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-2">
           <div className="flex items-center justify-between h-15">
 
             {/* Logo */}
@@ -37,7 +37,7 @@ const HeroSection = () => {
               <img
                 src="/paragon-prime-logo1.png"
                 alt="Logo"
-                className="h-16 md:h-15 w-auto object-contain"
+                className="h-15 md:h-15 w-auto object-contain"
               />
             </div>
 
