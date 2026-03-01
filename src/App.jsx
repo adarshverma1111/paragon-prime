@@ -12,15 +12,14 @@ function App() {
 
   return (
     <>
-    
-    <HeroSection/>
-    <OurWork/>
-    <PartnershipSlider/>
-    <WelcomePage/>
-    <SoftwareSolutions/>
-    <OurServices/>
-       <OurClients/>
-       <ParagonFooter/>
+      <HeroSection />
+      <OurWork />
+      <PartnershipSlider />
+      <WelcomePage />
+      <SoftwareSolutions />
+      <OurServices />
+      <OurClients />
+      <ParagonFooter />
     </>
   )
 }
