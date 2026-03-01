@@ -88,7 +88,7 @@ const HeroSection = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 flex items-center min-h-[80vh] md:min-h-screen">
-        <div className="lg:w-2/3">
+        <div className="lg:w-2/3 mt-15">
 
           <motion.p
             initial={{ opacity: 0, y: 15 }}
