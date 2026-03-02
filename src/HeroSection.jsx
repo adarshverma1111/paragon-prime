@@ -24,10 +24,10 @@ const HeroSection = () => {
 
       {/* Navbar */}
       <header
-        className="absolute top-0 left-0 right-0 z-20 
-        bg-white/95 backdrop-blur-md 
-        md:top-6 md:left-20 md:right-20 
-        md:rounded-[40px] shadow-xl"
+        className="fixed top-0 left-0 right-0 z-50 
+  bg-white/95 backdrop-blur-md 
+  md:top-6 md:left-20 md:right-20 
+  md:rounded-[40px] shadow-xl"
       >
         <div className="max-w-7xl mx-auto px-2">
           <div className="flex items-center justify-between h-15">
@@ -59,6 +59,7 @@ const HeroSection = () => {
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center space-x-10">
+              <a className="text-gray-600 hover:text-black text-sm cursor-pointer">Home</a>
               <a className="text-gray-600 hover:text-black text-sm cursor-pointer">About</a>
               <a className="text-gray-600 hover:text-black text-sm cursor-pointer">Services</a>
               <a className="text-gray-600 hover:text-black text-sm cursor-pointer">Industries</a>
@@ -73,6 +74,7 @@ const HeroSection = () => {
           {expanded && (
             <div className="md:hidden pb-6">
               <div className="flex flex-col space-y-4">
+                <a className="text-gray-600 text-sm cursor-pointer">Home</a>
                 <a className="text-gray-600 text-sm cursor-pointer">About</a>
                 <a className="text-gray-600 text-sm cursor-pointer">Services</a>
                 <a className="text-gray-600 text-sm cursor-pointer">Industries</a>
