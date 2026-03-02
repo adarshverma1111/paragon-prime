@@ -30,14 +30,12 @@ export default function PartnershipSlider() {
       <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[160px] rounded-full"></div>
 
       {/* Grid Texture */}
-      <div
-        className="absolute inset-0 opacity-[0.08]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      ></div>
+      <div className="absolute" style={{
+        top: "-10%", left: "-5%", width: 500, height: 500, borderRadius: "50%",
+        background: "radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%)",
+        pointerEvents: "none",
+      }}/>
+
 
       <div className="relative z-10">
 
