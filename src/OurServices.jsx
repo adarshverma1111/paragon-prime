@@ -25,7 +25,7 @@ export default function OurServices() {
   const cardVariants = {
     hidden: (index) => ({
       opacity: 0,
-      x: index % 2 === 0 ? -120 : 120, // left/right animation
+      x: index % 2 === 0 ? -120 : 120,
     }),
     visible: {
       opacity: 1,
@@ -35,7 +35,7 @@ export default function OurServices() {
   };
 
   return (
-    <section className="bg-black py-16 px-4 sm:px-8 md:px-16 font-sans">
+    <section className="bg-black py-16 px-4 sm:px-8 md:px-16 font-sans overflow-hidden">
 
       {/* Header */}
       <motion.div
@@ -57,7 +57,7 @@ export default function OurServices() {
         </h2>
 
         <p className="text-gray-400 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed text-center">
-          We provide comprehensive technology solutions to help your business thrive in the digital age. From mobile App and web development to digital marketing, our expert team delivers results-driven solutions tailored to your unique business needs.
+          We provide comprehensive technology solutions to help your business thrive in the digital age.
         </p>
       </motion.div>
 
