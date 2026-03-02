@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
+import vedio from "../../assets/vedios/vedios.mp4"
+import logo from "../../assets/logos/paragon-prime-logo1.png"
 
 const HeroSection = () => {
   const [expanded, setExpanded] = useState(false);
@@ -15,8 +17,7 @@ const HeroSection = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        {/* Make sure this file exists inside public folder */}
-        <source src="/vedios.mp4" type="video/mp4" />
+        <source src={vedio} type="video/mp4" />
       </video>
 
       {/* Overlay */}
@@ -25,9 +26,9 @@ const HeroSection = () => {
       {/* Navbar */}
       <header
         className="fixed top-0 left-0 right-0 z-50 
-  bg-white/95 backdrop-blur-md 
-  md:top-6 md:left-20 md:right-20 
-  md:rounded-[40px] shadow-xl"
+                    bg-white/95 backdrop-blur-md 
+                    md:top-6 md:left-20 md:right-20 
+                    md:rounded-[40px] shadow-xl"
       >
         <div className="max-w-7xl mx-auto px-2">
           <div className="flex items-center justify-between h-15">
@@ -35,7 +36,7 @@ const HeroSection = () => {
             {/* Logo */}
             <div className="flex items-center">
               <img
-                src="/paragon-prime-logo1.png"
+                src={logo}
                 alt="Logo"
                 className="h-15 md:h-15 w-auto object-contain"
               />
@@ -132,11 +133,11 @@ const HeroSection = () => {
           >
             {/* Primary Button */}
             <button className="relative px-8 py-3 text-sm font-semibold text-white rounded-full 
-  bg-gradient-to-r from-blue-600 to-orange-500 
-  shadow-lg shadow-orange-500/20
-  hover:shadow-orange-500/40 
-  hover:scale-105
-  transition-all duration-300">
+                               bg-gradient-to-r from-blue-600 to-orange-500 
+                               shadow-lg shadow-orange-500/20
+                               hover:shadow-orange-500/40 
+                               hover:scale-105
+                               transition-all duration-300">
 
               <span className="relative z-10">Learn More</span>
 
@@ -146,11 +147,11 @@ const HeroSection = () => {
 
             {/* Secondary Button */}
             <button className="px-8 py-3 text-sm font-semibold text-white rounded-full 
-  border border-white/30 
-  backdrop-blur-md 
-  hover:bg-white hover:text-black
-  hover:scale-105
-  transition-all duration-300 shadow-lg">
+                               border border-white/30 
+                               backdrop-blur-md 
+                               hover:bg-white hover:text-black
+                               hover:scale-105
+                               transition-all duration-300 shadow-lg">
 
               Schedule Meeting
             </button>

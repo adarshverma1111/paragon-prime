@@ -1,4 +1,10 @@
 "use client";
+import awslogo from "../../assets/logos/aws.png";
+import azurelogo from "../../assets/logos/azure.png";
+import gcloudlogo from "../../assets/logos/gcloud.png";
+import salesforcelogo from "../../assets/logos/salesforce.png";
+import ibmlogo from "../../assets/logos/ibm.png";
+import copilotlogo from "../../assets/logos/copilot.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -8,12 +14,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const partners = [
-  { name: "AWS", logo: "/logos/aws.png" },
-  { name: "Azure", logo: "/logos/azure.png" },
-  { name: "Google Cloud", logo: "/logos/gcloud.png" },
-  { name: "Salesforce", logo: "/logos/salesforce.png" },
-  { name: "IBM", logo: "/logos/ibm.png" },
-  { name: "Copilot", logo: "/logos/copilot.png" },
+  { name: "AWS", logo:awslogo },
+  { name: "Azure", logo: azurelogo },
+  { name: "Google Cloud", logo: gcloudlogo },
+  { name: "Salesforce", logo: salesforcelogo },
+  { name: "IBM", logo: ibmlogo },
+  { name: "Copilot", logo: copilotlogo },
 ];
 
 export default function PartnershipSlider() {

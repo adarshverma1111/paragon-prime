@@ -1,12 +1,11 @@
-import './App.css'
-import ParagonFooter from './Footer'
-import HeroSection from './HeroSection'
-import OurClients from './OurClients'
-import OurServices from './OurServices'
-import OurWork from './OurWork'
-import PartnershipSlider from './PartnershipSlider'
-import SoftwareSolutions from './SoftwareSolutions'
-import WelcomePage from './WelcomePage'
+import ParagonFooter from './components/Home/Footer'
+import HeroSection from './components/Home/HeroSection'
+import OurClients from './components/Home/OurClients'
+import OurServices from './components/Home/OurServices'
+import OurWork from './components/Home/OurWork'
+import PartnershipSlider from './components/Home/PartnershipSlider'
+import SoftwareSolutions from './components/Home/SoftwareSolutions'
+import WelcomePage from './components/Home/WelcomePage'
 
 function App() {
 
