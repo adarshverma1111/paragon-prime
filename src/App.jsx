@@ -1,4 +1,5 @@
 import ClientSuccessSection from './components/Home/ClientSuccessSection'
+import ContactPage from './components/Home/ContactPage'
 import ParagonFooter from './components/Home/Footer'
 import HeroSection from './components/Home/HeroSection'
 import OurClients from './components/Home/OurClients'
@@ -25,6 +26,7 @@ function App() {
       <TechStack/>
       <SoftwareProcess/>
        <ClientSuccessSection/>
+       <ContactPage/>
       <ParagonFooter />
     </>
   )
