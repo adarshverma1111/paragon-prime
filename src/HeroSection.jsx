@@ -128,13 +128,30 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex flex-wrap items-center gap-4 mt-8"
+            className="flex flex-wrap items-center gap-5 mt-8"
           >
-            <button className="px-6 py-3 text-sm font-medium text-white rounded-full bg-[#102C4C] hover:opacity-90 transition shadow-xl">
-              Learn More
+            {/* Primary Button */}
+            <button className="relative px-8 py-3 text-sm font-semibold text-white rounded-full 
+  bg-gradient-to-r from-blue-600 to-orange-500 
+  shadow-lg shadow-orange-500/20
+  hover:shadow-orange-500/40 
+  hover:scale-105
+  transition-all duration-300">
+
+              <span className="relative z-10">Learn More</span>
+
+              {/* Glow effect */}
+              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-orange-500 opacity-0 hover:opacity-30 blur-xl transition"></span>
             </button>
 
-            <button className="px-6 py-3 text-sm font-medium text-white border border-white/30 rounded-full backdrop-blur hover:bg-white/10 transition shadow-xl">
+            {/* Secondary Button */}
+            <button className="px-8 py-3 text-sm font-semibold text-white rounded-full 
+  border border-white/30 
+  backdrop-blur-md 
+  hover:bg-white hover:text-black
+  hover:scale-105
+  transition-all duration-300 shadow-lg">
+
               Schedule Meeting
             </button>
           </motion.div>
