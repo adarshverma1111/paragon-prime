@@ -307,7 +307,7 @@ export default function SoftwareProcess() {
           className="mt-10 text-center text-sm sm:text-base font-medium relative z-10"
           style={{ color: "#4a6fa5", animation: "fadeUp 0.8s 0.6s ease both", opacity: 0 }}
         >
-          From idea to launch — we've got every step covered.
+          From idea to launch — we've got every step covered...
         </p>
       </section>
     </>
