@@ -8,12 +8,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const partners = [
-  { name: "AWS", logo: "/logos/aws.svg" },
-  { name: "Azure", logo: "/logos/azure.svg" },
-  { name: "Google Cloud", logo: "/logos/gcloud.svg" },
-  { name: "Salesforce", logo: "/logos/salesforce.svg" },
-  { name: "IBM", logo: "/logos/ibm.svg" },
-  { name: "Copilot", logo: "/logos/copilot.svg" },
+  { name: "AWS", logo: "/logos/aws.png" },
+  { name: "Azure", logo: "/logos/azure.png" },
+  { name: "Google Cloud", logo: "/logos/gcloud.png" },
+  { name: "Salesforce", logo: "/logos/salesforce.png" },
+  { name: "IBM", logo: "/logos/ibm.png" },
+  { name: "Copilot", logo: "/logos/copilot.png" },
 ];
 
 export default function PartnershipSlider() {
@@ -40,7 +40,7 @@ export default function PartnershipSlider() {
       </motion.p>
 
       <Swiper
-        modules={[Autoplay, Navigation]}
+        modules={[Autoplay]}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         navigation
         loop
@@ -74,9 +74,6 @@ export default function PartnershipSlider() {
               <p className="text-gray-400 text-xs md:text-sm uppercase tracking-wider">
                 {partner.name}
               </p>
-
-              {/* Gradient Accent */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-orange-500 to-blue-500 rounded-b-xl"></div>
 
             </motion.div>
 
