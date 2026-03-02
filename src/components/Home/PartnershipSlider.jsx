@@ -14,7 +14,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const partners = [
-  { name: "AWS", logo:awslogo },
+  { name: "AWS", logo: awslogo },
   { name: "Azure", logo: azurelogo },
   { name: "Google Cloud", logo: gcloudlogo },
   { name: "Salesforce", logo: salesforcelogo },
@@ -24,69 +24,85 @@ const partners = [
 
 export default function PartnershipSlider() {
   return (
-    <section className="bg-black py-16 md:py-20 px-4 md:px-8 text-center">
+    <section className="relative py-16 md:py-20 px-4 md:px-8 text-center overflow-hidden bg-black">
 
-      {/* Heading Animation */}
-      <motion.h2
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3"
-      >
-        Partnership & <span className="text-orange-500">Collaborations</span>
-      </motion.h2>
+      {/* Glow Effect */}
+      <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[160px] rounded-full"></div>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-        className="text-gray-400 text-sm md:text-base mb-10"
-      >
-        Building the future through global technology alliances
-      </motion.p>
-
-      <Swiper
-        modules={[Autoplay]}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
-        navigation
-        loop
-        spaceBetween={20}
-        breakpoints={{
-          0: { slidesPerView: 1 },
-          480: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
+      {/* Grid Texture */}
+      <div
+        className="absolute inset-0 opacity-[0.08]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
         }}
-      >
-        {partners.map((partner, index) => (
-          <SwiperSlide key={index}>
+      ></div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.4 }}
-              className="relative bg-[#0a0f1c] border border-blue-500/20 rounded-xl p-8 md:p-10 flex flex-col items-center justify-center shadow-lg hover:shadow-blue-500/20"
-            >
+      <div className="relative z-10">
 
-              <motion.img
-                src={partner.logo}
-                alt={partner.name}
-                className="h-12 md:h-14 mb-4 object-contain"
-                whileHover={{ rotate: 3, scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 200 }}
-              />
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3"
+        >
+          Partnership & <span className="text-orange-500">Collaborations</span>
+        </motion.h2>
 
-              <p className="text-gray-400 text-xs md:text-sm uppercase tracking-wider">
-                {partner.name}
-              </p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-gray-400 text-sm md:text-base mb-10"
+        >
+          Building the future through global technology alliances
+        </motion.p>
 
-            </motion.div>
+        <Swiper
+          modules={[Autoplay]}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          navigation
+          loop
+          spaceBetween={20}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            480: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
+        >
+          {partners.map((partner, index) => (
+            <SwiperSlide key={index}>
 
-          </SwiperSlide>
-        ))}
-      </Swiper>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4 }}
+                className="bg-[#0a0f1c] border border-blue-500/20 rounded-xl p-8 md:p-10 flex flex-col items-center justify-center shadow-lg hover:shadow-blue-500/20"
+              >
 
+                <motion.img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="h-12 md:h-14 mb-4 object-contain"
+                  whileHover={{ rotate: 3, scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                />
+
+                <p className="text-gray-400 text-xs md:text-sm uppercase tracking-wider">
+                  {partner.name}
+                </p>
+
+              </motion.div>
+
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+      </div>
     </section>
   );
 }
