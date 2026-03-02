@@ -22,6 +22,18 @@ export default function OurServices() {
     },
   ];
 
+  const cardVariants = {
+    hidden: (index) => ({
+      opacity: 0,
+      x: index % 2 === 0 ? -120 : 120, // left/right animation
+    }),
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
   return (
     <section className="bg-black py-16 px-4 sm:px-8 md:px-16 font-sans">
 
@@ -50,27 +62,16 @@ export default function OurServices() {
       </motion.div>
 
       {/* Cards */}
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          visible: {
-            transition: {
-              staggerChildren: 0.2,
-            },
-          },
-        }}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {services.map((service, index) => (
           <motion.div
             key={index}
-            variants={{
-              hidden: { opacity: 0, y: 40 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.6 }}
+            custom={index}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.3 }}
             whileHover={{ scale: 1.05 }}
             className="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300"
           >
@@ -94,7 +95,7 @@ export default function OurServices() {
             </div>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
 
     </section>
   );
