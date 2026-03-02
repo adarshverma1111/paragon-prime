@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 const clients = [
   {
@@ -31,10 +31,6 @@ const clients = [
             <rect x="24" y="26" width="12" height="9" rx="2" fill="white"/>
             <circle cx="22" cy="33" r="3" fill="white"/>
             <circle cx="38" cy="33" r="3" fill="white"/>
-            <path d="M38 10 Q46 22 44 30" stroke="white" strokeWidth="1.5" fill="none"/>
-            <text x="32" y="16" fill="white" fontSize="5" fontWeight="bold">One</text>
-            <text x="32" y="22" fill="white" fontSize="5" fontWeight="bold">Way</text>
-            <text x="30" y="50" fill="white" fontSize="5" fontWeight="bold" textAnchor="middle">Travel</text>
           </svg>
         </div>
       </div>
@@ -58,7 +54,6 @@ const clients = [
             <span className="text-white text-[8px] font-bold">Deepnoter</span>
             <span className="text-white text-[8px]"> Pvt Ltd</span>
           </div>
-          <span className="text-white text-[8px]">Dr. Lal PathLabs</span>
         </div>
       </div>
     ),
@@ -68,13 +63,10 @@ const clients = [
     logo: (
       <div className="flex items-center gap-2">
         <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-          <svg viewBox="0 0 24 24" className="w-5 h-5" fill="black">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-          </svg>
+          <span className="text-black font-bold text-xs">+</span>
         </div>
         <div>
-          <div className="text-white font-black text-sm tracking-wide">Pathkind<span className="text-white">▶▶</span></div>
-          <div className="text-white text-[9px] tracking-wider">Labs</div>
+          <div className="text-white font-black text-sm">PathVets</div>
         </div>
       </div>
     ),
@@ -82,13 +74,12 @@ const clients = [
   {
     id: 6,
     logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-          <span className="text-black font-black text-xs">+</span>
+      <div className="flex flex-col items-start">
+        <div className="text-white font-black text-xl tracking-wider italic">
+          FARIDWAR DELHI
         </div>
-        <div>
-          <div className="text-white font-black text-sm">PathVets</div>
-          <div className="text-white text-[8px]">A venture of Dr. Lal PathLabs</div>
+        <div className="text-white text-[9px] tracking-widest">
+          ALWAYS ON DUTY!
         </div>
       </div>
     ),
@@ -96,68 +87,49 @@ const clients = [
   {
     id: 7,
     logo: (
-      <div className="flex flex-col items-start">
-        <div className="flex items-center gap-1 text-white text-[9px]">
-          <span>🚕</span>
-          <span className="tracking-widest">Taxi Service</span>
-        </div>
-        <div className="text-white font-black text-xl leading-tight tracking-wider italic">FARIDWAR DELHI</div>
-        <div className="text-white text-[9px] tracking-widest">ALWAYS ON DUTY!</div>
+      <div className="flex flex-col items-center justify-center">
+        <div className="text-white font-black text-3xl">GO</div>
+        <div className="text-white font-black text-2xl">Contest</div>
       </div>
     ),
   },
   {
     id: 8,
     logo: (
-      <div className="flex flex-col items-center justify-center leading-none">
-        <div className="text-white font-black" style={{ fontSize: "3rem", lineHeight: 1 }}>GO</div>
-        <div className="text-white font-black text-2xl" style={{ lineHeight: 1 }}>Contest</div>
+      <div className="text-white font-bold text-2xl tracking-widest">
+        GLOBE
       </div>
     ),
   },
   {
     id: 9,
     logo: (
-      <div className="flex items-center text-white font-bold text-2xl tracking-widest">
-        GL
-        <div className="w-7 h-7 rounded-full border-2 border-white flex items-center justify-center mx-0.5">
-          <svg viewBox="0 0 24 24" className="w-4 h-4">
-            <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
-            <path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18" stroke="white" strokeWidth="1.2" fill="none"/>
-            <path d="M8 8 C8 8 10 10 12 8 C14 6 16 8 16 8" stroke="white" strokeWidth="1" fill="none"/>
-          </svg>
-        </div>
-        BE
+      <div className="text-white font-black text-2xl">
+        GetMeCab
       </div>
     ),
   },
   {
     id: 10,
     logo: (
-      <div className="flex flex-col items-center">
-        <div className="text-white font-black text-2xl tracking-tight">
-          GetMe<span className="border border-white px-0.5">Cab</span>
-        </div>
-        <div className="text-white text-[9px] tracking-wider mt-0.5">Making Holidays Memorable</div>
+      <div className="text-white font-bold text-lg">
+        Dr Lal PathLabs
       </div>
     ),
   },
   {
     id: 11,
     logo: (
-      <div className="text-white font-bold text-lg tracking-wide" style={{ fontFamily: "serif" }}>
-        ≋ Dr Lal PathLabs
+      <div className="text-white font-black text-xl">
+        AUTHBRIDGE
       </div>
     ),
   },
   {
     id: 12,
     logo: (
-      <div className="flex flex-col items-start">
-        <div className="text-white font-black text-xl tracking-widest">
-          <span className="text-white">A</span>UTHBRIDGE
-        </div>
-        <div className="text-white text-[9px] tracking-wider">Building trust through data</div>
+      <div className="text-white font-bold">
+        Trusted Partner
       </div>
     ),
   },
@@ -168,31 +140,41 @@ const row2 = clients.slice(6, 12);
 
 function MarqueeRow({ items, reverse = false, speed = 30 }) {
   const doubled = [...items, ...items];
+
   return (
-    <div className="overflow-hidden w-full">
+    <motion.div
+      className="overflow-hidden w-full"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+    >
       <div
-        className={`flex gap-6 md:gap-12 items-center`}
+        className="flex gap-6 md:gap-12 items-center"
         style={{
           width: "max-content",
           animation: `${reverse ? "marqueeReverse" : "marquee"} ${speed}s linear infinite`,
         }}
       >
         {doubled.map((client, i) => (
-          <div
+          <motion.div
             key={i}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3 }}
             className="flex items-center justify-center min-w-[120px] md:min-w-[160px] h-20 px-2 md:px-4 opacity-90 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-pointer"
           >
             {client.logo}
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export default function OurClients() {
   return (
     <section className="bg-black text-white py-12 px-6 md:px-12 overflow-hidden">
+
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
@@ -204,19 +186,32 @@ export default function OurClients() {
         }
       `}</style>
 
-      <div className="max-w-7xl mx-auto mb-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+      <motion.div
+        className="max-w-7xl mx-auto mb-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-start"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <div>
-          <p className="text-blue-500 font-semibold text-base mb-2 tracking-wide">Our Clients</p>
+          <p className="text-blue-500 font-semibold text-base mb-2 tracking-wide">
+            Our Clients
+          </p>
+
           <h2 className="text-white font-bold text-3xl md:text-4xl leading-tight">
-            Loved by Startups, Trusted by<br className="hidden md:block"/> Enterprises
+            Loved by Startups, Trusted by
+            <br className="hidden md:block"/>
+            Enterprises
           </h2>
         </div>
+
         <div className="md:pt-2">
           <p className="text-gray-400 text-sm italic leading-relaxed md:text-right">
-            Our clients trust us to turn ideas into impactful digital solutions. From strategy to execution, we deliver results that exceed expectations.
+            Our clients trust us to turn ideas into impactful digital solutions.
+            From strategy to execution, we deliver results that exceed expectations.
           </p>
         </div>
-      </div>
+      </motion.div>
 
       <div className="mb-6 border-t border-b border-gray-800 py-4">
         <MarqueeRow items={row1} reverse={false} speed={28} />

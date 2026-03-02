@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function OurServices() {
   const services = [
     {
@@ -21,47 +23,79 @@ export default function OurServices() {
   ];
 
   return (
-    <section className="bg-[#f0efea] py-16 px-4 sm:px-8 md:px-16 font-sans">
+    <section className="bg-black py-16 px-4 sm:px-8 md:px-16 font-sans">
+
       {/* Header */}
-      <div className="text-center mb-12">
+      <motion.div
+        className="text-center mb-12"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
         <div className="flex items-center justify-center gap-3 mb-4">
-          <span className="text-gray-600 font-semibold text-base tracking-wide">Our Services</span>
-          <div className="w-12 h-0.5 bg-green-700"></div>
+          <span className="text-gray-300 font-semibold text-base tracking-wide">
+            Our Services
+          </span>
+          <div className="w-12 h-0.5 bg-blue-500"></div>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-5">
-          What We <span className="text-green-700">Offer</span>
+
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-5">
+          What We <span className="text-orange-500">Offer</span>
         </h2>
-        <p className="text-gray-500 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed text-center">
+
+        <p className="text-gray-400 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed text-center">
           We provide comprehensive technology solutions to help your business thrive in the digital age. From mobile App and web development to digital marketing, our expert team delivers results-driven solutions tailored to your unique business needs.
         </p>
-      </div>
+      </motion.div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+      >
         {services.map((service, index) => (
-          <div
+          <motion.div
             key={index}
-            className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6 }}
+            whileHover={{ scale: 1.05 }}
+            className="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300"
           >
-            <h3 className="text-green-700 font-black text-xl sm:text-2xl mb-4">
+            <h3 className="text-orange-500 font-black text-xl sm:text-2xl mb-4">
               {service.title}
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed text-justify mb-6">
+
+            <p className="text-gray-400 text-sm leading-relaxed text-justify mb-6">
               {service.description}
             </p>
+
             <div className="flex flex-wrap gap-2">
               {service.tags.map((tag, i) => (
                 <span
                   key={i}
-                  className="border border-green-600 text-green-700 text-xs sm:text-sm px-4 py-1.5 rounded-full bg-transparent hover:bg-green-50 transition-colors cursor-default"
+                  className="border border-blue-500 text-blue-400 text-xs sm:text-sm px-4 py-1.5 rounded-full bg-transparent hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-colors cursor-default"
                 >
                   {tag}
                 </span>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
+
     </section>
   );
 }

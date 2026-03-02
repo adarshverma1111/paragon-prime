@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const slides = [
   {
@@ -37,7 +38,6 @@ export default function SoftwareSolutions() {
   const [current, setCurrent] = useState(0);
   const total = slides.length;
 
-  // Auto slide
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % total);
@@ -47,33 +47,39 @@ export default function SoftwareSolutions() {
   }, [total]);
 
   return (
-    <section className="bg-white py-16 px-4 overflow-hidden">
+    <section className="bg-black py-16 px-4 overflow-hidden">
+
       {/* Header */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
-          Software <span className="text-green-600">Solutions</span>
+        <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+          Software <span className="text-orange-500">Solutions</span>
         </h2>
-        <p className="text-gray-500 max-w-2xl mx-auto">
+        <p className="text-gray-400 max-w-2xl mx-auto">
           Comprehensive software solutions designed to streamline your business operations and drive growth
         </p>
       </div>
 
       {/* Slider */}
       <div className="relative max-w-6xl mx-auto overflow-hidden">
-        <div
-          className="flex transition-transform duration-700 ease-in-out"
-          style={{
-            transform: `translateX(-${
-              current * (100 / (window.innerWidth >= 768 ? 3 : 1))
-            }%)`,
+        <motion.div
+          className="flex"
+          animate={{
+            x: `-${current * (100 / (window.innerWidth >= 768 ? 3 : 1))}%`,
+          }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
           }}
         >
           {slides.concat(slides.slice(0, 3)).map((card, index) => (
-            <div
+            <motion.div
               key={index}
               className="w-full md:w-1/3 flex-shrink-0 px-3 flex justify-center"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="w-full max-w-[300px] rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition">
+              <div className="w-full max-w-[300px] rounded-xl overflow-hidden border border-gray-800 bg-gray-900 shadow-md hover:shadow-xl transition">
 
                 <div className="relative">
                   <img
@@ -84,7 +90,7 @@ export default function SoftwareSolutions() {
 
                   <div className="absolute bottom-0 left-0">
                     <div
-                      className="bg-green-500 text-white text-xs font-bold px-4 py-2 tracking-wider"
+                      className="bg-orange-500 text-white text-xs font-bold px-4 py-2 tracking-wider"
                       style={{
                         clipPath:
                           "polygon(0 0, 100% 0, 92% 100%, 0 100%)",
@@ -96,18 +102,18 @@ export default function SoftwareSolutions() {
                 </div>
 
                 <div className="p-6 text-center">
-                  <h3 className="text-gray-900 font-bold text-sm mb-3">
+                  <h3 className="text-white font-bold text-sm mb-3">
                     {card.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p className="text-gray-400 text-sm leading-relaxed">
                     {card.description}
                   </p>
                 </div>
 
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Dots */}
@@ -118,8 +124,8 @@ export default function SoftwareSolutions() {
             onClick={() => setCurrent(i)}
             className={`rounded-full transition-all duration-300 ${
               i === current
-                ? "w-6 h-3 bg-green-600"
-                : "w-3 h-3 bg-gray-300"
+                ? "w-6 h-3 bg-orange-500"
+                : "w-3 h-3 bg-gray-600"
             }`}
           />
         ))}
