@@ -107,7 +107,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="mt-6 text-4xl font-bold leading-tight 
-            text-white sm:text-5xl lg:text-7xl xl:text-8xl"
+      text-white sm:text-5xl lg:text-7xl xl:text-8xl"
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500">
               From Concept to
@@ -131,33 +131,70 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="flex flex-wrap items-center gap-5 mt-15"
           >
+
             {/* Primary Button */}
             <button className="relative px-8 py-3 text-sm font-semibold text-white rounded-full 
-                               bg-gradient-to-r from-blue-600 to-orange-500 
-                               shadow-lg shadow-orange-500/20
-                               hover:shadow-orange-500/40 
-                               hover:scale-105
-                               transition-all duration-300">
+                         bg-gradient-to-r from-blue-600 to-orange-500 
+                         shadow-lg shadow-orange-500/20
+                         hover:shadow-orange-500/40 
+                         hover:scale-105
+                         transition-all duration-300">
 
               <span className="relative z-10">Learn More</span>
 
-              {/* Glow effect */}
               <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-orange-500 opacity-0 hover:opacity-30 blur-xl transition"></span>
             </button>
 
             {/* Secondary Button */}
             <button className="px-8 py-3 text-sm font-semibold text-white rounded-full 
-                               border border-white/30 
-                               backdrop-blur-md 
-                               hover:bg-white hover:text-black
-                               hover:scale-105
-                               transition-all duration-300 shadow-lg">
+                         border border-white/30 
+                         backdrop-blur-md 
+                         hover:bg-white hover:text-black
+                         hover:scale-105
+                         transition-all duration-300 shadow-lg">
 
               Schedule Meeting
             </button>
+
+          </motion.div>
+
+          {/* Trust Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="flex flex-wrap items-center gap-10 mt-10 text-gray-300 text-sm"
+          >
+
+            <div className="flex items-center gap-2">
+              <span className="text-xl font-bold text-white">250+</span>
+              <span>Projects Delivered</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="text-xl font-bold text-white">100%</span>
+              <span>Happy Clients</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="text-xl font-bold text-white">4+</span>
+              <span>Years Experience</span>
+            </div>
+
           </motion.div>
 
         </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center text-gray-300 text-xs">
+
+        <span className="mb-2 tracking-widest">SCROLL</span>
+
+        <div className="w-[2px] h-10 bg-gray-500 relative overflow-hidden">
+          <div className="absolute top-0 w-[2px] h-4 bg-white animate-bounce"></div>
+        </div>
+
       </div>
     </section>
   );
