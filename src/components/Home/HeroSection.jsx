@@ -90,8 +90,8 @@ const HeroSection = () => {
       </header>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 flex items-center min-h-[80vh] md:min-h-screen">
-        <div className="lg:w-2/3 mt-15">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 flex items-center min-h-[85vh] md:min-h-screen">
+        <div className="lg:w-2/3 mt-30">
 
           <motion.p
             initial={{ opacity: 0, y: 15 }}
