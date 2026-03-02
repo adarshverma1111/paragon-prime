@@ -187,7 +187,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center text-gray-300 text-xs">
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 hidden md:flex flex-col items-center text-gray-300 text-xs">
 
         <span className="mb-2 tracking-widest">SCROLL</span>
 
