@@ -129,7 +129,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex flex-wrap items-center gap-5 mt-8"
+            className="flex flex-wrap items-center gap-5 mt-15"
           >
             {/* Primary Button */}
             <button className="relative px-8 py-3 text-sm font-semibold text-white rounded-full 
