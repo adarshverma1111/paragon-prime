@@ -1,3 +1,4 @@
+import logo from "../../assets/logos/paragon-prime-logo1.png"
 export default function ParagonFooter() {
   return (
     <footer className="bg-gradient-to-b from-[#0f172a] via-[#020617] to-black text-white px-6 sm:px-10 lg:px-12 pt-12 pb-0 font-sans">      <div className="max-w-7xl mx-auto">
@@ -7,7 +8,7 @@ export default function ParagonFooter() {
         <div className="flex flex-col gap-4 text-center sm:text-left">
           <div className="flex justify-center sm:justify-start">
             <img
-              src="paragon-prime-logo1.png"
+              src={logo}
               alt="Paragon Logo"
               className="w-36 sm:w-40 lg:w-44"
             />
