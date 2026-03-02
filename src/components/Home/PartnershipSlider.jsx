@@ -24,7 +24,7 @@ const partners = [
 
 export default function PartnershipSlider() {
   return (
-    <section className="bg-black py-16 md:py-20 px-4 md:px-8 text-center">
+    <section className="bg-black py-16 md:py-20 px-11 md:px-8 text-center">
 
       {/* Heading Animation */}
       <motion.h2
@@ -72,7 +72,7 @@ export default function PartnershipSlider() {
               <motion.img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-12 md:h-14 mb-4 object-contain"
+                className="h-14 md:h-14 mb-4 object-contain"
                 whileHover={{ rotate: 3, scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 200 }}
               />
