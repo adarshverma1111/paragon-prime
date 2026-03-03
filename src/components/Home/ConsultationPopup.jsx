@@ -76,7 +76,9 @@ export default function ConsultationPopup() {
     <>
       {/* Backdrop — also acts as scroll container so popup never hides behind navbar */}
       <div
-        className="fixed inset-0 z-40 overflow-y-auto"
+        // className="fixed inset-0 z-40 overflow-y-auto"
+        className="fixed inset-0 z-40 md:overflow-hidden overflow-y-auto"
+
         style={{
           background: "rgba(10,10,20,0.55)",
           backdropFilter: "blur(3px)",
@@ -104,7 +106,6 @@ export default function ConsultationPopup() {
           >
             {/* LEFT PANEL */}
             <div
-            //   className="flex flex-col justify-between p-7 md:w-2/5 "
             className="hidden md:flex flex-col justify-between p-7 md:w-2/5"
 
               style={{
@@ -260,7 +261,7 @@ export default function ConsultationPopup() {
                     ✅
                   </div>
                   <h3 className="text-xl font-black text-gray-800 mb-2">
-                    Message Sent!
+                    Message Sent...!
                   </h3>
                   <p className="text-gray-500 text-sm">
                     Our experts will get back to you shortly.
