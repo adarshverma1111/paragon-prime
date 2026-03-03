@@ -83,7 +83,7 @@ export default function OurWork() {
       className="relative w-full min-h-[420px] flex items-center overflow-hidden"
       style={{ backgroundColor: "#000000" }}
     >
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-20 flex flex-col lg:flex-row items-start lg:items-center gap-14">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-2 flex flex-col lg:flex-row items-start lg:items-center gap-14">
 
         {/* Left Content */}
         <motion.div
