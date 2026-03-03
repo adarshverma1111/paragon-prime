@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -13,21 +14,21 @@ const testimonials = [
     name: "Peter",
     avatar: "https://randomuser.me/api/portraits/men/45.jpg",
     stars: 5,
-    text: "We were having a lot of technical issues with our website. We didn't know where to turn to. Thanks to Paragon Prime, we have now successfully resolved all the issues. We have now hired them permanently as our dedicated tech team.",
+    text: "We were having a lot of technical issues with our website. We didn't know where to turn to. Thanks to Paragon Prime, we have now successfully resolved all the issues.",
   },
   {
     id: 3,
     name: "Sarah",
     avatar: "https://randomuser.me/api/portraits/women/68.jpg",
     stars: 5,
-    text: "Paragon prime transformed our entire digital infrastructure. Their team is incredibly knowledgeable and responsive. We saw results within weeks of starting the project and continue to be impressed by their dedication.",
+    text: "Paragon prime transformed our entire digital infrastructure. Their team is incredibly knowledgeable and responsive.",
   },
   {
     id: 4,
     name: "Michael",
     avatar: "https://randomuser.me/api/portraits/men/75.jpg",
     stars: 5,
-    text: "Working with Paragon Prime has been an absolute pleasure. They delivered on time, within budget, and the quality exceeded our expectations. I would highly recommend them to any business looking for a reliable tech partner.",
+    text: "Working with Paragon Prime has been an absolute pleasure.",
   },
 ];
 
@@ -38,13 +39,6 @@ export default function ClientSuccessSection() {
 
   return (
     <>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
-        .thin-scroll::-webkit-scrollbar { width: 3px; }
-        .thin-scroll::-webkit-scrollbar-track { background: #f8fafc; }
-        .thin-scroll::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
-      `}</style>
-
       <section
         className="w-full py-14 px-6 sm:px-10 lg:px-16"
         style={{
@@ -55,13 +49,20 @@ export default function ClientSuccessSection() {
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-30 items-start w-full">
 
           {/* LEFT: Heading */}
-          <div className="flex flex-col gap-3 lg:w-64 xl:w-72 flex-shrink-0">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-3 lg:w-64 xl:w-72 flex-shrink-0"
+          >
             <h2
               className="font-black leading-tight"
               style={{ fontSize: "clamp(1.75rem, 3.2vw, 2.6rem)", color: "#0b1120" }}
             >
               See how we've helped our clients succeed...
             </h2>
+
             <p className="font-bold text-sm sm:text-[15px]" style={{ color: "#0b1120" }}>
               More than 1500+ agencies using Paragon Prime Infotech
             </p>
@@ -73,28 +74,38 @@ export default function ClientSuccessSection() {
                 className="w-8 h-8 rounded-full flex items-center justify-center hover:scale-105 transition-transform"
                 style={{ background: "white", border: "1.5px solid #cbd5e1" }}
               >
-                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="#555" strokeWidth="2.5" strokeLinecap="round"><path d="M15 18l-6-6 6-6" /></svg>
+                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="#555" strokeWidth="2.5" strokeLinecap="round">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
               </button>
+
               <button
                 onClick={() => setPage((p) => (p + 2) % 4)}
                 className="w-8 h-8 rounded-full flex items-center justify-center hover:scale-105 transition-transform"
                 style={{ background: "#38bdf8" }}
               >
-                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><path d="M9 18l6-6-6-6" /></svg>
+                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
               </button>
             </div>
-          </div>
+          </motion.div>
 
-          {/* CENTER: Two Cards only */}
+          {/* CENTER: Cards */}
           <div className="flex flex-col sm:flex-row gap-10 flex-1 min-w-0 justify-center">
-                     {[cardA, cardB].map((t) => (
-                     <div
-                        key={t.id}
-                        className="relative flex flex-col bg-white rounded-xl w-full sm:w-[340px]"
-                        style={{
-                         border: "1px solid #e2e8f0",
-                         boxShadow: "0 2px 10px rgba(0,0,0,0.06)",
-                  }}
+
+            {[cardA, cardB].map((t, index) => (
+              <motion.div
+                key={t.id}
+                initial={{ opacity: 0, y: 80 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="relative flex flex-col bg-white rounded-xl w-full sm:w-[340px]"
+                style={{
+                  border: "1px solid #e2e8f0",
+                  boxShadow: "0 2px 10px rgba(0,0,0,0.06)",
+                }}
               >
                 {/* Cyan quote bubble */}
                 <div
@@ -102,11 +113,11 @@ export default function ClientSuccessSection() {
                   style={{ background: "#38bdf8", zIndex: 10 }}
                 >
                   <svg viewBox="0 0 20 16" className="w-4 h-3.5" fill="white">
-                    <path d="M0 16V9.6C0 4.267 2.667 1.067 8 0l1.067 1.6C6.578 2.489 5.156 4.356 4.8 7.2H8V16H0zm12 0V9.6C12 4.267 14.667 1.067 20 0l1.067 1.6c-2.489.889-3.911 2.756-4.267 5.6H20V16h-8z" />
+                    <path d="M0 16V9.6C0 4.267 2.667 1.067 8 0l1.067 1.6C6.578 2.489 5.156 4.356 4.8 7.2H8V16H0z" />
                   </svg>
                 </div>
 
-                {/* Scrollable review */}
+                {/* Review */}
                 <div
                   className="thin-scroll flex-1 overflow-y-auto px-5 pt-5 pb-3"
                   style={{ maxHeight: 185 }}
@@ -118,15 +129,14 @@ export default function ClientSuccessSection() {
                       </svg>
                     ))}
                   </div>
-                  <p className="text-sm leading-relaxed" style={{ color: "#374151", fontStyle: "italic" }}>
+
+                  <p className="text-sm leading-relaxed italic" style={{ color: "#374151" }}>
                     {t.text}
                   </p>
                 </div>
 
-                {/* Divider */}
                 <div style={{ height: "1px", background: "#e2e8f0", margin: "0 20px" }} />
 
-                {/* Author */}
                 <div className="flex items-center gap-3 px-4 py-4">
                   <img
                     src={t.avatar}
@@ -134,12 +144,15 @@ export default function ClientSuccessSection() {
                     className="w-12 h-12 rounded-full object-cover flex-shrink-0"
                     style={{ border: "2px solid #e2e8f0" }}
                   />
-                  <span className="font-bold text-sm" style={{ color: "#0b1120" }}>{t.name}</span>
+                  <span className="font-bold text-sm" style={{ color: "#0b1120" }}>
+                    {t.name}
+                  </span>
                 </div>
-              </div>
-            ))}
-          </div>
 
+              </motion.div>
+            ))}
+
+          </div>
         </div>
       </section>
     </>
