@@ -10,7 +10,7 @@ const THEME = {
   subText: "#9CA3AF",
 };
 
-const technologies = [
+const technologies =  [
   {
     name: "JavaScript",
     color: "#F7DF1E",
@@ -181,20 +181,20 @@ const technologies = [
       </svg>
     ),
   },
-];;
+];
 
 function TechCard({ tech, index }) {
   const [hovered, setHovered] = useState(false);
-
   const accent = index % 2 === 0 ? THEME.blue : THEME.orange;
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30, scale: 0.96 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, y: 40, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{
         duration: 0.6,
-        delay: index * 0.06,
+        delay: index * 0.05,
         type: "spring",
         stiffness: 90,
       }}
@@ -202,7 +202,8 @@ function TechCard({ tech, index }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Glow bloom behind card */}
+      {/* ---- BELOW THIS EVERYTHING SAME ---- */}
+
       <div
         className="absolute inset-0 rounded-xl sm:rounded-2xl pointer-events-none"
         style={{
@@ -228,7 +229,6 @@ function TechCard({ tech, index }) {
           transition: "all 0.35s cubic-bezier(0.34, 1.4, 0.64, 1)",
         }}
       >
-        {/* Shimmer stripe on hover */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -238,7 +238,6 @@ function TechCard({ tech, index }) {
           }}
         />
 
-        {/* Icon */}
         <div
           style={{
             transition:
@@ -254,7 +253,6 @@ function TechCard({ tech, index }) {
           {tech.svg}
         </div>
 
-        {/* Label */}
         <span
           className="text-xs sm:text-sm font-semibold text-center"
           style={{
@@ -266,7 +264,6 @@ function TechCard({ tech, index }) {
           {tech.name}
         </span>
 
-        {/* Glowing bottom bar */}
         <div
           className="absolute bottom-0 left-1/2 rounded-t-full"
           style={{
@@ -287,14 +284,13 @@ export default function TechStack() {
   return (
     <section
       className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 overflow-hidden"
-      style={{
-        background: THEME.bg,
-      }}
+      style={{ background: THEME.bg }}
     >
       {/* Header */}
       <motion.div
-        initial={{ opacity: 0, y: -25 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7 }}
         className="text-center mb-12 max-w-2xl relative z-10"
       >
@@ -327,22 +323,4 @@ export default function TechStack() {
     </section>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
