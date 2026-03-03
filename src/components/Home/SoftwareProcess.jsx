@@ -23,7 +23,7 @@ const steps = [
   {
     id: 2,
     label: "DESIGN",
-    color: "#f5a623",
+    color: "#FB7118",
     accent: "#1a3a6b",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 sm:w-10 sm:h-10">
@@ -48,7 +48,7 @@ const steps = [
   {
     id: 4,
     label: "DELIVERY",
-    color: "#f5a623",
+    color: "#FB7118",
     accent: "#1a3a6b",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 sm:w-10 sm:h-10">
@@ -222,24 +222,16 @@ export default function SoftwareProcess() {
       `}</style>
 
       <section
-        className="relative min-h-screen flex flex-col items-center justify-center px-4 py-16 overflow-hidden"
+        className="relative min-h-[90vh]-screen  flex flex-col items-center justify-center px-4 py-8 overflow-hidden"
         style={{
-          background: "#dff0f8",
+          background: `
+    radial-gradient(circle at 20% 30%, rgba(37,99,235,0.15), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(30,64,175,0.12), transparent 45%),
+    linear-gradient(145deg, #0B0F19 0%, #0F172A 40%, #000000 100%)
+  `,
           fontFamily: "'Plus Jakarta Sans', sans-serif",
         }}
       >
-        {/* Wave lines background */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-30" preserveAspectRatio="none">
-          {[...Array(10)].map((_, i) => (
-            <path
-              key={i}
-              d={`M -100 ${80 + i * 60} Q 200 ${60 + i * 60} 500 ${90 + i * 60} Q 800 ${120 + i * 60} 1100 ${80 + i * 60} Q 1400 ${50 + i * 60} 1700 ${85 + i * 60}`}
-              fill="none"
-              stroke="#90c8e8"
-              strokeWidth="1"
-            />
-          ))}
-        </svg>
 
         {/* Title */}
         <div
@@ -250,11 +242,11 @@ export default function SoftwareProcess() {
             className="font-black leading-tight"
             style={{
               fontSize: "clamp(1.6rem, 4vw, 2.8rem)",
-              color: "#0f1f4b",
+              color: "#fdfdff",
               letterSpacing: "-0.01em",
             }}
           >
-           Our Software<br />Development Process
+            Our Software<br /> <span style={{ color: '#FB7118' }}>Development</span> Process
           </h2>
         </div>
 
@@ -263,7 +255,7 @@ export default function SoftwareProcess() {
           {/* Left arrow */}
           <div className="flex items-center mr-2" style={{ animation: "arrowSlide 2s ease-in-out infinite" }}>
             <div className="w-8 h-0.5 bg-gray-500" />
-            <div className="w-0 h-0 border-t-4 border-b-4 border-l-8 border-transparent border-l-gray-500" style={{ borderLeftColor: "#555" }} />
+            <div className="w-0 h-0 border-t-4 border-b-4 border-l-8 border-transparent border-l-gray-500" style={{ borderLeftColor: "#FB7118" }} />
           </div>
 
           {steps.map((step, i) => (
@@ -295,7 +287,7 @@ export default function SoftwareProcess() {
               {i < steps.length - 1 && (
                 <MobileConnector
                   flip={i % 2 === 0}
-                  color={i % 2 === 0 ? "#f5a623" : "#1a3a6b"}
+                  color={i % 2 === 0 ? "#FB7118" : "#1a3a6b"}
                 />
               )}
             </div>
@@ -305,7 +297,7 @@ export default function SoftwareProcess() {
         {/* Bottom tagline */}
         <p
           className="mt-10 text-center text-sm sm:text-base font-medium relative z-10"
-          style={{ color: "#4a6fa5", animation: "fadeUp 0.8s 0.6s ease both", opacity: 0 }}
+          style={{ color: "#fff", animation: "fadeUp 0.8s 0.6s ease both", opacity: 0 }}
         >
           From idea to launch — we've got every step covered...
         </p>
