@@ -1,4 +1,5 @@
 import ClientSuccessSection from './components/Home/ClientSuccessSection'
+import ConsultationPopup from './components/Home/ConsultationPopup'
 import ContactPage from './components/Home/ContactPage'
 import ParagonFooter from './components/Home/Footer'
 import HeroSection from './components/Home/HeroSection'
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <>
+      <ConsultationPopup/>
       <HeroSection />
       <WelcomePage />
       <PartnershipSlider />

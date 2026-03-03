@@ -112,14 +112,16 @@ export default function ClientSuccessSection() {
                 }}
               >
                 {/* Quote bubble */}
-                <div
-                  className="absolute -top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center"
-                  style={{ background: "#023A73", zIndex: 10 }}
-                >
-                  <svg viewBox="0 0 20 16" className="w-4 h-3.5" fill="white">
-                    <path d="M0 16V9.6C0 4.267 2.667 1.067 8 0l1.067 1.6C6.578 2.489 5.156 4.356 4.8 7.2H8V16H0z" />
-                  </svg>
-                </div>
+               <div
+  className="absolute -top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center"
+  style={{ background: "#023A73", zIndex: 10 }}
+>
+  <svg viewBox="0 0 40 16" className="w-5 h-4" fill="white">
+    <path d="M0 16V9.6C0 4.267 2.667 1.067 8 0l1.067 1.6C6.578 2.489 5.156 4.356 4.8 7.2H8V16H0z" />
+    <path d="M16 16V9.6C16 4.267 18.667 1.067 24 0l1.067 1.6C22.578 2.489 21.156 4.356 20.8 7.2H24V16H16z" />
+  </svg>
+</div>
+
 
                 {/* Review */}
                 <div
