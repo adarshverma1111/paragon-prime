@@ -13,7 +13,7 @@ const testimonials = [
     name: "Peter",
     avatar: "https://randomuser.me/api/portraits/men/45.jpg",
     stars: 5,
-    text: "We were having a lot of technical issues with our website. We didn't know where to turn to. Thanks to Jamtech, we have now successfully resolved all the issues. We have now hired them permanently as our dedicated tech team.",
+    text: "We were having a lot of technical issues with our website. We didn't know where to turn to. Thanks to Paragon Prime, we have now successfully resolved all the issues. We have now hired them permanently as our dedicated tech team.",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const testimonials = [
     name: "Michael",
     avatar: "https://randomuser.me/api/portraits/men/75.jpg",
     stars: 5,
-    text: "Working with Jamtech has been an absolute pleasure. They delivered on time, within budget, and the quality exceeded our expectations. I would highly recommend them to any business looking for a reliable tech partner.",
+    text: "Working with Paragon Prime has been an absolute pleasure. They delivered on time, within budget, and the quality exceeded our expectations. I would highly recommend them to any business looking for a reliable tech partner.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function ClientSuccessSection() {
               See how we've helped our clients succeed...
             </h2>
             <p className="font-bold text-sm sm:text-[15px]" style={{ color: "#0b1120" }}>
-              More than 1500+ agencies using Jamtech Technologies
+              More than 1500+ agencies using Paragon Prime Infotech
             </p>
 
             {/* Arrows */}
