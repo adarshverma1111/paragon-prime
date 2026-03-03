@@ -1,20 +1,21 @@
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 // ── Animated Tech Orb (right side visual) ─────────────────────────────────────
 const TechOrb = ({ size = 380 }) => {
-  const outerR  = size * 0.447;   // ~170 at 380
-  const innerR  = size * 0.289;   // ~110 at 380
-  const coreS   = size * 0.342;   // ~130 at 380
-  const glowS   = size * 0.526;   // ~200 at 380
+  const outerR = size * 0.447;   // ~170 at 380
+  const innerR = size * 0.289;   // ~110 at 380
+  const coreS = size * 0.342;   // ~130 at 380
+  const glowS = size * 0.526;   // ~200 at 380
   const orbIcons = [
-    { icon: "💻", label: "Dev",     deg: 0   },
-    { icon: "📱", label: "Mobile",  deg: 45  },
-    { icon: "🌐", label: "Web",     deg: 90  },
-    { icon: "☁️", label: "Cloud",   deg: 135 },
-    { icon: "🔒", label: "Security",deg: 180 },
-    { icon: "📊", label: "Analytics",deg:225 },
+    { icon: "💻", label: "Dev", deg: 0 },
+    { icon: "📱", label: "Mobile", deg: 45 },
+    { icon: "🌐", label: "Web", deg: 90 },
+    { icon: "☁️", label: "Cloud", deg: 135 },
+    { icon: "🔒", label: "Security", deg: 180 },
+    { icon: "📊", label: "Analytics", deg: 225 },
     { icon: "⚙️", label: "Systems", deg: 270 },
-    { icon: "🚀", label: "Launch",  deg: 315 },
+    { icon: "🚀", label: "Launch", deg: 315 },
   ];
 
   return (
@@ -51,7 +52,7 @@ const TechOrb = ({ size = 380 }) => {
       `}</style>
 
       {/* Outer orbit ring */}
-      <div className="orbit-ring absolute" style={{ width: outerR*2, height: outerR*2, borderRadius: "50%", border: "1px dashed rgba(249,115,22,0.25)" }}>
+      <div className="orbit-ring absolute" style={{ width: outerR * 2, height: outerR * 2, borderRadius: "50%", border: "1px dashed rgba(249,115,22,0.25)" }}>
         {orbIcons.map(({ icon, deg }, i) => {
           const rad = (deg * Math.PI) / 180;
           const x = Math.cos(rad) * outerR;
@@ -67,7 +68,7 @@ const TechOrb = ({ size = 380 }) => {
       </div>
 
       {/* Inner orbit ring */}
-      <div className="orbit-ring-2 absolute" style={{ width: innerR*2, height: innerR*2, borderRadius: "50%", border: "1px solid rgba(59,130,246,0.2)" }}>
+      <div className="orbit-ring-2 absolute" style={{ width: innerR * 2, height: innerR * 2, borderRadius: "50%", border: "1px solid rgba(59,130,246,0.2)" }}>
         {[0, 90, 180, 270].map((deg, i) => {
           const rad = (deg * Math.PI) / 180;
           const x = Math.cos(rad) * innerR;
@@ -79,7 +80,7 @@ const TechOrb = ({ size = 380 }) => {
               width: 12, height: 12, borderRadius: "50%",
               background: i % 2 === 0 ? "#f97316" : "#3b82f6",
               boxShadow: `0 0 8px ${i % 2 === 0 ? "#f97316" : "#3b82f6"}`,
-            }}/>
+            }} />
           );
         })}
       </div>
@@ -103,7 +104,7 @@ const TechOrb = ({ size = 380 }) => {
         width: glowS, height: glowS, borderRadius: "50%",
         background: "radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%)",
         zIndex: 1,
-      }}/>
+      }} />
     </div>
   );
 };
@@ -111,8 +112,8 @@ const TechOrb = ({ size = 380 }) => {
 // ── Stats ─────────────────────────────────────────────────────────────────────
 const STATS = [
   { value: "250+", label: "Projects" },
-  { value: "4+",   label: "Years"    },
-  { value: "98%",  label: "Clients"  },
+  { value: "4+", label: "Years" },
+  { value: "98%", label: "Clients" },
 ];
 
 // ── Highlights ────────────────────────────────────────────────────────────────
@@ -122,6 +123,33 @@ const HIGHLIGHTS = [
   "Mobile App Development",
   "Web Applications",
 ];
+
+
+const fadeLeft = {
+  hidden: { opacity: 0, x: -60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.9,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+      ease: [0.22, 1, 0.36, 1],
+      delay: 0.2,
+    },
+  },
+};
+
 
 // ── Hero Section ──────────────────────────────────────────────────────────────
 export default function HeroSection() {
@@ -208,21 +236,26 @@ export default function HeroSection() {
         top: "-10%", left: "-5%", width: 500, height: 500, borderRadius: "50%",
         background: "radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%)",
         pointerEvents: "none",
-      }}/>
+      }} />
 
       {/* Blue radial glow bottom-right */}
       <div className="absolute" style={{
         bottom: "-10%", right: "5%", width: 600, height: 600, borderRadius: "50%",
         background: "radial-gradient(circle, rgba(29,78,216,0.08) 0%, transparent 70%)",
         pointerEvents: "none",
-      }}/>
+      }} />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 py-20">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
           {/* ── Left Content ── */}
-          <div className="anim-left flex-1 max-w-xl">
-
+          <motion.div
+            className="flex-1 max-w-xl"
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             {/* Badge */}
             <div className="tag-chip mb-6" style={{ display: "inline-flex" }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#f97316" }} className="animate-pulse" />
@@ -248,8 +281,8 @@ export default function HeroSection() {
               {HIGHLIGHTS.map((item, i) => (
                 <div className="highlight-item" key={i}>
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <circle cx="7" cy="7" r="7" fill="rgba(249,115,22,0.15)"/>
-                    <path d="M4 7l2 2 4-4" stroke="#f97316" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="7" cy="7" r="7" fill="rgba(249,115,22,0.15)" />
+                    <path d="M4 7l2 2 4-4" stroke="#f97316" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   {item}
                 </div>
@@ -271,19 +304,22 @@ export default function HeroSection() {
               <button className="btn-primary">
                 Our Services
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
             </div>
-          </div>
-
+          </motion.div>
           {/* ── Right Visual ── */}
-          <div className="anim-right flex-1 flex items-center justify-center">
-            {/* Mobile: 380, Desktop: 520 */}
+          <motion.div
+            className="flex-1 flex items-center justify-center"
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >            {/* Mobile: 380, Desktop: 520 */}
             <div className="block lg:hidden"><TechOrb size={320} /></div>
             <div className="hidden lg:block"><TechOrb size={520} /></div>
-          </div>
-
+          </motion.div>
         </div>
       </div>
     </section>

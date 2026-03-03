@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 // ─── Data Configuration ───────────────────────────────────────────────────────
 const STATS = [
@@ -9,23 +10,30 @@ const STATS = [
 ];
 
 // ─── Animated Counter Hook ────────────────────────────────────────────────────
-function useCountUp(target, duration = 1800, start = false) {
+function useCountUp(target, duration = 2000, start = false) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!start) return;
+
     let startTime = null;
+    let animationFrame;
 
     const step = (timestamp) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
+
       const eased = 1 - Math.pow(1 - progress, 3);
       setCount(Math.floor(eased * target));
 
-      if (progress < 1) requestAnimationFrame(step);
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(step);
+      }
     };
 
-    requestAnimationFrame(step);
+    animationFrame = requestAnimationFrame(step);
+
+    return () => cancelAnimationFrame(animationFrame);
   }, [target, duration, start]);
 
   return count;
@@ -33,7 +41,7 @@ function useCountUp(target, duration = 1800, start = false) {
 
 // ─── Single Stat Card ─────────────────────────────────────────────────────────
 function StatCard({ value, suffix, label, animate }) {
-  const count = useCountUp(value, 4500, animate);
+  const count = useCountUp(value, 2000, animate);
 
   return (
     <div className="flex flex-col items-center md:items-start gap-2 px-6 py-5">
@@ -52,63 +60,49 @@ function StatCard({ value, suffix, label, animate }) {
   );
 }
 
+// ─── Animation Variants ───────────────────────────────────────────────────────
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.1,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 // ─── Main Section ─────────────────────────────────────────────────────────────
 export default function OurWork() {
-  const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.25 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <section
-      ref={sectionRef}
       className="relative w-full min-h-[420px] flex items-center overflow-hidden"
       style={{ backgroundColor: "#000000" }}
     >
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-20 flex flex-col lg:flex-row items-start lg:items-center gap-14">
 
         {/* Left Content */}
-        <div
+        <motion.div
           className="flex-1 max-w-2xl"
-          style={{
-            animation: visible ? "fadeSlideUp 0.7s ease both" : "none",
-          }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          onViewportEnter={() => setVisible(true)}
         >
-          <p
-            className="text-gray-400 text-base sm:text-lg mb-4 font-light tracking-wide"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
-          >
+          <p className="text-gray-400 text-base sm:text-lg mb-4 font-light tracking-wide">
             Driving Digital Success
           </p>
 
-          <h1
-            className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-white leading-[1.2] tracking-wide mb-8"
-            style={{
-              fontFamily: "'Syne', sans-serif",
-            }}
-          >
+          <h1 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-white leading-[1.2] tracking-wide mb-8">
             Innovative <span style={{ color: "#023A73" }}>Web</span> & Digital
             Solutions
           </h1>
 
-          <p
-            className="text-gray-400 text-base leading-8 max-w-lg"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
-          >
+          <p className="text-gray-400 text-base leading-8 max-w-lg">
             <strong className="text-white font-semibold">
               Paragon Prime
             </strong>{" "}
@@ -117,14 +111,15 @@ export default function OurWork() {
             focuses on building scalable, high-performance solutions that
             enhance your online presence and deliver measurable growth.
           </p>
-        </div>
+        </motion.div>
 
         {/* Stats Section */}
-        <div
+        <motion.div
           className="w-full lg:w-auto lg:ml-auto"
-          style={{
-            animation: visible ? "fadeSlideUp 0.7s 0.2s ease both" : "none",
-          }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
         >
           <div
             className="grid grid-cols-2 divide-x divide-y divide-gray-800 border border-gray-800 rounded-sm overflow-hidden"
@@ -134,15 +129,8 @@ export default function OurWork() {
               <StatCard key={i} {...stat} animate={visible} />
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
-
-      <style>{`
-        @keyframes fadeSlideUp {
-          from { opacity: 0; transform: translateY(24px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
     </section>
   );
 }
