@@ -102,7 +102,7 @@ export default function ClientSuccessSection() {
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="relative flex flex-col bg-white rounded-2xl w-full sm:w-[340px] transition-all duration-300"
+                className="relative flex flex-col bg-white rounded-2xl w-full sm:w-[340px]"
                 style={{
                   border: "1px solid #e2e8f0",
                   boxShadow: `
