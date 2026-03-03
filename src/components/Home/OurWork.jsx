@@ -33,7 +33,7 @@ function useCountUp(target, duration = 1800, start = false) {
 
 // ─── Single Stat Card ─────────────────────────────────────────────────────────
 function StatCard({ value, suffix, label, animate }) {
-  const count = useCountUp(value, 1800, animate);
+  const count = useCountUp(value, 4500, animate);
 
   return (
     <div className="flex flex-col items-center md:items-start gap-2 px-6 py-5">

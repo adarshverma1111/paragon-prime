@@ -17,16 +17,16 @@ function App() {
   return (
     <>
       <HeroSection />
-      <OurWork />
-      <PartnershipSlider />
       <WelcomePage />
+      <PartnershipSlider />
+      <OurWork />
       <SoftwareSolutions />
       <OurServices />
+      <TechStack />
+      <SoftwareProcess />
+      <ClientSuccessSection />
       <OurClients />
-      <TechStack/>
-      <SoftwareProcess/>
-       <ClientSuccessSection/>
-       <ContactPage/>
+      <ContactPage />
       <ParagonFooter />
     </>
   )

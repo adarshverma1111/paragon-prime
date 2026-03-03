@@ -283,7 +283,7 @@ function TechCard({ tech, index }) {
 export default function TechStack() {
   return (
     <section
-      className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 overflow-hidden"
+      className="relative min-h-[84vh] flex flex-col items-center justify-center px-4 py-20 overflow-hidden"
       style={{ background: THEME.bg }}
     >
       {/* Header */}
