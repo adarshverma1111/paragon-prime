@@ -87,7 +87,7 @@ export default function ConsultationPopup() {
 
         {/* ✅ FIX: pt-20 on mobile, pt-28 on desktop — clears the fixed navbar */}
         <div
-          className="relative z-50 flex items-center justify-center pointer-events-none p-4 pt-20 md:pt-28"
+          className="relative z-50 flex items-center justify-center pointer-events-none p-4 pt-20 md:pt-25"
           style={{ minHeight: "100%" }}
         >
           <div
