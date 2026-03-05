@@ -110,7 +110,7 @@ export default function WebsDevelopment() {
             {sections.map((section, index) => (
                 <section
                     key={index}
-                    className="py-20 px-6 lg:px-20 border-t border-white/5"
+                    className="py-12 px-6 lg:px-20 border-t border-white/5"
                 >
                     <div
                         className={`flex flex-col lg:flex-row items-center gap-16 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""
