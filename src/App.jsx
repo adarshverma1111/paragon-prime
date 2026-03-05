@@ -25,8 +25,8 @@ function App() {
       <Navbar />
       <HeroSection />
       <WelcomePage />
-      <OurWork />
       <PartnershipSlider />
+      <OurWork />
       <SoftwareSolutions />
       <OurServices />
       <TechStack />
