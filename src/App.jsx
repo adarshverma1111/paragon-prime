@@ -12,6 +12,7 @@ import SoftwareSolutions from './components/Home/SoftwareSolutions'
 import TechStack from './components/Home/TechStack'
 import WelcomePage from './components/Home/WelcomePage'
 import Navbar from './components/Home/Navbar'
+import SupportSection from './components/Home/SupportSection'
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <OurClients />
       <ContactPage />
       <ParagonFooter />
+      <SupportSection/>
     </>
   )
 }
