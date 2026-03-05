@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logos/paragon-prime-logo1.png";
 
 const Navbar = () => {
@@ -11,13 +12,13 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img
               src={logo}
               alt="Logo"
               className="h-14 md:h-14 w-auto object-contain"
             />
-          </div>
+          </Link>
 
           {/* Mobile Toggle */}
           <button
@@ -57,14 +58,41 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-10">
-            <a className="text-gray-600 hover:text-black text-sm cursor-pointer">Home</a>
-            <a className="text-gray-600 hover:text-black text-sm cursor-pointer">About</a>
-            <a className="text-gray-600 hover:text-black text-sm cursor-pointer">Services</a>
-            <a className="text-gray-600 hover:text-black text-sm cursor-pointer">Industries</a>
 
-            <button className="px-6 py-2 text-sm text-white bg-[#FB7118] rounded-full hover:bg-[#023A73] transition shadow-lg">
-              Contact Us
-            </button>
+            <Link
+              to="/"
+              className="text-gray-600 hover:text-black text-sm cursor-pointer"
+            >
+              Home
+            </Link>
+
+            <Link
+              to="/about"
+              className="text-gray-600 hover:text-black text-sm cursor-pointer"
+            >
+              About
+            </Link>
+
+            <Link
+              to="/services"
+              className="text-gray-600 hover:text-black text-sm cursor-pointer"
+            >
+              Services
+            </Link>
+
+            <Link
+              to="/industries"
+              className="text-gray-600 hover:text-black text-sm cursor-pointer"
+            >
+              Industries
+            </Link>
+
+            <Link to="/contact">
+              <button className="px-6 py-2 text-sm text-white bg-[#FB7118] rounded-full hover:bg-[#023A73] transition shadow-lg">
+                Contact Us
+              </button>
+            </Link>
+
           </nav>
 
         </div>
@@ -72,18 +100,52 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {expanded && (
           <div className="md:hidden pb-6 pt-2">
+
             <div className="flex flex-col space-y-4">
 
-              <a className="text-gray-700 text-sm cursor-pointer">Home</a>
-              <a className="text-gray-700 text-sm cursor-pointer">About</a>
-              <a className="text-gray-700 text-sm cursor-pointer">Services</a>
-              <a className="text-gray-700 text-sm cursor-pointer">Industries</a>
+              <Link
+                to="/"
+                className="text-gray-700 text-sm cursor-pointer"
+                onClick={() => setExpanded(false)}
+              >
+                Home
+              </Link>
 
-              <button className="mt-2 px-5 py-2 text-sm text-white bg-[#FB7118] rounded-full w-fit hover:bg-[#023A73] transition shadow-lg">
-                Contact Us
-              </button>
+              <Link
+                to="/about"
+                className="text-gray-700 text-sm cursor-pointer"
+                onClick={() => setExpanded(false)}
+              >
+                About
+              </Link>
+
+              <Link
+                to="/services"
+                className="text-gray-700 text-sm cursor-pointer"
+                onClick={() => setExpanded(false)}
+              >
+                Services
+              </Link>
+
+              <Link
+                to="/industries"
+                className="text-gray-700 text-sm cursor-pointer"
+                onClick={() => setExpanded(false)}
+              >
+                Industries
+              </Link>
+
+              <Link
+                to="/contact"
+                onClick={() => setExpanded(false)}
+              >
+                <button className="mt-2 px-5 py-2 text-sm text-white bg-[#FB7118] rounded-full w-fit hover:bg-[#023A73] transition shadow-lg">
+                  Contact Us
+                </button>
+              </Link>
 
             </div>
+
           </div>
         )}
 
