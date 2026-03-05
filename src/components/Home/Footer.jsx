@@ -5,10 +5,12 @@ export default function ParagonFooter() {
   return (
     <footer className="bg-gradient-to-b from-[#0f172a] via-[#020617] to-black text-white px-6 sm:px-10 lg:px-12 pt-12 pb-0 font-sans">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10">
+        {/* grid-cols-2 on mobile so Quick Links & Our Services sit side by side;
+            Brand and Contact are forced full-width via col-span-2 sm:col-span-1 */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10">
 
-          {/* Column 1 - Brand */}
-          <div className="flex flex-col gap-4 text-center sm:text-left">
+          {/* Column 1 - Brand (full width on mobile) */}
+          <div className="col-span-2 sm:col-span-1 flex flex-col gap-4 text-center sm:text-left">
             <div className="flex justify-center sm:justify-start">
               <img
                 src={logo}
@@ -61,8 +63,8 @@ export default function ParagonFooter() {
             </div>
           </div>
 
-          {/* Column 2 - Quick Links */}
-          <div className="text-left">
+          {/* Column 2 - Quick Links (col-span-1 on mobile = left half) */}
+          <div className="col-span-1 text-left">
             <h3 className="text-lg font-bold mb-2">Quick Links</h3>
             <div className="w-10 h-0.5 bg-[#FF4400] mb-5"></div>
 
@@ -107,8 +109,8 @@ export default function ParagonFooter() {
             </ul>
           </div>
 
-          {/* Column 3 - Services */}
-          <div className="text-left">
+          {/* Column 3 - Services (col-span-1 on mobile = right half) */}
+          <div className="col-span-1 text-left">
             <h3 className="text-lg font-bold mb-2">Our Services</h3>
             <div className="w-10 h-0.5 bg-[#FF4400] mb-5"></div>
 
@@ -153,8 +155,8 @@ export default function ParagonFooter() {
             </ul>
           </div>
 
-          {/* Column 4 - Contact */}
-          <div className="text-left">
+          {/* Column 4 - Contact (full width on mobile) */}
+          <div className="col-span-2 sm:col-span-1 text-left">
             <h3 className="text-lg font-bold mb-2">Get In Touch</h3>
             <div className="w-10 h-0.5 bg-[#FF4400] mb-5"></div>
 
