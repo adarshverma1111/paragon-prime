@@ -11,12 +11,14 @@ import SoftwareProcess from './components/Home/SoftwareProcess'
 import SoftwareSolutions from './components/Home/SoftwareSolutions'
 import TechStack from './components/Home/TechStack'
 import WelcomePage from './components/Home/WelcomePage'
+import Navbar from './components/Home/Navbar'
 
 
 function App() {
 
   return (
     <>
+    <Navbar/>
       <ConsultationPopup/>
       <HeroSection />
       <WelcomePage />
