@@ -14,28 +14,30 @@ import WelcomePage from './components/Home/WelcomePage'
 import Navbar from './components/Home/Navbar'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import ConsultationPopup from './components/Home/ConsultationPopup'
+import Webdevelopment from './pages/Webdevelopment'
 
 
 function App() {
 
   return (
     <>
-    <ConsultationPopup/>
+      <ConsultationPopup />
       <Navbar />
       <HeroSection />
+      <WelcomePage />
       <OurWork />
       <PartnershipSlider />
-      <WelcomePage />
       <SoftwareSolutions />
       <OurServices />
-      <OurClients />
       <TechStack />
       <SoftwareProcess />
       <ClientSuccessSection />
+      <OurClients />
       <ContactPage />
       <ParagonFooter />
       <SupportSection />
       <PrivacyPolicy />
+      <Webdevelopment />
     </>
   )
 }
