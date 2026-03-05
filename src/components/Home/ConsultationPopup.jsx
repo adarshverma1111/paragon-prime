@@ -25,7 +25,6 @@ export default function ConsultationPopup() {
   });
   const [submitted, setSubmitted] = useState(false);
   const timerRef = useRef(null);
-  const slideRef = useRef(null);
 
   // Show popup after 8 seconds
   useEffect(() => {
@@ -66,7 +65,7 @@ export default function ConsultationPopup() {
 
   const prev = () =>
     setTestimonialIdx(
-      (i) => (i - 1 + testimonials.length) % testimonials.length,
+      (i) => (i - 1 + testimonials.length) % testimonials.length
     );
   const next = () => setTestimonialIdx((i) => (i + 1) % testimonials.length);
 
@@ -75,9 +74,7 @@ export default function ConsultationPopup() {
   return (
     <>
       <div
-        // className="fixed inset-0 z-40 overflow-y-auto"
         className="fixed inset-0 z-40 md:overflow-hidden overflow-y-auto"
-
         style={{
           background: "rgba(10,10,20,0.55)",
           backdropFilter: "blur(3px)",
@@ -88,15 +85,16 @@ export default function ConsultationPopup() {
       >
         <div className="absolute inset-0" onClick={closePopup} />
 
-        {/* Popup — Perfect Centered */}
+        {/* ✅ FIX: pt-20 on mobile, pt-28 on desktop — clears the fixed navbar */}
         <div
-          className="relative z-50 flex items-center justify-center pointer-events-none p-4"
+          className="relative z-50 flex items-center justify-center pointer-events-none p-4 pt-20 md:pt-28"
           style={{ minHeight: "100%" }}
         >
           <div
             className="pointer-events-auto flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl w-full max-w-3xl"
             style={{
-              background: "linear-gradient(145deg, #1A3A6B 0%, #132A4A 60%, #0D1B34 100%)",
+              background:
+                "linear-gradient(145deg, #1A3A6B 0%, #132A4A 60%, #0D1B34 100%)",
               animation: closing
                 ? "slideDown 0.35s cubic-bezier(.4,0,.2,1) forwards"
                 : "slideUp 0.45s cubic-bezier(.16,1,.3,1) forwards",
@@ -105,10 +103,9 @@ export default function ConsultationPopup() {
             {/* LEFT PANEL */}
             <div
               className="hidden md:flex flex-col justify-between p-7 md:w-2/5"
-
               style={{
                 background:
-                  "linear-gradient(145deg,  #1f1a6b 0%, #132A4A 60%, #0D1B34 100%)",
+                  "linear-gradient(145deg, #1f1a6b 0%, #132A4A 60%, #0D1B34 100%)",
                 minHeight: 340,
               }}
             >
@@ -150,12 +147,10 @@ export default function ConsultationPopup() {
                     className="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-lg transition-all duration-200"
                     style={{ background: "rgba(255,255,255,0.18)" }}
                     onMouseEnter={(e) =>
-                    (e.currentTarget.style.background =
-                      "rgba(255,140,0,0.85)")
+                      (e.currentTarget.style.background = "rgba(255,140,0,0.85)")
                     }
                     onMouseLeave={(e) =>
-                    (e.currentTarget.style.background =
-                      "rgba(255,255,255,0.18)")
+                      (e.currentTarget.style.background = "rgba(255,255,255,0.18)")
                     }
                   >
                     ‹
@@ -168,8 +163,7 @@ export default function ConsultationPopup() {
                       (e.currentTarget.style.background = "rgba(255,160,30,1)")
                     }
                     onMouseLeave={(e) =>
-                    (e.currentTarget.style.background =
-                      "rgba(255,140,0,0.85)")
+                      (e.currentTarget.style.background = "rgba(255,140,0,0.85)")
                     }
                   >
                     ›
@@ -198,7 +192,6 @@ export default function ConsultationPopup() {
                       />
                     </svg>
                   </span>
-
                   <span>+91-95559 72693</span>
                 </div>
 
@@ -208,13 +201,13 @@ export default function ConsultationPopup() {
                       version="1.1"
                       id="Layer_1"
                       xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
                       x="0px"
                       y="0px"
                       width="16px"
                       height="26px"
                       viewBox="0 0 122.879 88.855"
-                      xml:space="preserve"
+                      xmlSpace="preserve"
                     >
                       <g>
                         <path
@@ -231,7 +224,6 @@ export default function ConsultationPopup() {
                       </g>
                     </svg>
                   </span>
-
                   <span>connect@paragonprimeinfotech.com</span>
                 </div>
               </div>
@@ -379,7 +371,6 @@ export default function ConsultationPopup() {
                             />
                           </svg>
                         </div>
-
                         <div className="text-xs text-gray-400">reCAPTCHA</div>
                       </div>
                     </div>
