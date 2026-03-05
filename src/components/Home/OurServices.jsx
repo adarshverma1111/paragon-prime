@@ -5,7 +5,7 @@ export default function OurServices() {
     {
       title: "Website Development",
       description:
-        "We create visually stunning, user-friendly websites optimized for performance and conversions.",
+        "We create visually stunning, user-friendly websites optimized for performance.",
       backText:
         "Get a high-performing website tailored to your brand and business goals.",
       tags: ["Responsive Design", "SEO Optimized", "Fast Loading", "Custom CMS"],
