@@ -5,20 +5,29 @@ export default function OurServices() {
     {
       title: "Website Development",
       description:
-        "We create visually stunning, user-friendly websites optimized for performance and conversions. From corporate sites to landing pages, our designs reflect your brand identity.",
+        "We create visually stunning, user-friendly websites optimized for performance and conversions.",
+      backText:
+        "Get a high-performing website tailored to your brand and business goals.",
       tags: ["Responsive Design", "SEO Optimized", "Fast Loading", "Custom CMS"],
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     },
     {
       title: "App Development",
       description:
-        "Build powerful iOS and Android applications with intuitive interfaces and robust functionality. We specialize in Flutter, React Native, and native development.",
+        "Build powerful iOS and Android applications with intuitive interfaces.",
+      backText:
+        "Launch scalable mobile apps with seamless user experiences.",
       tags: ["iOS & Android", "Cross-Platform", "Native Apps", "UI/UX Design"],
+      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3",
     },
     {
       title: "Digital Marketing",
       description:
-        "Drive measurable growth with data-driven digital marketing strategies. From SEO and PPC to content marketing and social media campaigns.",
+        "Drive measurable growth with data-driven digital marketing strategies.",
+      backText:
+        "Boost your brand visibility and generate quality leads.",
       tags: ["SEO", "PPC Campaigns", "Content Marketing", "Analytics"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
     },
   ];
 
@@ -30,7 +39,10 @@ export default function OurServices() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6 },
+      transition: {
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1],
+      },
     },
   };
 
@@ -42,21 +54,13 @@ export default function OurServices() {
         className="text-center mb-12"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <span className="text-gray-300 font-semibold text-base tracking-wide">
-            Our Services
-          </span>
-          <div className="w-12 h-0.5 bg-blue-500"></div>
-        </div>
-
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-5">
           What We <span className="text-orange-500">Offer</span>
         </h2>
-
-        <p className="text-gray-400 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed text-center">
+        <p className="text-gray-400 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
           We provide comprehensive technology solutions to help your business thrive in the digital age.
         </p>
       </motion.div>
@@ -71,31 +75,83 @@ export default function OurServices() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            transition={{ delay: index * 0.3 }}
-            whileHover={{ scale: 1.05 }}
-            className="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300"
+            className="group perspective"
           >
-            <h3 className="text-orange-500 font-black text-xl sm:text-2xl mb-4">
-              {service.title}
-            </h3>
+            {/* Flip Container */}
+            <div className="relative w-full h-[420px] transition-transform duration-700 transform-style preserve-3d group-hover:rotate-y-180">
 
-            <p className="text-gray-400 text-sm leading-relaxed text-justify mb-6">
-              {service.description}
-            </p>
+              {/* FRONT SIDE */}
+              <div className="absolute w-full h-full backface-hidden bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-md">
 
-            <div className="flex flex-wrap gap-2">
-              {service.tags.map((tag, i) => (
-                <span
-                  key={i}
-                  className="border border-blue-500 text-blue-400 text-xs sm:text-sm px-4 py-1.5 rounded-full bg-transparent hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-colors cursor-default"
-                >
-                  {tag}
-                </span>
-              ))}
+                <div className="h-48 w-full overflow-hidden">
+                  <img
+                    src={`${service.image}?auto=format&fit=crop&w=800&q=80`}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-orange-500 font-black text-xl mb-4">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                    {service.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {service.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="border border-blue-500 text-blue-400 text-xs px-4 py-1.5 rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* BACK SIDE */}
+              <div className="absolute w-full h-full rotate-y-180 backface-hidden bg-gradient-to-br from-orange-600 to-orange-500 rounded-2xl flex flex-col items-center justify-center text-center p-8 shadow-xl">
+
+                <h3 className="text-white font-black text-2xl mb-4">
+                  {service.title}
+                </h3>
+
+                <p className="text-white text-sm mb-6 leading-relaxed">
+                  {service.backText}
+                </p>
+
+                <button className="bg-black text-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300">
+                  Explore More
+                </button>
+              </div>
+
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* Required Custom CSS */}
+      <style jsx>{`
+        .perspective {
+          perspective: 1000px;
+        }
+        .preserve-3d {
+          transform-style: preserve-3d;
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+        .group-hover\\:rotate-y-180:hover {
+          transform: rotateY(180deg);
+        }
+      `}</style>
 
     </section>
   );
