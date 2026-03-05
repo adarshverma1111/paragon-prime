@@ -98,7 +98,7 @@ export default function ConsultationPopup() {
           <div
             className="pointer-events-auto flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl w-full max-w-3xl self-start"
             style={{
-              marginTop: "80px" /* clears a typical ~70px navbar */,
+              marginTop: "160px" /* clears a typical ~70px navbar */,
               animation: closing
                 ? "slideDown 0.35s cubic-bezier(.4,0,.2,1) forwards"
                 : "slideUp 0.45s cubic-bezier(.16,1,.3,1) forwards",
@@ -106,11 +106,11 @@ export default function ConsultationPopup() {
           >
             {/* LEFT PANEL */}
             <div
-            className="hidden md:flex flex-col justify-between p-7 md:w-2/5"
+              className="hidden md:flex flex-col justify-between p-7 md:w-2/5"
 
               style={{
                 background:
-                  "linear-gradient(145deg, #1a3aff 0%, #0d1fa8 60%, #0b1580 100%)",
+                  "linear-gradient(145deg, #2a2794 0%, #1c4072 60%, #0D1B34 100%)",
                 minHeight: 340,
               }}
             >
@@ -152,12 +152,12 @@ export default function ConsultationPopup() {
                     className="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-lg transition-all duration-200"
                     style={{ background: "rgba(255,255,255,0.18)" }}
                     onMouseEnter={(e) =>
-                      (e.currentTarget.style.background =
-                        "rgba(255,140,0,0.85)")
+                    (e.currentTarget.style.background =
+                      "rgba(255,140,0,0.85)")
                     }
                     onMouseLeave={(e) =>
-                      (e.currentTarget.style.background =
-                        "rgba(255,255,255,0.18)")
+                    (e.currentTarget.style.background =
+                      "rgba(255,255,255,0.18)")
                     }
                   >
                     ‹
@@ -170,8 +170,8 @@ export default function ConsultationPopup() {
                       (e.currentTarget.style.background = "rgba(255,160,30,1)")
                     }
                     onMouseLeave={(e) =>
-                      (e.currentTarget.style.background =
-                        "rgba(255,140,0,0.85)")
+                    (e.currentTarget.style.background =
+                      "rgba(255,140,0,0.85)")
                     }
                   >
                     ›
