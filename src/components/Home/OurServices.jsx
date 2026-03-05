@@ -114,19 +114,25 @@ export default function OurServices() {
               </div>
 
               {/* BACK SIDE */}
-              <div className="absolute w-full h-full rotate-y-180 backface-hidden bg-gradient-to-br from-orange-600 to-orange-500 rounded-2xl flex flex-col items-center justify-center text-center p-8 shadow-xl">
+              <div className="absolute w-full h-full rotate-y-180 backface-hidden rounded-2xl flex flex-col items-center justify-center text-center p-8 shadow-2xl border border-white/10"
+                style={{
+                  background: "linear-gradient(145deg, #0F1C2E 0%, #132A4A 60%, #1A3A6B 100%)",
+                  backdropFilter: "blur(8px)",
+                }}
+              >
 
-                <h3 className="text-white font-black text-2xl mb-4">
+                <h3 className="text-white font-bold text-2xl mb-4 tracking-wide">
                   {service.title}
                 </h3>
 
-                <p className="text-white text-sm mb-6 leading-relaxed">
+                <p className="text-gray-300 text-sm mb-8 leading-relaxed max-w-xs">
                   {service.backText}
                 </p>
 
-                <button className="bg-black text-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300">
-                  Explore More
+                <button className="px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 border border-[#f5a623]/40 text-[#f5a623] hover:bg-[#f5a623] hover:text-black hover:shadow-[0_0_20px_rgba(245,166,35,0.4)]">
+                  Explore Service
                 </button>
+
               </div>
 
             </div>
