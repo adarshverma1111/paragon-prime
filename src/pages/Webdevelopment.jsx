@@ -176,7 +176,7 @@ export default function WebsDevelopment() {
                         className="w-full h-full object-cover"
                     />
                     {/* Dark Overlay */}
-                    <div className="absolute inset-0 bg-black/70" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/85 to-black/90" />
                 </div>
 
                 {/* Glow Layers */}
