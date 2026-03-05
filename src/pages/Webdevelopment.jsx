@@ -84,7 +84,18 @@ export default function WebsDevelopment() {
         <div className="bg-gradient-to-b from-[#0a0f1c] via-[#0f172a] to-[#0a0f1c] text-white overflow-x-hidden">
 
             {/* HERO */}
-            <section className="relative min-h-[50vh] flex items-center justify-center px-6 lg:px-20 text-center">
+            <section className="relative min-h-[50vh] flex items-center justify-center px-6 lg:px-20 text-center overflow-hidden">
+
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80"
+                        alt="Website Development"
+                        className="w-full h-full object-cover"
+                    />
+                    {/* Dark Overlay */}
+                    <div className="absolute inset-0 bg-black/80" />
+                </div>
 
                 {/* Glow background */}
                 <div className="absolute w-72 h-72 bg-orange-500/10 blur-[120px] rounded-full top-20 left-1/2 -translate-x-1/2" />
@@ -98,7 +109,8 @@ export default function WebsDevelopment() {
                     <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
                         Website Development
                     </h1>
-                    <p className="text-gray-400 text-lg md:text-xl">
+
+                    <p className="text-gray-300 text-lg md:text-xl">
                         We craft powerful digital experiences that blend cutting-edge
                         technology with modern design to help brands dominate
                         the digital landscape.
