@@ -1,5 +1,4 @@
 import ClientSuccessSection from './components/Home/ClientSuccessSection'
-import ConsultationPopup from './components/Home/ConsultationPopup'
 import ContactPage from './components/Home/ContactPage'
 import ParagonFooter from './components/Home/Footer'
 import HeroSection from './components/Home/HeroSection'
@@ -9,31 +8,30 @@ import OurWork from './components/Home/OurWork'
 import PartnershipSlider from './components/Home/PartnershipSlider'
 import SoftwareProcess from './components/Home/SoftwareProcess'
 import SoftwareSolutions from './components/Home/SoftwareSolutions'
+import SupportSection from './components/Home/SupportSection'
 import TechStack from './components/Home/TechStack'
 import WelcomePage from './components/Home/WelcomePage'
 import Navbar from './components/Home/Navbar'
-import SupportSection from './components/Home/SupportSection'
 
 
 function App() {
 
   return (
     <>
-    <Navbar/>
-      <ConsultationPopup/>
+      <Navbar />
       <HeroSection />
-      <WelcomePage />
-      <PartnershipSlider />
       <OurWork />
+      <PartnershipSlider />
+      <WelcomePage />
       <SoftwareSolutions />
       <OurServices />
+      <OurClients />
       <TechStack />
       <SoftwareProcess />
       <ClientSuccessSection />
-      <OurClients />
       <ContactPage />
       <ParagonFooter />
-      <SupportSection/>
+      <SupportSection />
     </>
   )
 }
