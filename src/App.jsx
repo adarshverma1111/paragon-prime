@@ -12,12 +12,14 @@ import SupportSection from './pages/SupportSection'
 import TechStack from './components/Home/TechStack'
 import WelcomePage from './components/Home/WelcomePage'
 import Navbar from './components/Home/Navbar'
+import ConsultationPopup from './components/Home/ConsultationPopup'
 
 
 function App() {
 
   return (
     <>
+    <ConsultationPopup/>
       <Navbar />
       <HeroSection />
       <OurWork />
