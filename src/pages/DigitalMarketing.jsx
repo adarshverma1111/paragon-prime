@@ -1,63 +1,63 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaMobileAlt, FaRocket, FaCogs, FaLayerGroup } from "react-icons/fa";
+import { FaBullhorn, FaSearch, FaChartLine, FaRocket } from "react-icons/fa";
 
 const sections = [
     {
-        title: "Custom Mobile App Development",
-        icon: <FaMobileAlt />,
+        title: "Strategic Digital Marketing",
+        icon: <FaBullhorn />,
         description:
-            "We design and develop powerful mobile applications tailored to your business vision. From intuitive UI to scalable backend systems, our apps are built for performance, security, and seamless user experiences.",
+            "We craft data-driven digital marketing strategies that amplify your brand presence and generate measurable growth. Our approach combines creativity, analytics, and technology to deliver impactful campaigns.",
         points: [
-            "iOS & Android Development",
-            "React Native / Flutter Solutions",
-            "Scalable Backend Architecture",
-            "Secure API Integrations",
+            "Multi-Channel Marketing Strategy",
+            "Brand Positioning & Awareness",
+            "Target Audience Research",
+            "Campaign Planning & Execution",
         ],
         image:
-            "https://images.unsplash.com/photo-1551650975-87deedd944c3",
+            "https://images.unsplash.com/photo-1557838923-2985c318be48",
     },
     {
-        title: "UI/UX Focused App Design",
-        icon: <FaLayerGroup />,
+        title: "SEO & Search Visibility",
+        icon: <FaSearch />,
         description:
-            "We craft visually stunning and user-centric app interfaces that drive engagement and retention. Every interaction is thoughtfully designed to ensure simplicity, clarity, and delight.",
+            "Visibility is everything. We optimize your digital presence to rank higher in search engines, drive organic traffic, and improve online authority through advanced SEO strategies.",
         points: [
-            "User-Centered Design",
-            "Interactive Prototypes",
-            "Smooth Animations",
-            "Modern Design Systems",
+            "Technical SEO Optimization",
+            "Keyword Research & Strategy",
+            "On-Page & Off-Page SEO",
+            "Content Optimization",
         ],
         image:
-            "https://images.unsplash.com/photo-1526498460520-4c246339dccb",
+            "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07",
     },
     {
-        title: "Performance & Optimization",
-        icon: <FaCogs />,
+        title: "Performance Marketing",
+        icon: <FaChartLine />,
         description:
-            "Speed and reliability are critical for mobile success. We optimize application performance, reduce load times, and ensure smooth functionality across devices and operating systems.",
+            "We run high-converting paid campaigns across platforms to maximize ROI. Our performance marketing strategies are focused on measurable results and continuous optimization.",
         points: [
-            "App Performance Optimization",
-            "Low Latency Architecture",
-            "Battery Efficient Code",
-            "Crash & Bug Monitoring",
+            "Google Ads & PPC Campaigns",
+            "Social Media Advertising",
+            "Conversion Rate Optimization",
+            "Analytics & Performance Tracking",
         ],
         image:
-            "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
     },
     {
-        title: "Launch, Deployment & Growth",
+        title: "Growth & Brand Scaling",
         icon: <FaRocket />,
         description:
-            "From app store submission to post-launch scaling, we help you launch confidently. Our growth strategy ensures continuous updates, analytics tracking, and long-term success.",
+            "From campaign launch to long-term scaling, we help your brand grow sustainably. Our data-backed strategies ensure consistent engagement, leads, and revenue growth.",
         points: [
-            "App Store & Play Store Deployment",
-            "Analytics & User Insights",
-            "Version Updates & Maintenance",
-            "Continuous Feature Enhancement",
+            "Marketing Automation",
+            "Lead Generation Funnels",
+            "Email Marketing Campaigns",
+            "Continuous Strategy Optimization",
         ],
         image:
-            "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+            "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
     },
 ];
 
@@ -79,7 +79,7 @@ const textVariant = {
     },
 };
 
-export default function AppDevelopment() {
+export default function DigitalMarketing() {
     return (
         <div className="bg-gradient-to-b from-[#0a0f1c] via-[#0f172a] to-[#0a0f1c] text-white overflow-x-hidden">
 
@@ -88,8 +88,8 @@ export default function AppDevelopment() {
 
                 <div className="absolute inset-0">
                     <img
-                        src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=2000&q=80"
-                        alt="App Development"
+                        src="https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=2000&q=80"
+                        alt="Digital Marketing"
                         className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/80" />
@@ -104,13 +104,13 @@ export default function AppDevelopment() {
                     className="max-w-4xl relative z-10"
                 >
                     <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
-                        App Development
+                        Digital Marketing
                     </h1>
 
                     <p className="text-gray-300 text-lg md:text-xl">
-                        We build next-generation mobile applications that combine
-                        cutting-edge technology with exceptional user experiences
-                        to accelerate digital growth.
+                        We accelerate brand growth through powerful digital strategies,
+                        targeted campaigns, and data-driven marketing solutions that
+                        deliver measurable results.
                     </p>
                 </motion.div>
             </section>
@@ -122,8 +122,9 @@ export default function AppDevelopment() {
                     className="py-12 px-6 lg:px-20 border-t border-white/5"
                 >
                     <div
-                        className={`flex flex-col lg:flex-row items-center gap-16 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""
-                            }`}
+                        className={`flex flex-col lg:flex-row items-center gap-16 ${
+                            index % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                        }`}
                     >
                         <motion.div
                             variants={imageVariant}
@@ -171,23 +172,18 @@ export default function AppDevelopment() {
                     </div>
                 </section>
             ))}
+
             {/* CTA */}
             <section className="relative py-16 md:py-20 px-6 lg:px-20 overflow-hidden">
 
-                {/* Background Image */}
                 <div className="absolute inset-0">
                     <img
-                        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80"
-                        alt="CTA Background"
+                        src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2000&q=80"
+                        alt="Marketing CTA"
                         className="w-full h-full object-cover"
                     />
-                    {/* Dark Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/85 to-black/90" />
                 </div>
-
-                {/* Glow Layers */}
-                <div className="absolute top-10 left-1/3 w-[350px] h-[350px] bg-orange-500/10 blur-[130px] rounded-full" />
-                <div className="absolute bottom-10 right-1/4 w-[300px] h-[300px] bg-yellow-500/10 blur-[110px] rounded-full" />
 
                 <motion.div
                     initial={{ opacity: 0, y: 60 }}
@@ -196,21 +192,20 @@ export default function AppDevelopment() {
                     viewport={{ once: true }}
                     className="relative text-center max-w-3xl mx-auto z-10"
                 >
-
                     <p className="text-orange-400 uppercase tracking-[4px] text-xs md:text-sm mb-4">
-                        Let’s Build The Future
+                        Let’s Grow Together
                     </p>
 
                     <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                        Ready to Create a{" "}
+                        Ready to Scale Your
                         <span className="bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
-                            High-Impact Digital Experience?
+                            Digital Presence?
                         </span>
                     </h2>
 
                     <p className="text-gray-300 text-base md:text-lg mb-8 max-w-xl mx-auto">
-                        We design and engineer powerful websites that not only look stunning
-                        but drive measurable growth and long-term business success.
+                        Partner with us to create powerful digital marketing strategies
+                        that increase visibility, engagement, and revenue.
                     </p>
 
                     <motion.button
@@ -221,7 +216,7 @@ export default function AppDevelopment() {
                        text-black shadow-[0_0_30px_rgba(255,165,0,0.4)]
                        transition-all duration-300"
                     >
-                        Start Your Project
+                        Start Your Campaign
                     </motion.button>
 
                 </motion.div>

@@ -15,6 +15,8 @@ import Navbar from './components/Home/Navbar'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import ConsultationPopup from './components/Home/ConsultationPopup'
 import Webdevelopment from './pages/Webdevelopment'
+import AppDevelopmentPage from './pages/AppDevelopmentPage'
+import DigitalMarketing from './pages/DigitalMarketing'
 
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
       <SupportSection />
       <PrivacyPolicy />
       <Webdevelopment />
+      <AppDevelopmentPage />
+      <DigitalMarketing />
     </>
   )
 }
