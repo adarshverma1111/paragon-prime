@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import supportIllustration from "../../assets/logos/5138226.jpg";
+import supportIllustration from "../assets/images/5138226.jpg";
 
 const services = [
   {
@@ -148,13 +148,11 @@ const SupportSection = () => {
                   animate={sectionInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.3 + idx * 0.08 }}
                   onClick={() => setActiveService(activeService === idx ? null : idx)}
-                  className={`group flex items-start gap-4 p-4 rounded-xl cursor-pointer transition-all duration-300 border ${
-                    activeService === idx ? "bg-orange-50 border-orange-300 shadow-sm" : "border-transparent hover:bg-gray-50 hover:border-gray-200"
-                  }`}
+                  className={`group flex items-start gap-4 p-4 rounded-xl cursor-pointer transition-all duration-300 border ${activeService === idx ? "bg-orange-50 border-orange-300 shadow-sm" : "border-transparent hover:bg-gray-50 hover:border-gray-200"
+                    }`}
                 >
-                  <div className={` w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                    activeService === idx ? "bg-orange-500 text-white shadow-md" : "bg-orange-100 text-orange-500 group-hover:bg-orange-200"
-                  }`}>
+                  <div className={` w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 ${activeService === idx ? "bg-orange-500 text-white shadow-md" : "bg-orange-100 text-orange-500 group-hover:bg-orange-200"
+                    }`}>
                     {service.icon}
                   </div>
                   <div className="flex-1 min-w-0">
@@ -197,7 +195,7 @@ const SupportSection = () => {
 
             {/* CTA Card */}
             <motion.div
-              initial={{ opacity: 0, y: 18}}
+              initial={{ opacity: 0, y: 18 }}
               animate={sectionInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="w-full max-w-sm mx-auto bg-blue-900 from-blue-900 to-blue-900 rounded-2xl p-6 text-white shadow-xl"
@@ -215,22 +213,22 @@ const SupportSection = () => {
               </div>
               <div className="flex gap-2">
                 <a
-  href="https://wa.me/919555972693"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex-1 bg-white text-blue-900 text-xs font-bold py-2.5 rounded-xl hover:bg-orange-50 transition-all duration-200 shadow text-center block cursor-pointer"
-  style={{ fontFamily: "'Arial', sans-serif" }}
->
-  Start Live Chat
-</a>
+                  href="https://wa.me/919555972693"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-white text-blue-900 text-xs font-bold py-2.5 rounded-xl hover:bg-orange-50 transition-all duration-200 shadow text-center block cursor-pointer"
+                  style={{ fontFamily: "'Arial', sans-serif" }}
+                >
+                  Start Live Chat
+                </a>
 
                 <a
-  href="tel:9555972693"
-  className="flex-1 bg-white/15 border border-white/30 text-white text-xs font-semibold py-2.5 rounded-xl hover:bg-white/25 transition-all duration-200 text-center block cursor-pointer"
-  style={{ fontFamily: "'Arial', sans-serif" }}
->
-  Call Support
-</a>
+                  href="tel:9555972693"
+                  className="flex-1 bg-white/15 border border-white/30 text-white text-xs font-semibold py-2.5 rounded-xl hover:bg-white/25 transition-all duration-200 text-center block cursor-pointer"
+                  style={{ fontFamily: "'Arial', sans-serif" }}
+                >
+                  Call Support
+                </a>
 
               </div>
             </motion.div>
