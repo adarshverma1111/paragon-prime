@@ -54,7 +54,7 @@ export default function ClientSuccessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="flex flex-col gap-3 lg:w-64 xl:w-72 flex-shrink-0"
+            className="flex flex-col gap-3 lg:w-64 xl:w-72 "
           >
             <h2
               className="font-black leading-tight"
@@ -156,7 +156,7 @@ export default function ClientSuccessSection() {
                   <img
                     src={t.avatar}
                     alt={t.name}
-                    className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+                    className="w-12 h-12 rounded-full object-cover "
                     style={{
                       border: "2px solid #023A73",
                       boxShadow: "0 4px 10px rgba(2, 58, 115, 0.25)",

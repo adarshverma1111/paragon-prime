@@ -78,7 +78,7 @@ const SupportSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-white overflow-hidden py-20 px-4 sm:px-8"
+      className="relative bg-f1f1f1 overflow-hidden py-20 px-4 sm:px-8"
       style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
     >
       <div
@@ -99,13 +99,13 @@ const SupportSection = () => {
           className="text-center mb-14"
         >
           <span
-            className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-green-600 bg-green-50 border border-green-200 rounded-full px-4 py-1.5 mb-4"
+            className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-orange-600 bg-orange-50 border border-orange-200 rounded-full px-4 py-1.5 mb-4"
             style={{ fontFamily: "'Arial', sans-serif" }}
           >
             Always Available
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 leading-tight">
-            Our <span className="text-green-700">24/7</span> Support Services
+            Our <span className="text-orange-500">24/7</span> Support Services
           </h2>
           <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto" style={{ fontFamily: "'Arial', sans-serif" }}>
             Comprehensive technical support available around the clock
@@ -117,9 +117,9 @@ const SupportSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={sectionInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-                className="flex flex-col items-center bg-green-50 border border-green-100 rounded-2xl px-7 py-3"
+                className="flex flex-col items-center bg-orange-50 border border-orange-100 rounded-2xl px-7 py-3"
               >
-                <span className="text-2xl font-bold text-green-700">{s.value}</span>
+                <span className="text-2xl font-bold text-orange-500">{s.value}</span>
                 <span className="text-xs text-gray-500 mt-0.5" style={{ fontFamily: "'Arial', sans-serif" }}>{s.label}</span>
               </motion.div>
             ))}
@@ -149,23 +149,23 @@ const SupportSection = () => {
                   transition={{ duration: 0.5, delay: 0.3 + idx * 0.08 }}
                   onClick={() => setActiveService(activeService === idx ? null : idx)}
                   className={`group flex items-start gap-4 p-4 rounded-xl cursor-pointer transition-all duration-300 border ${
-                    activeService === idx ? "bg-green-50 border-green-300 shadow-sm" : "border-transparent hover:bg-gray-50 hover:border-gray-200"
+                    activeService === idx ? "bg-orange-50 border-orange-300 shadow-sm" : "border-transparent hover:bg-gray-50 hover:border-gray-200"
                   }`}
                 >
-                  <div className={`flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                    activeService === idx ? "bg-green-600 text-white shadow-md" : "bg-green-100 text-green-700 group-hover:bg-green-200"
+                  <div className={` w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                    activeService === idx ? "bg-orange-500 text-white shadow-md" : "bg-orange-100 text-orange-500 group-hover:bg-orange-200"
                   }`}>
                     {service.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className={`font-bold text-sm sm:text-base transition-colors duration-200 ${activeService === idx ? "text-green-800" : "text-gray-800"}`}>
+                    <h3 className={`font-bold text-sm sm:text-base transition-colors duration-200 ${activeService === idx ? "text-orange-500" : "text-gray-800"}`}>
                       {service.title}
                     </h3>
                     <p className="text-gray-500 text-xs sm:text-sm mt-0.5 leading-relaxed" style={{ fontFamily: "'Arial', sans-serif" }}>
                       {service.desc}
                     </p>
                   </div>
-                  <div className={`flex-shrink-0 mt-1 transition-transform duration-300 ${activeService === idx ? "rotate-90 text-green-600" : "text-gray-300 group-hover:text-green-400"}`}>
+                  <div className={` mt-1 transition-transform duration-300 ${activeService === idx ? "rotate-90 text-orange-500" : "text-gray-300 group-hover:text-orange-400"}`}>
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
@@ -200,7 +200,7 @@ const SupportSection = () => {
               initial={{ opacity: 0, y: 18}}
               animate={sectionInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="w-full max-w-sm mx-auto bg-gradient-to-br from-green-700 to-green-900 rounded-2xl p-6 text-white shadow-xl"
+              className="w-full max-w-sm mx-auto bg-blue-900 from-blue-900 to-blue-900 rounded-2xl p-6 text-white shadow-xl"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
@@ -210,16 +210,28 @@ const SupportSection = () => {
                 </div>
                 <div>
                   <p className="font-bold text-sm">Need Immediate Help?</p>
-                  <p className="text-green-200 text-xs" style={{ fontFamily: "'Arial', sans-serif" }}>Our team is online right now</p>
+                  <p className="text-white text-xs" style={{ fontFamily: "'Arial', sans-serif" }}>Our team is online right now</p>
                 </div>
               </div>
               <div className="flex gap-2">
-                <button className="flex-1 bg-white text-green-800 text-xs font-bold py-2.5 rounded-xl hover:bg-green-50 transition-all duration-200 shadow" style={{ fontFamily: "'Arial', sans-serif" }}>
-                  Start Live Chat
-                </button>
-                <button className="flex-1 bg-white/15 border border-white/30 text-white text-xs font-semibold py-2.5 rounded-xl hover:bg-white/25 transition-all duration-200" style={{ fontFamily: "'Arial', sans-serif" }}>
-                  Call Support
-                </button>
+                <a
+  href="https://wa.me/919555972693"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex-1 bg-white text-blue-900 text-xs font-bold py-2.5 rounded-xl hover:bg-orange-50 transition-all duration-200 shadow text-center block cursor-pointer"
+  style={{ fontFamily: "'Arial', sans-serif" }}
+>
+  Start Live Chat
+</a>
+
+                <a
+  href="tel:9555972693"
+  className="flex-1 bg-white/15 border border-white/30 text-white text-xs font-semibold py-2.5 rounded-xl hover:bg-white/25 transition-all duration-200 text-center block cursor-pointer"
+  style={{ fontFamily: "'Arial', sans-serif" }}
+>
+  Call Support
+</a>
+
               </div>
             </motion.div>
           </motion.div>
