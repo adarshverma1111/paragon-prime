@@ -166,45 +166,53 @@ export default function WebsDevelopment() {
             ))}
 
             {/* CTA */}
-            <section className="relative py-32 px-6 lg:px-20 overflow-hidden">
+            <section className="relative py-16 md:py-20 px-6 lg:px-20 overflow-hidden">
 
-                {/* Background Animated Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0a0f1c] via-[#111827] to-[#0a0f1c]" />
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80"
+                        alt="CTA Background"
+                        className="w-full h-full object-cover"
+                    />
+                    {/* Dark Overlay */}
+                    <div className="absolute inset-0 bg-black/70" />
+                </div>
 
                 {/* Glow Layers */}
-                <div className="absolute top-10 left-1/3 w-[400px] h-[400px] bg-orange-500/10 blur-[150px] rounded-full" />
-                <div className="absolute bottom-10 right-1/4 w-[350px] h-[350px] bg-yellow-500/10 blur-[120px] rounded-full" />
+                <div className="absolute top-10 left-1/3 w-[350px] h-[350px] bg-orange-500/10 blur-[130px] rounded-full" />
+                <div className="absolute bottom-10 right-1/4 w-[300px] h-[300px] bg-yellow-500/10 blur-[110px] rounded-full" />
 
                 <motion.div
-                    initial={{ opacity: 0, y: 80 }}
+                    initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="relative text-center max-w-4xl mx-auto"
+                    className="relative text-center max-w-3xl mx-auto z-10"
                 >
 
-                    <p className="text-orange-400 uppercase tracking-[4px] text-sm mb-6">
+                    <p className="text-orange-400 uppercase tracking-[4px] text-xs md:text-sm mb-4">
                         Let’s Build The Future
                     </p>
 
-                    <h2 className="text-5xl md:text-6xl font-bold leading-tight mb-8">
+                    <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
                         Ready to Create a{" "}
                         <span className="bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
                             High-Impact Digital Experience?
                         </span>
                     </h2>
 
-                    <p className="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+                    <p className="text-gray-300 text-base md:text-lg mb-8 max-w-xl mx-auto">
                         We design and engineer powerful websites that not only look stunning
                         but drive measurable growth and long-term business success.
                     </p>
 
                     <motion.button
-                        whileHover={{ scale: 1.08 }}
+                        whileHover={{ scale: 1.06 }}
                         whileTap={{ scale: 0.95 }}
-                        className="relative px-12 py-5 text-lg font-semibold rounded-full 
+                        className="px-10 py-4 text-base font-semibold rounded-full 
                        bg-gradient-to-r from-orange-500 to-yellow-500 
-                       text-black shadow-[0_0_40px_rgba(255,165,0,0.4)]
+                       text-black shadow-[0_0_30px_rgba(255,165,0,0.4)]
                        transition-all duration-300"
                     >
                         Start Your Project
