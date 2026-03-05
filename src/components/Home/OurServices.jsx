@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function OurServices() {
+  const navigate = useNavigate();
+
   const services = [
     {
       title: "Website Development",
@@ -10,6 +13,7 @@ export default function OurServices() {
         "Get a high-performing website tailored to your brand and business goals.",
       tags: ["Responsive Design", "SEO Optimized", "Fast Loading", "Custom CMS"],
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      route: "/web-development",
     },
     {
       title: "App Development",
@@ -19,6 +23,7 @@ export default function OurServices() {
         "Launch scalable mobile apps with seamless user experiences.",
       tags: ["iOS & Android", "Cross-Platform", "Native Apps", "UI/UX Design"],
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3",
+      route: "/app-development",
     },
     {
       title: "Digital Marketing",
@@ -28,6 +33,7 @@ export default function OurServices() {
         "Boost your brand visibility and generate quality leads.",
       tags: ["SEO", "PPC Campaigns", "Content Marketing", "Analytics"],
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+      route: "/digital-marketing",
     },
   ];
 
@@ -114,13 +120,13 @@ export default function OurServices() {
               </div>
 
               {/* BACK SIDE */}
-              <div className="absolute w-full h-full rotate-y-180 backface-hidden rounded-2xl flex flex-col items-center justify-center text-center p-8 shadow-2xl border border-white/10"
+              <div
+                className="absolute w-full h-full rotate-y-180 backface-hidden rounded-2xl flex flex-col items-center justify-center text-center p-8 shadow-2xl border border-white/10"
                 style={{
                   background: "linear-gradient(145deg, #0F1C2E 0%, #132A4A 60%, #1A3A6B 100%)",
                   backdropFilter: "blur(8px)",
                 }}
               >
-
                 <h3 className="text-white font-bold text-2xl mb-4 tracking-wide">
                   {service.title}
                 </h3>
@@ -129,10 +135,12 @@ export default function OurServices() {
                   {service.backText}
                 </p>
 
-                <button className="px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 border border-[#f5a623]/40 text-[#f5a623] hover:bg-[#f5a623] hover:text-black hover:shadow-[0_0_20px_rgba(245,166,35,0.4)]">
+                <button
+                  onClick={() => navigate(service.route)}
+                  className="px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 border border-[#f5a623]/40 text-[#f5a623] hover:bg-[#f5a623] hover:text-black hover:shadow-[0_0_20px_rgba(245,166,35,0.4)]"
+                >
                   Explore Service
                 </button>
-
               </div>
 
             </div>
