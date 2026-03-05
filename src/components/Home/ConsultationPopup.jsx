@@ -74,7 +74,6 @@ export default function ConsultationPopup() {
 
   return (
     <>
-      {/* Backdrop — also acts as scroll container so popup never hides behind navbar */}
       <div
         // className="fixed inset-0 z-40 overflow-y-auto"
         className="fixed inset-0 z-40 md:overflow-hidden overflow-y-auto"
@@ -87,18 +86,17 @@ export default function ConsultationPopup() {
             : "fadeIn 0.4s ease forwards",
         }}
       >
-        {/* Click-to-close layer (behind popup) */}
         <div className="absolute inset-0" onClick={closePopup} />
 
-        {/* Popup — centred with top padding so it clears the navbar */}
+        {/* Popup — Perfect Centered */}
         <div
-          className="relative z-50 flex justify-center pointer-events-none px-4 py-6"
+          className="relative z-50 flex items-center justify-center pointer-events-none p-4"
           style={{ minHeight: "100%" }}
         >
           <div
-            className="pointer-events-auto flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl w-full max-w-3xl self-start"
+            className="pointer-events-auto flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl w-full max-w-3xl"
             style={{
-              marginTop: "160px" /* clears a typical ~70px navbar */,
+              background: "linear-gradient(145deg, #1A3A6B 0%, #132A4A 60%, #0D1B34 100%)",
               animation: closing
                 ? "slideDown 0.35s cubic-bezier(.4,0,.2,1) forwards"
                 : "slideUp 0.45s cubic-bezier(.16,1,.3,1) forwards",
@@ -110,7 +108,7 @@ export default function ConsultationPopup() {
 
               style={{
                 background:
-                  "linear-gradient(145deg, #2a2794 0%, #1c4072 60%, #0D1B34 100%)",
+                  "linear-gradient(145deg,  #1f1a6b 0%, #132A4A 60%, #0D1B34 100%)",
                 minHeight: 340,
               }}
             >
