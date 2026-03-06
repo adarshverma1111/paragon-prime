@@ -22,7 +22,6 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <ConsultationPopup />
-
       <Routes>
         <Route path="/" element={<Homepage />} />
         {/* <Route path="/about" element={<About />} />
@@ -39,7 +38,6 @@ function App() {
 
       {/* Footer on all pages */}
       <Contact />
-
       <Footer />
     </Router>
   );

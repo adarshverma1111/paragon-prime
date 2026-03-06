@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaBullhorn, FaSearch, FaChartLine, FaRocket } from "react-icons/fa";
+import Galaxy from "../Galaxy";
 
 const sections = [
     {
@@ -15,7 +16,7 @@ const sections = [
             "Campaign Planning & Execution",
         ],
         image:
-            "https://images.unsplash.com/photo-1557838923-2985c318be48",
+            "https://highzeal.com/images/posts/digital-marketing.jpg",
     },
     {
         title: "SEO & Search Visibility",
@@ -116,62 +117,92 @@ export default function DigitalMarketing() {
             </section>
 
             {/* SERVICES */}
-            {sections.map((section, index) => (
-                <section
-                    key={index}
-                    className="py-12 px-6 lg:px-20 border-t border-white/5"
-                >
-                    <div
-                        className={`flex flex-col lg:flex-row items-center gap-16 ${
-                            index % 2 !== 0 ? "lg:flex-row-reverse" : ""
-                        }`}
-                    >
-                        <motion.div
-                            variants={imageVariant}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                            className="lg:w-1/2 relative"
-                        >
-                            <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 blur-xl rounded-3xl" />
-                            <img
-                                src={`${section.image}?auto=format&fit=crop&w=1200&q=80`}
-                                alt={section.title}
-                                className="relative rounded-3xl shadow-2xl border border-white/10"
-                            />
-                        </motion.div>
+            <div className="relative">
 
-                        <motion.div
-                            variants={textVariant}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                            className="lg:w-1/2"
-                        >
-                            <div className="text-orange-400 text-3xl mb-4">
-                                {section.icon}
-                            </div>
-                            <h2 className="text-4xl font-bold mb-6">
-                                {section.title}
-                            </h2>
-                            <p className="text-gray-400 mb-8 leading-relaxed">
-                                {section.description}
-                            </p>
-
-                            <ul className="space-y-3">
-                                {section.points.map((point, i) => (
-                                    <li
-                                        key={i}
-                                        className="text-gray-300 border-b border-white/10 pb-2"
-                                    >
-                                        {point}
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
+                {/* Galaxy Background */}
+                <div className="absolute inset-0 z-0 pointer-events-none">
+                    <div style={{ width: "100%", height: "100%", position: "relative" }}>
+                        <Galaxy
+                            mouseRepulsion
+                            mouseInteraction
+                            density={1}
+                            glowIntensity={0.3}
+                            saturation={0}
+                            hueShift={140}
+                            twinkleIntensity={0.3}
+                            rotationSpeed={0.1}
+                            repulsionStrength={2}
+                            autoCenterRepulsion={0}
+                            starSpeed={0.5}
+                            speed={1}
+                        />
                     </div>
-                </section>
-            ))}
+                </div>
+
+                {sections.map((section, index) => (
+                    <section
+                        key={index}
+                        className="relative z-10 py-12 px-6 lg:px-20 border-t border-white/5"
+                    >
+                        <div
+                            className={`flex flex-col lg:flex-row items-center gap-16 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                                }`}
+                        >
+
+                            {/* Image */}
+                            <motion.div
+                                variants={imageVariant}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true }}
+                                className="lg:w-1/2 relative"
+                            >
+                                <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 blur-xl rounded-3xl" />
+
+                                <img
+                                    src={`${section.image}?auto=format&fit=crop&w=1200&q=80`}
+                                    alt={section.title}
+                                    className="relative rounded-3xl shadow-2xl border border-white/10"
+                                />
+                            </motion.div>
+
+                            {/* Text */}
+                            <motion.div
+                                variants={textVariant}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true }}
+                                className="lg:w-1/2"
+                            >
+                                <div className="text-orange-400 text-3xl mb-4">
+                                    {section.icon}
+                                </div>
+
+                                <h2 className="text-4xl font-bold mb-6">
+                                    {section.title}
+                                </h2>
+
+                                <p className="text-gray-400 mb-8 leading-relaxed">
+                                    {section.description}
+                                </p>
+
+                                <ul className="space-y-3">
+                                    {section.points.map((point, i) => (
+                                        <li
+                                            key={i}
+                                            className="text-gray-300 border-b border-white/10 pb-2"
+                                        >
+                                            {point}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+
+                        </div>
+                    </section>
+                ))}
+
+            </div>
 
             {/* CTA */}
             <section className="relative py-16 md:py-20 px-6 lg:px-20 overflow-hidden">
