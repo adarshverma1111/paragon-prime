@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaCode, FaMobileAlt, FaRocket, FaSearch } from "react-icons/fa";
+import Galaxy from "../Galaxy";
 
 const sections = [
     {
