@@ -13,6 +13,7 @@ import ConsultationPopup from "./components/Home/ConsultationPopup";
 import SupportSection from "./pages/SupportSection";
 import ScrollToTop from "./pages/ScrollToTop";
 import Contact from "./components/Home/ContactPage";
+import ServicesSection from "./components/Services/Servicessection";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
       <Contact />
 
       <Footer />
+      <ServicesSection />
     </Router>
   );
 }
