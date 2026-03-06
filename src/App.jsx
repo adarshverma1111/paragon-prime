@@ -15,6 +15,7 @@ import ScrollToTop from "./pages/ScrollToTop";
 import Contact from "./components/Home/ContactPage";
 import ERPSolutions from "./pages/ERPSolutions";
 import CRMSolutions from "./pages/CRMSolutions";
+import OurService from "./pages/OurService";
 
 
 function App() {
@@ -26,8 +27,9 @@ function App() {
       <ConsultationPopup />
       <Routes>
         <Route path="/" element={<Homepage />} />
+                <Route path="/services" element={<OurService/>} />
+
         {/* <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/contact" element={<ContactPage />} /> */}
         <Route path="/" element={<WelcomePage />} />
@@ -38,6 +40,8 @@ function App() {
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/support" element={<SupportSection />} />
+
+        
       </Routes>
 
       {/* Footer on all pages */}
