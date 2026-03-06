@@ -11,7 +11,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Homepage from "./components/Home/Homepage";
 import ConsultationPopup from "./components/Home/ConsultationPopup";
 import SupportSection from "./pages/SupportSection";
-import ScrollToTop from "./components/Home/ScrollToTop";
+import ScrollToTop from "./pages/ScrollToTop";
 import Contact from "./components/Home/ContactPage";
 
 
@@ -19,9 +19,9 @@ function App() {
   return (
     <Router>
       {/* Navbar on all pages */}
-      <ScrollToTop/>
+      <ScrollToTop />
       <Navbar />
-      <ConsultationPopup/>
+      <ConsultationPopup />
 
       <Routes>
         <Route path="/" element={<Homepage />} />
@@ -34,11 +34,11 @@ function App() {
         <Route path="/app-development" element={<AppDevelopmentPage />} />
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/support" element={<SupportSection/>} />
+        <Route path="/support" element={<SupportSection />} />
       </Routes>
 
       {/* Footer on all pages */}
-            <Contact />
+      <Contact />
 
       <Footer />
     </Router>
