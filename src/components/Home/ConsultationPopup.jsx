@@ -28,9 +28,18 @@ export default function ConsultationPopup() {
 
   // Show popup after 8 seconds
   useEffect(() => {
-    timerRef.current = setTimeout(() => setVisible(true), 8000);
-    return () => clearTimeout(timerRef.current);
-  }, []);
+  const popupShown = sessionStorage.getItem("consultationPopupShown");
+
+  if (popupShown === "true") return; 
+
+  timerRef.current = setTimeout(() => {
+    setVisible(true);
+    sessionStorage.setItem("consultationPopupShown", "true");
+  }, 9000);
+
+  return () => clearTimeout(timerRef.current);
+}, []);
+
 
   // Auto-cycle testimonials
   useEffect(() => {
