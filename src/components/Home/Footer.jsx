@@ -129,13 +129,13 @@ export default function ParagonFooter() {
               </li>
 
               <li>
-                <Link to="/website-design" className="text-gray-300 text-sm hover:text-[#134E8E] transition">
-                  &gt; Website Design
+                <Link to="/ERP-solution" className="text-gray-300 text-sm hover:text-[#134E8E] transition">
+                  &gt; ERP solution
                 </Link>
               </li>
 
               <li>
-                <Link to="/crm-hrm" className="text-gray-300 text-sm hover:text-[#134E8E] transition">
+                <Link to="/CRM-solution" className="text-gray-300 text-sm hover:text-[#134E8E] transition">
                   &gt; CRM / HRM
                 </Link>
               </li>

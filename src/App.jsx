@@ -13,6 +13,8 @@ import ConsultationPopup from "./components/Home/ConsultationPopup";
 import SupportSection from "./pages/SupportSection";
 import ScrollToTop from "./pages/ScrollToTop";
 import Contact from "./components/Home/ContactPage";
+import ERPSolutions from "./pages/ERPSolutions";
+import CRMSolutions from "./pages/CRMSolutions";
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
         <Route path="/" element={<WelcomePage />} />
         <Route path="/web-development" element={<Webdevelopment />} />
         <Route path="/app-development" element={<AppDevelopmentPage />} />
+        <Route path="/ERP-solution" element={<ERPSolutions/>} />
+        <Route path="/CRM-solution" element={<CRMSolutions/>} />
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/support" element={<SupportSection />} />

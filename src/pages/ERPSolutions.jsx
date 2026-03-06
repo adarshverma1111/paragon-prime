@@ -1,7 +1,14 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { FaMobileAlt, FaRocket, FaCogs, FaLayerGroup } from "react-icons/fa";
+import {
+  FaDatabase,
+  FaChartLine,
+  FaNetworkWired,
+  FaShieldAlt,
+  FaCubes,
+  FaSyncAlt,
+} from "react-icons/fa";
 
 /* ─── Google Fonts injection ─────────────────────────────────────────────── */
 const FontLoader = () => (
@@ -9,22 +16,25 @@ const FontLoader = () => (
     @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&family=Bebas+Neue&display=swap');
 
     :root {
-      --amber:   #FF6B1A;
-      --amber2:  #FFAC5F;
-      --ice:     #7EE8FF;
-      --violet:  #A78BFF;
-      --bg:      #060810;
-      --surface: #0D1117;
-      --border:  rgba(255,255,255,0.06);
+      --emerald:  #00D97E;
+      --emerald2: #52FFBD;
+      --gold:     #FFD166;
+      --steel:    #7AB8FF;
+      --crimson:  #FF5E7D;
+      --bg:       #050A08;
+      --surface:  #0A100D;
+      --border:   rgba(255,255,255,0.06);
     }
 
     .font-display { font-family: 'Bebas Neue', sans-serif; }
     .font-body    { font-family: 'Syne', sans-serif; }
     .font-mono    { font-family: 'JetBrains Mono', monospace; }
 
-    .dot-grid {
-      background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
-      background-size: 28px 28px;
+    .grid-mesh {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
     }
 
     .scanlines::after {
@@ -42,44 +52,52 @@ const FontLoader = () => (
       border-radius: inherit;
     }
 
-    .ghost-num {
+    .ghost-num-erp {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(120px, 18vw, 220px);
       line-height: 1;
-      background: linear-gradient(180deg, rgba(167,139,255,0.12) 0%, transparent 70%);
+      background: linear-gradient(180deg, rgba(0,217,126,0.10) 0%, transparent 70%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       user-select: none;
       pointer-events: none;
     }
 
-    @keyframes ticker {
+    @keyframes erp-ticker {
       from { transform: translateX(0); }
       to   { transform: translateX(-50%); }
     }
-    .ticker-inner { animation: ticker 22s linear infinite; }
+    .erp-ticker-inner { animation: erp-ticker 24s linear infinite; }
 
-    @keyframes shimmer-app {
+    @keyframes shimmer-erp {
       from { background-position: -200% center; }
       to   { background-position: 200% center; }
     }
-    .shimmer-text-app {
-      background: linear-gradient(90deg, #FF6B1A, #A78BFF, #7EE8FF, #FF6B1A);
+    .shimmer-text-erp {
+      background: linear-gradient(90deg, #00D97E, #FFD166, #7AB8FF, #00D97E);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: shimmer-app 5s linear infinite;
+      animation: shimmer-erp 5s linear infinite;
     }
 
-    @keyframes float-phone {
-      0%, 100% { transform: translateY(0px) rotate(-2deg); }
-      50%       { transform: translateY(-12px) rotate(2deg); }
+    @keyframes float-cube {
+      0%, 100% { transform: translateY(0px) rotate(8deg); }
+      50%       { transform: translateY(-16px) rotate(-4deg); }
     }
-    .float-phone { animation: float-phone 5s ease-in-out infinite; }
+    .float-cube { animation: float-cube 6s ease-in-out infinite; }
+
+    @keyframes pulse-ring {
+      0%   { transform: scale(1);   opacity: 0.4; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    .pulse-ring {
+      animation: pulse-ring 2.5s ease-out infinite;
+    }
 
     ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #060810; }
-    ::-webkit-scrollbar-thumb { background: #FF6B1A; border-radius: 2px; }
+    ::-webkit-scrollbar-track { background: #050A08; }
+    ::-webkit-scrollbar-thumb { background: #00D97E; border-radius: 2px; }
   `}</style>
 );
 
@@ -87,84 +105,123 @@ const FontLoader = () => (
 const sections = [
   {
     index: "01",
-    title: "Custom Mobile\nApp Dev",
-    icon: <FaMobileAlt />,
-    tag: "ENGINEERING",
+    title: "Core ERP\nModules",
+    icon: <FaCubes />,
+    tag: "FOUNDATION",
     description:
-      "We design and develop powerful mobile applications tailored to your business vision. From intuitive UI to scalable backend systems, our apps are built for performance, security, and seamless user experiences.",
+      "Build your enterprise on a unified platform. Our ERP core integrates Finance, HR, Supply Chain, and Procurement into a single source of truth — eliminating silos and giving leadership real-time visibility across every department.",
     points: [
-      "iOS & Android Development",
-      "React Native / Flutter Solutions",
-      "Scalable Backend Architecture",
-      "Secure API Integrations",
+      "Finance & Accounting Automation",
+      "HR & Payroll Management",
+      "Procurement & Inventory Control",
+      "Multi-Entity & Multi-Currency Support",
     ],
-    image: "https://static.habilelabs.io/big_data_03_449e4dfa3c.jpg",
-    accent: "#FF6B1A",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    accent: "#00D97E",
   },
   {
     index: "02",
-    title: "UI/UX Focused\nApp Design",
-    icon: <FaLayerGroup />,
-    tag: "DESIGN SYSTEMS",
+    title: "Business\nIntelligence",
+    icon: <FaChartLine />,
+    tag: "ANALYTICS",
     description:
-      "We craft visually stunning and user-centric app interfaces that drive engagement and retention. Every interaction is thoughtfully designed to ensure simplicity, clarity, and delight.",
+      "Transform raw operational data into strategic decisions. Our BI layer delivers live dashboards, predictive forecasting, and drill-down analytics that surface actionable insights for every level of your organization.",
     points: [
-      "User-Centered Design",
-      "Interactive Prototypes",
-      "Smooth Animations",
-      "Modern Design Systems",
+      "Real-Time KPI Dashboards",
+      "Predictive Revenue Forecasting",
+      "Custom Report Builder",
+      "AI-Powered Anomaly Detection",
     ],
-    image: "https://images.unsplash.com/photo-1526498460520-4c246339dccb",
-    accent: "#A78BFF",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+    accent: "#FFD166",
   },
   {
     index: "03",
-    title: "Performance &\nOptimization",
-    icon: <FaCogs />,
-    tag: "SPEED & RELIABILITY",
+    title: "Seamless\nIntegrations",
+    icon: <FaNetworkWired />,
+    tag: "CONNECTIVITY",
     description:
-      "Speed and reliability are critical for mobile success. We optimize application performance, reduce load times, and ensure smooth functionality across devices and operating systems.",
+      "Your ERP doesn't live in isolation. We architect robust API ecosystems that connect your ERP to CRMs, e-commerce platforms, logistics providers, payment gateways, and legacy systems — without friction.",
     points: [
-      "App Performance Optimization",
-      "Low Latency Architecture",
-      "Battery Efficient Code",
-      "Crash & Bug Monitoring",
+      "REST & GraphQL API Gateway",
+      "Pre-Built Connector Library",
+      "Legacy System Migration",
+      "Real-Time Event Streaming",
     ],
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-    accent: "#7EE8FF",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
+    accent: "#7AB8FF",
   },
   {
     index: "04",
-    title: "Launch, Deploy\n& Growth",
-    icon: <FaRocket />,
-    tag: "DEPLOYMENT",
+    title: "Data Security\n& Compliance",
+    icon: <FaShieldAlt />,
+    tag: "GOVERNANCE",
     description:
-      "From app store submission to post-launch scaling, we help you launch confidently. Our growth strategy ensures continuous updates, analytics tracking, and long-term success.",
+      "Enterprise data demands enterprise-grade protection. We implement role-based access controls, end-to-end encryption, full audit trails, and compliance frameworks for GDPR, SOX, ISO 27001, and industry-specific regulations.",
     points: [
-      "App Store & Play Store Deployment",
-      "Analytics & User Insights",
-      "Version Updates & Maintenance",
-      "Continuous Feature Enhancement",
+      "Role-Based Access Control (RBAC)",
+      "End-to-End Data Encryption",
+      "SOX / GDPR / ISO 27001 Compliance",
+      "Immutable Audit Trails",
     ],
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    accent: "#FFAC5F",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3",
+    accent: "#FF5E7D",
+  },
+  {
+    index: "05",
+    title: "Cloud & On-Prem\nDeployment",
+    icon: <FaDatabase />,
+    tag: "INFRASTRUCTURE",
+    description:
+      "Deploy your ERP the way your business demands — fully managed SaaS cloud, on-premise, or hybrid. We deliver containerized, scalable architectures built for zero downtime, disaster recovery, and global performance.",
+    points: [
+      "AWS / Azure / GCP Deployment",
+      "On-Premise & Hybrid Architectures",
+      "99.99% Uptime SLA",
+      "Auto-Scaling & Disaster Recovery",
+    ],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
+    accent: "#00D97E",
+  },
+  {
+    index: "06",
+    title: "Continuous\nOptimization",
+    icon: <FaSyncAlt />,
+    tag: "LIFECYCLE",
+    description:
+      "ERP is not a one-time project — it's an evolving asset. Our dedicated support teams provide proactive monitoring, version upgrades, performance tuning, and strategic roadmap planning to keep your system ahead of growth.",
+    points: [
+      "24/7 Proactive Monitoring",
+      "Quarterly Performance Reviews",
+      "Automated Version Upgrades",
+      "Strategic Growth Roadmapping",
+    ],
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+    accent: "#FFD166",
   },
 ];
 
 const stats = [
-  { value: "200+", label: "Apps Shipped" },
-  { value: "4.9★", label: "Avg Store Rating" },
-  { value: "60ms", label: "Avg Response Time" },
-  { value: "99.9%", label: "Uptime SLA" },
+  { value: "150+", label: "ERP Deployments" },
+  { value: "40%", label: "Avg. Cost Reduction" },
+  { value: "3×",  label: "Faster Reporting" },
+  { value: "99.99%", label: "Uptime SLA" },
 ];
 
 /* ─── Ticker ─────────────────────────────────────────────────────────────── */
 const TickerBar = () => (
-  <div className="relative overflow-hidden py-3 border-y" style={{ borderColor: "var(--border)", background: "rgba(167,139,255,0.04)" }}>
-    <div className="ticker-inner flex whitespace-nowrap" style={{ width: "max-content" }}>
+  <div
+    className="relative overflow-hidden py-3 border-y"
+    style={{ borderColor: "var(--border)", background: "rgba(0,217,126,0.04)" }}
+  >
+    <div className="erp-ticker-inner flex whitespace-nowrap" style={{ width: "max-content" }}>
       {[...Array(6)].map((_, i) => (
-        <span key={i} className="font-mono text-xs tracking-widest mx-8" style={{ color: "var(--violet)" }}>
-          APP DEVELOPMENT &nbsp;◆&nbsp; IOS & ANDROID &nbsp;◆&nbsp; REACT NATIVE &nbsp;◆&nbsp; UI/UX DESIGN &nbsp;◆&nbsp; PERFORMANCE &nbsp;◆&nbsp; APP STORE LAUNCH &nbsp;◆&nbsp;
+        <span
+          key={i}
+          className="font-mono text-xs tracking-widest mx-8"
+          style={{ color: "var(--emerald)" }}
+        >
+          ERP SOLUTIONS &nbsp;◆&nbsp; FINANCE & HR &nbsp;◆&nbsp; SUPPLY CHAIN &nbsp;◆&nbsp; BUSINESS INTELLIGENCE &nbsp;◆&nbsp; CLOUD DEPLOYMENT &nbsp;◆&nbsp; ENTERPRISE SECURITY &nbsp;◆&nbsp;
         </span>
       ))}
     </div>
@@ -174,7 +231,7 @@ const TickerBar = () => (
 /* ─── Stats Bar ──────────────────────────────────────────────────────────── */
 const StatsBar = () => (
   <div
-    className="relative z-10 grid grid-cols-2 lg:grid-cols-4 dot-grid"
+    className="relative z-10 grid grid-cols-2 lg:grid-cols-4 grid-mesh"
     style={{ borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}
   >
     {stats.map((s, i) => (
@@ -184,13 +241,24 @@ const StatsBar = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: i * 0.1 }}
-        className="flex flex-col items-center justify-center py-10 px-6 font-body"
+        className="flex flex-col items-center justify-center py-10 px-6 font-body relative"
         style={{ borderRight: i < stats.length - 1 ? "1px solid var(--border)" : "none" }}
       >
-        <span className="font-display text-4xl lg:text-5xl mb-1" style={{ color: "var(--violet)" }}>
+        {/* Pulse dot */}
+        <div className="relative flex items-center justify-center mb-3">
+          <div
+            className="pulse-ring absolute w-3 h-3 rounded-full"
+            style={{ background: "var(--emerald)", opacity: 0.4 }}
+          />
+          <div className="w-2 h-2 rounded-full" style={{ background: "var(--emerald)" }} />
+        </div>
+        <span className="font-display text-4xl lg:text-5xl mb-1" style={{ color: "var(--emerald)" }}>
           {s.value}
         </span>
-        <span className="font-mono text-xs tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.35)" }}>
+        <span
+          className="font-mono text-xs tracking-widest uppercase"
+          style={{ color: "rgba(255,255,255,0.35)" }}
+        >
           {s.label}
         </span>
       </motion.div>
@@ -214,14 +282,19 @@ const ServiceCard = ({ section, index }) => {
     >
       {/* Ghost number */}
       <div
-        className={`ghost-num absolute top-4 select-none pointer-events-none ${isEven ? "right-4 lg:right-16" : "left-4 lg:left-16"}`}
+        className={`ghost-num-erp absolute top-4 select-none pointer-events-none ${
+          isEven ? "right-4 lg:right-16" : "left-4 lg:left-16"
+        }`}
         aria-hidden
       >
         {section.index}
       </div>
 
-      <div className={`relative z-10 flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-12 lg:gap-20`}>
-
+      <div
+        className={`relative z-10 flex flex-col ${
+          isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+        } items-center gap-12 lg:gap-20`}
+      >
         {/* ── Image Panel ── */}
         <motion.div
           initial={{ opacity: 0, x: isEven ? 60 : -60 }}
@@ -245,7 +318,10 @@ const ServiceCard = ({ section, index }) => {
                 transition: "all 0.35s",
                 opacity: hovered ? 1 : 0.4,
                 transform: hovered
-                  ? ci === 0 ? "translate(-4px,-4px)" : ci === 1 ? "translate(4px,-4px)" : ci === 2 ? "translate(-4px,4px)" : "translate(4px,4px)"
+                  ? ci === 0 ? "translate(-4px,-4px)"
+                  : ci === 1 ? "translate(4px,-4px)"
+                  : ci === 2 ? "translate(-4px,4px)"
+                  : "translate(4px,4px)"
                   : "translate(0,0)",
               }}
             />
@@ -255,11 +331,11 @@ const ServiceCard = ({ section, index }) => {
           <div
             className="absolute -top-4 z-20 font-mono text-xs px-4 py-1 rounded-full tracking-widest"
             style={{
-              left: isEven ? "1rem" : "auto",
-              right: isEven ? "auto" : "1rem",
+              left:       isEven ? "1rem" : "auto",
+              right:      isEven ? "auto" : "1rem",
               background: `${section.accent}18`,
-              border: `1px solid ${section.accent}55`,
-              color: section.accent,
+              border:     `1px solid ${section.accent}55`,
+              color:      section.accent,
             }}
           >
             {section.tag}
@@ -275,7 +351,9 @@ const ServiceCard = ({ section, index }) => {
               className="w-full object-cover"
               style={{
                 height: "420px",
-                filter: hovered ? "brightness(0.9) saturate(1.1)" : "brightness(0.75) saturate(0.85)",
+                filter: hovered
+                  ? "brightness(0.9) saturate(1.1)"
+                  : "brightness(0.65) saturate(0.7)",
                 transition: "filter 0.4s",
               }}
             />
@@ -286,15 +364,20 @@ const ServiceCard = ({ section, index }) => {
                 opacity: hovered ? 1 : 0,
               }}
             />
+            {/* Grid overlay on image */}
+            <div
+              className="absolute inset-0 grid-mesh opacity-30 pointer-events-none"
+              style={{ mixBlendMode: "overlay" }}
+            />
           </div>
 
           {/* Index badge */}
           <div
             className="absolute -bottom-5 font-display text-7xl leading-none select-none"
             style={{
-              right: isEven ? "-1rem" : "auto",
-              left: isEven ? "auto" : "-1rem",
-              color: section.accent,
+              right:   isEven ? "-1rem" : "auto",
+              left:    isEven ? "auto"  : "-1rem",
+              color:   section.accent,
               opacity: 0.18,
             }}
           >
@@ -313,7 +396,11 @@ const ServiceCard = ({ section, index }) => {
           {/* Icon */}
           <div
             className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-6 text-xl"
-            style={{ background: `${section.accent}15`, color: section.accent, border: `1px solid ${section.accent}30` }}
+            style={{
+              background: `${section.accent}15`,
+              color:      section.accent,
+              border:     `1px solid ${section.accent}30`,
+            }}
           >
             {section.icon}
           </div>
@@ -333,7 +420,10 @@ const ServiceCard = ({ section, index }) => {
             style={{ background: `linear-gradient(90deg, ${section.accent}, transparent)` }}
           />
 
-          <p className="text-sm lg:text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.55)" }}>
+          <p
+            className="text-sm lg:text-base leading-relaxed mb-8"
+            style={{ color: "rgba(255,255,255,0.55)" }}
+          >
             {section.description}
           </p>
 
@@ -369,56 +459,65 @@ const ServiceCard = ({ section, index }) => {
             ))}
           </ul>
         </motion.div>
-
       </div>
     </motion.section>
   );
 };
 
 /* ─── Main Component ─────────────────────────────────────────────────────── */
-export default function AppDevelopment() {
+export default function ERPSolutions() {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const heroY       = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
     <div className="font-body overflow-x-hidden" style={{ background: "var(--bg)", color: "#fff" }}>
       <FontLoader />
 
-      {/* ── HERO ───────────────────────────────────────────────────────────── */}
+      {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section ref={heroRef} className="relative min-h-[92vh] flex flex-col justify-end overflow-hidden">
 
         {/* Parallax BG */}
         <motion.div className="absolute inset-0" style={{ y: heroY }}>
           <img
-            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=2000&q=80"
-            alt="App Development Hero"
+            src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=2000&q=80"
+            alt="ERP Solutions Hero"
             className="w-full h-full object-cover"
-            style={{ filter: "brightness(0.28) saturate(0.5)" }}
+            style={{ filter: "brightness(0.22) saturate(0.4)" }}
           />
         </motion.div>
 
         {/* Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060810] via-[#060810]/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#060810]/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050A08] via-[#050A08]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050A08]/70 via-transparent to-transparent" />
 
         {/* Ambient glows */}
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(167,139,255,0.13) 0%, transparent 70%)", filter: "blur(50px)" }} />
-        <div className="absolute top-1/2 right-1/4 w-64 h-64 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(255,107,26,0.08) 0%, transparent 70%)", filter: "blur(40px)" }} />
-
-        {/* Dot grid */}
-        <div className="absolute inset-0 dot-grid opacity-20" />
-
-        {/* Floating phone icon decoration */}
         <div
-          className="float-phone absolute right-[8%] top-[20%] text-[120px] lg:text-[160px] select-none pointer-events-none hidden lg:block"
-          style={{ color: "rgba(167,139,255,0.06)", filter: "blur(1px)" }}
+          className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(0,217,126,0.12) 0%, transparent 70%)",
+            filter: "blur(50px)",
+          }}
+        />
+        <div
+          className="absolute top-1/2 right-1/4 w-64 h-64 rounded-full pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(255,209,102,0.07) 0%, transparent 70%)",
+            filter: "blur(40px)",
+          }}
+        />
+
+        {/* Grid mesh */}
+        <div className="absolute inset-0 grid-mesh opacity-20" />
+
+        {/* Floating icon decoration */}
+        <div
+          className="float-cube absolute right-[8%] top-[18%] text-[110px] lg:text-[150px] select-none pointer-events-none hidden lg:block"
+          style={{ color: "rgba(0,217,126,0.05)", filter: "blur(1px)" }}
           aria-hidden
         >
-          📱
+          ⬡
         </div>
 
         <motion.div
@@ -432,8 +531,8 @@ export default function AppDevelopment() {
             transition={{ duration: 0.6 }}
             className="flex items-center gap-3 mb-6"
           >
-            <span className="w-8 h-px" style={{ background: "var(--violet)" }} />
-            <span className="font-mono text-xs tracking-[5px] uppercase" style={{ color: "var(--violet)" }}>
+            <span className="w-8 h-px" style={{ background: "var(--emerald)" }} />
+            <span className="font-mono text-xs tracking-[5px] uppercase" style={{ color: "var(--emerald)" }}>
               Digital Forge Studio
             </span>
           </motion.div>
@@ -446,7 +545,7 @@ export default function AppDevelopment() {
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className="font-display text-[clamp(56px,10vw,140px)] leading-none tracking-tight text-white"
             >
-              APP
+              ERP
             </motion.h1>
           </div>
           <div className="overflow-hidden mb-8">
@@ -454,9 +553,9 @@ export default function AppDevelopment() {
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
-              className="font-display text-[clamp(56px,10vw,140px)] leading-none tracking-tight shimmer-text-app"
+              className="font-display text-[clamp(56px,10vw,140px)] leading-none tracking-tight shimmer-text-erp"
             >
-              DEVELOPMENT
+              SOLUTIONS
             </motion.h1>
           </div>
 
@@ -468,20 +567,20 @@ export default function AppDevelopment() {
             className="flex flex-col sm:flex-row items-start sm:items-center gap-6 lg:gap-12"
           >
             <p className="max-w-md text-sm lg:text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
-              We build next-generation mobile applications that combine
-              cutting-edge technology with exceptional user experiences
-              to accelerate digital growth.
+              We engineer unified enterprise platforms that streamline Finance,
+              HR, Supply Chain, and Operations — giving your business the
+              clarity and control to scale with confidence.
             </p>
             <motion.button
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="flex-shrink-0 group flex items-center gap-3 px-7 py-3.5 rounded-full font-body font-semibold text-sm text-black transition-all duration-300"
               style={{
-                background: "linear-gradient(135deg, #A78BFF, #7EE8FF)",
-                boxShadow: "0 0 40px rgba(167,139,255,0.3)",
+                background: "linear-gradient(135deg, #00D97E, #FFD166)",
+                boxShadow: "0 0 40px rgba(0,217,126,0.3)",
               }}
             >
-              Start Your Project
+              Book a Demo
               <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
             </motion.button>
           </motion.div>
@@ -494,33 +593,36 @@ export default function AppDevelopment() {
           transition={{ delay: 1.2 }}
           className="absolute bottom-6 right-8 z-10 flex flex-col items-center gap-2"
         >
-          <span className="font-mono text-xs tracking-widest" style={{ color: "rgba(255,255,255,0.25)", writingMode: "vertical-rl" }}>
+          <span
+            className="font-mono text-xs tracking-widest"
+            style={{ color: "rgba(255,255,255,0.25)", writingMode: "vertical-rl" }}
+          >
             SCROLL
           </span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
             className="w-px h-10"
-            style={{ background: "linear-gradient(to bottom, var(--violet), transparent)" }}
+            style={{ background: "linear-gradient(to bottom, var(--emerald), transparent)" }}
           />
         </motion.div>
       </section>
 
-      {/* ── TICKER ─────────────────────────────────────────────────────────── */}
+      {/* ── TICKER ───────────────────────────────────────────────────────── */}
       <TickerBar />
 
-      {/* ── STATS ──────────────────────────────────────────────────────────── */}
+      {/* ── STATS ────────────────────────────────────────────────────────── */}
       <StatsBar />
 
-      {/* ── SERVICES ───────────────────────────────────────────────────────── */}
+      {/* ── SERVICES ─────────────────────────────────────────────────────── */}
       <div className="relative" style={{ background: "var(--bg)" }}>
-        <div className="absolute inset-0 dot-grid opacity-[0.04] pointer-events-none" />
+        <div className="absolute inset-0 grid-mesh opacity-[0.04] pointer-events-none" />
         {sections.map((section, i) => (
           <ServiceCard key={i} section={section} index={i} />
         ))}
       </div>
 
-      {/* ── CTA ────────────────────────────────────────────────────────────── */}
+      {/* ── CTA ──────────────────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden py-28 lg:py-40 px-6 lg:px-20"
         style={{ borderTop: "1px solid var(--border)" }}
@@ -528,26 +630,35 @@ export default function AppDevelopment() {
         {/* BG Image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80"
-            alt="CTA"
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2000&q=80"
+            alt="ERP CTA"
             className="w-full h-full object-cover"
-            style={{ filter: "brightness(0.12) saturate(0.3)" }}
+            style={{ filter: "brightness(0.1) saturate(0.3)" }}
           />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(6,8,16,0.97) 0%, rgba(6,8,16,0.85) 100%)" }} />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(135deg, rgba(5,10,8,0.97) 0%, rgba(5,10,8,0.85) 100%)" }}
+          />
         </div>
 
         {/* Ambient orbs */}
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(167,139,255,0.07) 0%, transparent 65%)", filter: "blur(20px)" }}
+          style={{
+            background: "radial-gradient(circle, rgba(0,217,126,0.07) 0%, transparent 65%)",
+            filter: "blur(20px)",
+          }}
         />
         <div
           className="absolute bottom-0 right-0 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(255,107,26,0.05) 0%, transparent 70%)", filter: "blur(30px)" }}
+          style={{
+            background: "radial-gradient(circle, rgba(255,209,102,0.05) 0%, transparent 70%)",
+            filter: "blur(30px)",
+          }}
         />
 
-        {/* Dot grid */}
-        <div className="absolute inset-0 dot-grid opacity-10 pointer-events-none" />
+        {/* Grid mesh */}
+        <div className="absolute inset-0 grid-mesh opacity-10 pointer-events-none" />
 
         <div className="relative z-10 max-w-4xl mx-auto">
           {/* Eyebrow */}
@@ -558,11 +669,11 @@ export default function AppDevelopment() {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-center gap-3 mb-8"
           >
-            <span className="w-8 h-px" style={{ background: "var(--violet)" }} />
-            <span className="font-mono text-xs tracking-[5px] uppercase" style={{ color: "var(--violet)" }}>
-              Let's Build Together
+            <span className="w-8 h-px" style={{ background: "var(--emerald)" }} />
+            <span className="font-mono text-xs tracking-[5px] uppercase" style={{ color: "var(--emerald)" }}>
+              Transform Your Enterprise
             </span>
-            <span className="w-8 h-px" style={{ background: "var(--violet)" }} />
+            <span className="w-8 h-px" style={{ background: "var(--emerald)" }} />
           </motion.div>
 
           {/* Heading */}
@@ -574,7 +685,7 @@ export default function AppDevelopment() {
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className="font-display text-[clamp(44px,8vw,110px)] leading-none tracking-tight text-white"
             >
-              READY TO LAUNCH
+              READY TO UNIFY
             </motion.h2>
           </div>
           <div className="overflow-hidden mb-10 text-center">
@@ -583,9 +694,9 @@ export default function AppDevelopment() {
               whileInView={{ y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.07 }}
-              className="font-display text-[clamp(44px,8vw,110px)] leading-none tracking-tight shimmer-text-app"
+              className="font-display text-[clamp(44px,8vw,110px)] leading-none tracking-tight shimmer-text-erp"
             >
-              YOUR APP?
+              YOUR OPERATIONS?
             </motion.h2>
           </div>
 
@@ -597,8 +708,9 @@ export default function AppDevelopment() {
             className="text-center text-sm lg:text-base leading-relaxed mb-12 max-w-xl mx-auto"
             style={{ color: "rgba(255,255,255,0.45)" }}
           >
-            We design and engineer powerful mobile apps that not only look stunning
-            but drive measurable growth and long-term business success.
+            We implement enterprise-grade ERP systems that consolidate your
+            entire operation into one intelligent platform — driving
+            efficiency, reducing costs, and accelerating growth.
           </motion.p>
 
           {/* Buttons */}
@@ -614,11 +726,11 @@ export default function AppDevelopment() {
               whileTap={{ scale: 0.97 }}
               className="group flex items-center gap-3 px-10 py-4 rounded-full font-body font-bold text-sm text-black transition-all duration-300"
               style={{
-                background: "linear-gradient(135deg, #A78BFF, #7EE8FF)",
-                boxShadow: "0 0 50px rgba(167,139,255,0.35)",
+                background: "linear-gradient(135deg, #00D97E, #FFD166)",
+                boxShadow: "0 0 50px rgba(0,217,126,0.35)",
               }}
             >
-              Start Your Project
+              Book a Free Demo
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </motion.button>
             <motion.button
@@ -626,12 +738,12 @@ export default function AppDevelopment() {
               whileTap={{ scale: 0.97 }}
               className="px-10 py-4 rounded-full font-body font-semibold text-sm transition-all duration-300"
               style={{
-                border: "1px solid rgba(255,255,255,0.15)",
-                color: "rgba(255,255,255,0.7)",
+                border:     "1px solid rgba(255,255,255,0.15)",
+                color:      "rgba(255,255,255,0.7)",
                 background: "rgba(255,255,255,0.03)",
               }}
             >
-              View Our Work
+              View Case Studies
             </motion.button>
           </motion.div>
         </div>
