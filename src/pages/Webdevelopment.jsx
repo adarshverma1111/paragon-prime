@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaCode, FaMobileAlt, FaRocket, FaSearch } from "react-icons/fa";
-import FloatingLines from "../FloatingLines";
 
 const sections = [
     {
@@ -120,20 +119,26 @@ export default function WebsDevelopment() {
             </section>
 
             {/* SERVICES */}
-            {/* SERVICES */}
             <div className="relative">
 
-                {/* Background Floating Lines */}
-                <div className="absolute inset-0 z-0 opacity-40">
-                    <FloatingLines
-                        enabledWaves={["top", "middle", "bottom"]}
-                        lineCount={5}
-                        lineDistance={5}
-                        bendRadius={5}
-                        bendStrength={-0.5}
-                        interactive={true}
-                        parallax={true}
-                    />
+                {/* Galaxy Background */}
+                <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+                    <div style={{ width: "100%", height: "100%", position: "relative" }}>
+                        <Galaxy
+                            mouseRepulsion
+                            mouseInteraction
+                            density={1}
+                            glowIntensity={0.3}
+                            saturation={0}
+                            hueShift={140}
+                            twinkleIntensity={0.3}
+                            rotationSpeed={0.1}
+                            repulsionStrength={2}
+                            autoCenterRepulsion={0}
+                            starSpeed={0.5}
+                            speed={1}
+                        />
+                    </div>
                 </div>
 
                 {sections.map((section, index) => (
@@ -145,6 +150,7 @@ export default function WebsDevelopment() {
                             className={`flex flex-col lg:flex-row items-center gap-16 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""
                                 }`}
                         >
+
                             {/* Image */}
                             <motion.div
                                 variants={imageVariant}
@@ -154,6 +160,7 @@ export default function WebsDevelopment() {
                                 className="lg:w-1/2 relative"
                             >
                                 <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 blur-xl rounded-3xl" />
+
                                 <img
                                     src={`${section.image}?auto=format&fit=crop&w=1200&q=80`}
                                     alt={section.title}
@@ -192,9 +199,11 @@ export default function WebsDevelopment() {
                                     ))}
                                 </ul>
                             </motion.div>
+
                         </div>
                     </section>
                 ))}
+
             </div>
 
             {/* CTA */}
