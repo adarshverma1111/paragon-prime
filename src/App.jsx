@@ -16,7 +16,7 @@ import Contact from "./components/Home/ContactPage";
 import ERPSolutions from "./pages/ERPSolutions";
 import CRMSolutions from "./pages/CRMSolutions";
 import OurService from "./pages/OurService";
-
+import AboutUs from "./components/Aboutus/AboutUs";
 
 function App() {
   return (
@@ -27,21 +27,20 @@ function App() {
       <ConsultationPopup />
       <Routes>
         <Route path="/" element={<Homepage />} />
-                <Route path="/services" element={<OurService/>} />
+        <Route path="/services" element={<OurService />} />
+        <Route path="/about" element={<AboutUs />} />
 
-        {/* <Route path="/about" element={<About />} />
+        {/* 
         <Route path="/industries" element={<Industries />} />
         <Route path="/contact" element={<ContactPage />} /> */}
         <Route path="/" element={<WelcomePage />} />
         <Route path="/web-development" element={<Webdevelopment />} />
         <Route path="/app-development" element={<AppDevelopmentPage />} />
-        <Route path="/ERP-solution" element={<ERPSolutions/>} />
-        <Route path="/CRM-solution" element={<CRMSolutions/>} />
+        <Route path="/ERP-solution" element={<ERPSolutions />} />
+        <Route path="/CRM-solution" element={<CRMSolutions />} />
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/support" element={<SupportSection />} />
-
-        
       </Routes>
 
       {/* Footer on all pages */}
