@@ -399,7 +399,6 @@ export default function AboutUs() {
                     </div>
                 </div>
             </section>
-
             {/* CTA */}
             <section className="py-24 px-6" style={{ background: "#020917" }}>
                 <div className="max-w-3xl mx-auto text-center rounded-3xl p-12 border border-white/10 relative overflow-hidden"
