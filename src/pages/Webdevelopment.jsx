@@ -63,23 +63,30 @@ const sections = [
 ];
 
 const imageVariant = {
-    hidden: { opacity: 0, x: "20%" },
-    show: {
-        opacity: 1,
-        x: 0,
-        transition: { duration: 0.8, ease: "easeOut" },
+  hidden: { opacity: 0, x: 60 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+      ease: [0.25, 0.1, 0.25, 1],
+      delay: 0.1,
     },
+  },
 };
 
 const textVariant = {
-    hidden: { opacity: 0, x: "-20%" },
-    show: {
-        opacity: 1,
-        x: 0,
-        transition: { duration: 0.8, ease: "easeOut" },
+  hidden: { opacity: 0, x: -60 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+      ease: [0.25, 0.1, 0.25, 1],
+      delay: 0.2,
     },
+  },
 };
-
 export default function WebsDevelopment() {
     return (
         <div className="bg-gradient-to-b from-[#0a0f1c] via-[#0f172a] to-[#0a0f1c] text-white overflow-x-hidden">
