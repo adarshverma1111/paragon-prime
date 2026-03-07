@@ -362,6 +362,7 @@ export default function DigitalMarketing() {
 
         <div className="absolute inset-0 dot-grid opacity-20" />
 
+<<<<<<< HEAD
         {/* Decorative graph bars — subtle background art */}
         <div className="absolute bottom-0 right-0 flex items-end gap-2 pr-8 pb-8 pointer-events-none hidden lg:flex" aria-hidden>
           {[40, 65, 50, 80, 55, 95, 70].map((h, i) => (
@@ -375,6 +376,8 @@ export default function DigitalMarketing() {
             />
           ))}
         </div>
+=======
+>>>>>>> 51e3753105b9b351e4e05c2b5b1d5d3a1487f596
 
         <motion.div style={{ opacity: heroOpacity }} className="relative z-10 px-6 lg:px-20 pb-20 lg:pb-28">
 
