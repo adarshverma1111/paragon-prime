@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaMobileAlt, FaRocket, FaCogs, FaLayerGroup } from "react-icons/fa";
-import Galaxy from "../Galaxy";
 
 const sections = [
     {
@@ -119,26 +118,6 @@ export default function AppDevelopment() {
             {/* SERVICES */}
             {/* SERVICES */}
             <div className="relative">
-
-                {/* Galaxy Background */}
-                <div className="absolute inset-0 z-0 pointer-events-none">
-                    <div style={{ width: "100%", height: "100%", position: "relative" }}>
-                        <Galaxy
-                            mouseRepulsion
-                            mouseInteraction
-                            density={1}
-                            glowIntensity={0.3}
-                            saturation={0}
-                            hueShift={140}
-                            twinkleIntensity={0.3}
-                            rotationSpeed={0.1}
-                            repulsionStrength={2}
-                            autoCenterRepulsion={0}
-                            starSpeed={0.5}
-                            speed={1}
-                        />
-                    </div>
-                </div>
 
                 {sections.map((section, index) => (
                     <section
