@@ -16,6 +16,7 @@ import Contact from "./components/Home/ContactPage";
 import ERPSolutions from "./pages/ERPSolutions";
 import CRMSolutions from "./pages/CRMSolutions";
 import AboutUs from "./components/Aboutus/AboutUs";
+import ServicesPage from "./components/Home/ServicesPage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/services" element={<ServicesPage/>} />
 
         {/* 
         <Route path="/industries" element={<Industries />} />
