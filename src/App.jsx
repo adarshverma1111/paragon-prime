@@ -13,6 +13,7 @@ import ConsultationPopup from "./components/Home/ConsultationPopup";
 import SupportSection from "./pages/SupportSection";
 import ScrollToTop from "./pages/ScrollToTop";
 import Contact from "./components/Home/ContactPage";
+import AboutUs from "./components/Aboutus/Aboutus";
 
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
       <ConsultationPopup />
       <Routes>
         <Route path="/" element={<Homepage />} />
-        {/* <Route path="/about" element={<About />} />
+        <Route path="/about" element={<AboutUs />} />
+        {/* 
         <Route path="/services" element={<Services />} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/contact" element={<ContactPage />} /> */}
