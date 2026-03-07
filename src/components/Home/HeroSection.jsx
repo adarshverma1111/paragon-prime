@@ -84,7 +84,7 @@ const HeroSection = () => {
             className="mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-7xl xl:text-8xl"
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500">
-              From Concept to
+              From Concept tooo
             </span>{" "}
             Creation
           </motion.h1>
