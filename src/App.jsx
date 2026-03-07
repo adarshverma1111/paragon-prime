@@ -15,7 +15,6 @@ import ScrollToTop from "./pages/ScrollToTop";
 import Contact from "./components/Home/ContactPage";
 import ERPSolutions from "./pages/ERPSolutions";
 import CRMSolutions from "./pages/CRMSolutions";
-import OurService from "./pages/OurService";
 import AboutUs from "./components/Aboutus/AboutUs";
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
       <ConsultationPopup />
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/services" element={<OurService />} />
         <Route path="/about" element={<AboutUs />} />
 
         {/* 
