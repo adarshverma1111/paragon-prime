@@ -170,14 +170,14 @@ export default function AboutUs() {
             </section>
 
             {/* MISSION */}
-            <section className="py-10 px-6 bg-[#040d1f] overflow-hidden">
+            <section className="py-12 lg:py-24 px-6 bg-[#040d1f] overflow-hidden">
                 <div
                     ref={missionRef}
-                    className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center"
+                    className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-20 items-center"
                 >
 
                     {/* Image */}
-                    <div className="relative w-full h-[420px] md:h-[500px]">
+                    <div className="relative w-full h-[420px] md:h-[520px] lg:h-[600px]">
 
                         {/* Glow Background */}
                         <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orange-500/20 to-blue-500/20 blur-3xl"></div>
@@ -200,14 +200,14 @@ export default function AboutUs() {
 
                         {/* Experience Card */}
                         <div
-                            className="absolute bottom-6 right-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl px-6 py-4 text-center shadow-2xl"
+                            className="absolute bottom-8 right-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl px-7 py-5 text-center shadow-2xl"
                             style={{
                                 opacity: missionVis ? 1 : 0,
                                 transition: "all 0.8s ease 0.3s"
                             }}
                         >
                             <div
-                                className="text-4xl font-black text-white"
+                                className="text-5xl font-black text-white"
                                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                             >
                                 4+
@@ -227,52 +227,66 @@ export default function AboutUs() {
                             transition: "all 0.8s ease 0.2s"
                         }}
                     >
-                        <div className="text-orange-400 text-xs tracking-widest uppercase font-semibold mb-3">
+                        <div className="text-orange-400 text-xs tracking-widest uppercase font-semibold mb-4">
                             About Paragon Prime
                         </div>
 
                         <h2
-                            className="text-4xl md:text-5xl font-black mb-5 leading-tight"
+                            className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight"
                             style={{
                                 fontFamily: "'Bebas Neue', sans-serif",
                                 letterSpacing: "2px"
                             }}
                         >
-                            Find Your Dream{" "}
+                            Your Trusted{" "}
                             <span className="bg-gradient-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
-                                Digital Partner
+                                Digital Growth Partner
                             </span>
                         </h2>
 
-                        <p className="text-blue-200 leading-relaxed mb-6 text-sm">
-                            We are a passionate team of developers, designers, and marketers who
-                            live and breathe digital. Since 2020, we've helped businesses of all
-                            sizes build powerful online presences that convert.
+                        <p className="text-blue-200 leading-relaxed mb-4 text-sm md:text-base">
+                            At Paragon Prime, we combine strategy, technology, and creativity
+                            to craft digital experiences that empower businesses to grow faster
+                            in the modern digital landscape.
                         </p>
 
-                        <div className="space-y-4 mb-8">
+                        <p className="text-blue-200 leading-relaxed mb-8 text-sm md:text-base">
+                            From high-performance websites and mobile apps to scalable ERP and
+                            CRM platforms, our solutions are designed to streamline operations,
+                            elevate customer experiences, and drive measurable business results.
+                        </p>
+
+                        {/* Features */}
+                        <div className="space-y-5 mb-10">
                             {[
                                 {
                                     icon: "🏆",
-                                    title: "Award-Winning Designs",
-                                    sub: "Recognized for creative excellence across 20+ industry awards."
+                                    title: "Award-Winning Digital Experiences",
+                                    sub: "Creative designs and intuitive user experiences recognized across the industry."
+                                },
+                                {
+                                    icon: "⚡",
+                                    title: "Performance & Scalability",
+                                    sub: "Modern technology stacks engineered for speed, security, and long-term growth."
                                 },
                                 {
                                     icon: "🎯",
-                                    title: "Results-Driven Strategy",
-                                    sub: "Every project is measured by KPIs that align with your business goals."
+                                    title: "Results-Focused Strategy",
+                                    sub: "Every solution is aligned with your business goals and measurable outcomes."
                                 }
                             ].map((item) => (
                                 <div key={item.title} className="flex gap-4 items-start">
-                                    <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0 bg-gradient-to-br from-orange-500/20 to-blue-500/20 border border-orange-400/30">
+                                    <div className="w-11 h-11 rounded-xl flex items-center justify-center text-lg flex-shrink-0 bg-gradient-to-br from-orange-500/20 to-blue-500/20 border border-orange-400/30">
                                         {item.icon}
                                     </div>
 
                                     <div>
-                                        <div className="font-semibold text-sm text-white">
+                                        <div className="font-semibold text-sm md:text-base text-white">
                                             {item.title}
                                         </div>
-                                        <div className="text-xs text-blue-300 mt-0.5">{item.sub}</div>
+                                        <div className="text-xs md:text-sm text-blue-300 mt-1">
+                                            {item.sub}
+                                        </div>
                                     </div>
                                 </div>
                             ))}
@@ -280,13 +294,13 @@ export default function AboutUs() {
 
                         <a
                             href="#"
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all hover:scale-105"
+                            className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold transition-all hover:scale-105"
                             style={{
                                 background: "linear-gradient(135deg, #f97316, #ea580c)",
                                 boxShadow: "0 6px 30px #f9731444"
                             }}
                         >
-                            Learn More →
+                            Discover Our Work →
                         </a>
                     </div>
                 </div>
