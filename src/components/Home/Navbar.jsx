@@ -69,6 +69,12 @@ const Navbar = () => {
                 </button>
               </Link>
 
+              <Link to="/meeting">
+                <button className="px-6 py-2 text-sm text-white bg-[#023A73] rounded-full hover:bg-black transition shadow-lg">
+                  Schedule Meeting
+                </button>
+              </Link>
+
             </nav>
 
           </div>
@@ -104,6 +110,12 @@ const Navbar = () => {
                     Contact Us
                   </button>
                 </Link>
+
+                 <Link to="/meeting">
+                <button className="px-6 py-2 text-sm text-white bg-[#023A73] rounded-full hover:bg-black transition shadow-lg">
+                  Schedule Meeting
+                </button>
+              </Link>
 
               </div>
 

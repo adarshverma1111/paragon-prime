@@ -117,7 +117,7 @@ export default function AboutUs() {
 
             {/* HERO */}
             <section
-                className="relative py-28 pb-10 flex flex-col items-center justify-center text-center px-6 overflow-hidden"
+                className="relative py-25 pb-10 flex flex-col items-center justify-center text-center px-6 overflow-hidden"
                 style={{ background: "linear-gradient(135deg, #020917 0%, #040d1f 50%, #060a14 100%)" }}
             >
                 <div className="absolute top-16 left-1/4 w-72 h-72 rounded-full blur-3xl opacity-20 pointer-events-none"

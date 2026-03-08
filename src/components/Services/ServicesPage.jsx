@@ -276,7 +276,7 @@ export default function ServicesPage() {
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-20 lg:mt-6 overflow-hidden"
-        style={{ minHeight: "90vh", paddingTop: "5rem", paddingBottom: "5rem" }}>
+        style={{ minHeight: "90vh", paddingTop: "6rem", paddingBottom: "5rem" }}>
 
         {/* BG glows */}
         <div className="absolute top-16 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-20 pointer-events-none"

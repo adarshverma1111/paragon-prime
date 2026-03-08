@@ -491,7 +491,7 @@ export default function IndustriesPage() {
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section
         className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-20 overflow-hidden"
-        style={{ minHeight: "88vh", paddingTop: "5rem", paddingBottom: "4rem" }}>
+        style={{ minHeight: "88vh", paddingTop: "3rem", paddingBottom: "4rem" }}>
 
         {/* BG glows */}
         <div className="absolute top-20 left-1/3 w-72 h-72 rounded-full blur-3xl opacity-20 pointer-events-none"

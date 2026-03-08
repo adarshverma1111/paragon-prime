@@ -58,37 +58,7 @@ const Fonts = () => (
     }
     .talk-link:hover { gap: 10px; }
 
-    /* Orbit animation */
-    @keyframes orbit-cw {
-      from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
-      to   { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
-    }
-    @keyframes orbit-ccw {
-      from { transform: rotate(0deg) translateX(160px) rotate(0deg); }
-      to   { transform: rotate(-360deg) translateX(160px) rotate(360deg); }
-    }
-    .orbit-cw  { animation: orbit-cw  14s linear infinite; }
-    .orbit-ccw { animation: orbit-ccw 20s linear infinite; }
-
-    @keyframes pulse-ring {
-      0%,100% { box-shadow: 0 0 0 0 rgba(59,130,246,0.25); }
-      50%      { box-shadow: 0 0 0 18px rgba(59,130,246,0); }
-    }
-    .pulse-ring { animation: pulse-ring 3s ease-in-out infinite; }
-
-    /* Bounce */
-    @keyframes bounce-y {
-      0%,100% { transform: translateY(0); }
-      50%      { transform: translateY(9px); }
-    }
-    .bounce-y { animation: bounce-y 2.2s ease-in-out infinite; }
-
-    .stat-glow { box-shadow: 0 0 0 1px rgba(255,255,255,0.07) inset; }
-    .pill-badge { backdrop-filter: blur(10px); }
-
-    /* Hide scrollbar */
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+   
   `}</style>
 );
 
@@ -109,81 +79,81 @@ function useInView(threshold = 0.12) {
 
 /* ─── Data ──────────────────────────────────────────────────────────────── */
 const STATS = [
-  { value: "50+",  label: "Integrations" },
-  { value: "10+",  label: "Years Experience" },
-  { value: "1000+",label: "Customers Satisfied" },
+  { value: "50+", label: "Integrations" },
+  { value: "10+", label: "Years Experience" },
+  { value: "1000+", label: "Customers Satisfied" },
   { value: "96%+", label: "Client Retention" },
 ];
 
 const CATEGORIES = [
-  { key: "all",         label: "All",                    Icon: FaPlug },
-  { key: "payment",     label: "Payment Methods",         Icon: FaCreditCard },
-  { key: "crypto",      label: "Crypto & Blockchain",     Icon: FaBitcoin },
-  { key: "ai",          label: "AI & ML",                 Icon: FaBrain },
-  { key: "metaverse",   label: "Meta Verse",              Icon: FaMagic },
-  { key: "notifications",label: "Notifications",          Icon: FaBell },
-  { key: "ads",         label: "Advertisement",           Icon: FaBullhorn },
-  { key: "support",     label: "Customer Support",        Icon: FaComments },
-  { key: "sms",         label: "SMS & Calling Solutions", Icon: FaComments },
-  { key: "forms",       label: "Forms & Survey",          Icon: FaWpforms },
-  { key: "health",      label: "Health & Fitness",        Icon: FaHeartbeat },
-  { key: "finance",     label: "Finance Services",        Icon: FaChartLine },
-  { key: "defi",        label: "Crypto",                  Icon: FaCoins },
+  { key: "all", label: "All", Icon: FaPlug },
+  { key: "payment", label: "Payment Methods", Icon: FaCreditCard },
+  { key: "crypto", label: "Crypto & Blockchain", Icon: FaBitcoin },
+  { key: "ai", label: "AI & ML", Icon: FaBrain },
+  { key: "metaverse", label: "Meta Verse", Icon: FaMagic },
+  { key: "notifications", label: "Notifications", Icon: FaBell },
+  { key: "ads", label: "Advertisement", Icon: FaBullhorn },
+  { key: "support", label: "Customer Support", Icon: FaComments },
+  { key: "sms", label: "SMS & Calling Solutions", Icon: FaComments },
+  { key: "forms", label: "Forms & Survey", Icon: FaWpforms },
+  { key: "health", label: "Health & Fitness", Icon: FaHeartbeat },
+  { key: "finance", label: "Finance Services", Icon: FaChartLine },
+  { key: "defi", label: "Crypto", Icon: FaCoins },
 ];
 
 const INTEGRATIONS = [
   // ── Payment Methods ──────────────────────────────────────
   {
-    cat: ["payment","all"],
+    cat: ["payment", "all"],
     name: "Stripe Integration",
     logo: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg",
     bg: "#6772E5",
-    desc: "JAMTECH Technologies has always been digitally innovative, ensuring flawless performance and reliability of your website.",
+    desc: "Paragon Prime Technologies has always been digitally innovative, ensuring flawless performance and reliability of your website.",
   },
   {
-    cat: ["payment","all"],
+    cat: ["payment", "all"],
     name: "PayPal Integration",
     logo: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png",
     bg: "#003087",
     desc: "PayPal integration is like adding a trustworthy payment partner to your online store connecting your customers seamlessly.",
   },
   {
-    cat: ["payment","all"],
+    cat: ["payment", "all"],
     name: "Razorpay",
     logo: "https://razorpay.com/assets/razorpay-glyph.svg",
     bg: "#3395FF",
     desc: "Razorpay Integration is like adding a friendly payment assistant to your website or app, helping you easily accept payments.",
   },
   {
-    cat: ["payment","all"],
+    cat: ["payment", "all"],
     name: "UPI Payments",
     logo: "https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg",
     bg: "#138808",
     desc: "Integrating UPI payments involves embedding UPI payment gateways such as decentralized finance applications.",
   },
   {
-    cat: ["payment","all"],
+    cat: ["payment", "all"],
     name: "PayU",
     logo: "https://logowik.com/content/uploads/images/payu3888.jpg",
     bg: "#60C4A9",
     desc: "PayU Integration involves incorporating PayU, a secure online payment gateway, into your website or application.",
   },
   {
-    cat: ["payment","all"],
+    cat: ["payment", "all"],
     name: "Authorize.Net",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Authorize.Net_logo.svg/2560px-Authorize.Net_logo.svg.png",
     bg: "#336699",
     desc: "Authorize.Net is an online payment gateway that simplifies the process of accepting payments on websites and applications.",
   },
   {
-    cat: ["payment","all"],
+    cat: ["payment", "all"],
     name: "Payoneer Integration",
     logo: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Payoneer_logo.svg",
     bg: "#FF4800",
     desc: "Payoneer Integration is like adding a versatile financial assistant to your online business for global payment acceptance.",
   },
   {
-    cat: ["payment","crypto","all"],
+    cat: ["payment", "crypto", "all"],
     name: "Solana",
     logo: "https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png",
     bg: "#9945FF",
@@ -192,28 +162,28 @@ const INTEGRATIONS = [
 
   // ── Crypto & Blockchain ──────────────────────────────────
   {
-    cat: ["crypto","all"],
+    cat: ["crypto", "all"],
     name: "Litecoin",
     logo: "https://upload.wikimedia.org/wikipedia/commons/3/33/Litecoin.svg",
     bg: "#345D9D",
     desc: "Integrating Litecoin onto a website involves embedding functionalities that enable users to transact with Litecoin.",
   },
   {
-    cat: ["crypto","all"],
+    cat: ["crypto", "all"],
     name: "Metamask",
     logo: "https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg",
     bg: "#E2761B",
     desc: "Integrating MetaMask onto a website involves embedding functionalities that enable users to interact with Ethereum.",
   },
   {
-    cat: ["crypto","all"],
+    cat: ["crypto", "all"],
     name: "Coin Exchange",
     logo: "https://cryptologos.cc/logos/bitcoin-btc-logo.svg",
     bg: "#F7931A",
     desc: "In a coin exchange, you can think of it as a digital marketplace where various cryptocurrencies are bought and sold.",
   },
   {
-    cat: ["crypto","all"],
+    cat: ["crypto", "all"],
     name: "Smart Contract",
     logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg",
     bg: "#627EEA",
@@ -222,49 +192,49 @@ const INTEGRATIONS = [
 
   // ── AI & ML ──────────────────────────────────────────────
   {
-    cat: ["ai","all"],
+    cat: ["ai", "all"],
     name: "OpenAI Completion API",
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
     bg: "#10A37F",
     desc: "We offer the OpenAI Completion API as a helpful service for businesses and developers. We make it easy by smoothly integrating.",
   },
   {
-    cat: ["ai","all"],
+    cat: ["ai", "all"],
     name: "Voice Synthesizer",
     logo: "https://img.icons8.com/fluency/96/microphone.png",
     bg: "#8B5CF6",
     desc: "Our company proudly offers a state-of-the-art voice synthesizer, leveraging advanced text-to-speech (TTS) technology.",
   },
   {
-    cat: ["ai","all"],
+    cat: ["ai", "all"],
     name: "Face Detection",
     logo: "https://img.icons8.com/fluency/96/face-id.png",
     bg: "#EF4444",
     desc: "Experience the power of our Face Detection Integration. Our technology helps machines easily find and recognize faces.",
   },
   {
-    cat: ["ai","metaverse","all"],
+    cat: ["ai", "metaverse", "all"],
     name: "Midjourney",
     logo: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Midjourney_Emblem.png",
     bg: "#2D3748",
     desc: "We're excited to tell you about our new service called 'Midjourney Integration.' It's a smart feature that uses Midjourney AI.",
   },
   {
-    cat: ["ai","all"],
+    cat: ["ai", "all"],
     name: "Data Forecasting",
     logo: "https://img.icons8.com/fluency/96/combo-chart.png",
     bg: "#3B82F6",
     desc: "We're experts in data forecasting, using past data to predict future trends. Our goal is to empower you with insights for smart decision-making.",
   },
   {
-    cat: ["ai","all"],
+    cat: ["ai", "all"],
     name: "Text/Audio/Video Generative",
     logo: "https://img.icons8.com/fluency/96/robot-2.png",
     bg: "#6366F1",
     desc: "Our company specializes in Text/Audio/Video Generative Technology. We use super smart computer tricks to create original content.",
   },
   {
-    cat: ["ai","all"],
+    cat: ["ai", "all"],
     name: "Banner Bear",
     logo: "https://img.icons8.com/fluency/96/bear.png",
     bg: "#F59E0B",
@@ -273,28 +243,28 @@ const INTEGRATIONS = [
 
   // ── Meta Verse ───────────────────────────────────────────
   {
-    cat: ["metaverse","all"],
+    cat: ["metaverse", "all"],
     name: "Augmented Reality",
     logo: "https://img.icons8.com/fluency/96/augmented-reality.png",
     bg: "#14B8A6",
     desc: "Augmented Reality (AR) is like a magic window that adds digital information to the real world around us using devices like phones.",
   },
   {
-    cat: ["metaverse","all"],
+    cat: ["metaverse", "all"],
     name: "Virtual Reality",
     logo: "https://img.icons8.com/fluency/96/virtual-reality.png",
     bg: "#8B5CF6",
     desc: "Virtual Reality (VR) is like a super cool adventure inside your computer. It's a technology that puts you in a different world.",
   },
   {
-    cat: ["metaverse","all"],
+    cat: ["metaverse", "all"],
     name: "Mixed Reality",
     logo: "https://img.icons8.com/fluency/96/vr-glasses.png",
     bg: "#3B82F6",
     desc: "Mixed Reality (MR) is like a mix of the real world and the digital world coming together to create something awesome.",
   },
   {
-    cat: ["metaverse","ai","all"],
+    cat: ["metaverse", "ai", "all"],
     name: "Avatar Generation With AI",
     logo: "https://img.icons8.com/fluency/96/avatar.png",
     bg: "#EC4899",
@@ -303,35 +273,35 @@ const INTEGRATIONS = [
 
   // ── Notifications ────────────────────────────────────────
   {
-    cat: ["notifications","all"],
+    cat: ["notifications", "all"],
     name: "Firebase Notification",
     logo: "https://upload.wikimedia.org/wikipedia/commons/3/37/Firebase_Logo.svg",
     bg: "#FFCA28",
     desc: "Firebase Notifications are like little messages sent to your phone from apps. They can pop up on your screen to keep you engaged.",
   },
   {
-    cat: ["notifications","all"],
+    cat: ["notifications", "all"],
     name: "One Signal Notification",
     logo: "https://img.icons8.com/color/96/onesignal.png",
     bg: "#E54B4B",
     desc: "OneSignal Notifications are like helpful messages that apps send to your phone to keep you informed about new things.",
   },
   {
-    cat: ["notifications","all"],
+    cat: ["notifications", "all"],
     name: "Local Push Notification",
     logo: "https://img.icons8.com/fluency/96/appointment-reminders.png",
     bg: "#10B981",
     desc: "Local Push Notifications are like friendly reminders from your phone itself. They pop up on your screen or make a sound to tell you something.",
   },
   {
-    cat: ["notifications","ads","all"],
+    cat: ["notifications", "ads", "all"],
     name: "AWS Notification Services",
     logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
     bg: "#FF9900",
     desc: "AWS Notification Services are like messengers that help apps and systems communicate with you. They send emails, texts, and more.",
   },
   {
-    cat: ["ads","all"],
+    cat: ["ads", "all"],
     name: "Google Analytics",
     logo: "https://upload.wikimedia.org/wikipedia/commons/8/89/Logo_Google_Analytics.svg",
     bg: "#E37400",
@@ -340,28 +310,28 @@ const INTEGRATIONS = [
 
   // ── Advertisement / Customer Support ─────────────────────
   {
-    cat: ["ads","support","all"],
+    cat: ["ads", "support", "all"],
     name: "Yahoo Gemini",
     logo: "https://img.icons8.com/color/96/yahoo.png",
     bg: "#6001D2",
     desc: "Yahoo Gemini is like a platform that helps businesses show ads to people who might be interested in their products or services.",
   },
   {
-    cat: ["support","all"],
+    cat: ["support", "all"],
     name: "TAWKTO",
     logo: "https://img.icons8.com/color/96/tawk-to.png",
     bg: "#03A84E",
     desc: "Tawk.to is a helpful chatting buddy for websites. It's free and makes it easy for businesses to talk with visitors in real-time.",
   },
   {
-    cat: ["support","sms","all"],
+    cat: ["support", "sms", "all"],
     name: "Slack",
     logo: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg",
     bg: "#4A154B",
     desc: "Slack is a chatting app where teams talk and work together, making teamwork fun. It's like a virtual office helping people collaborate.",
   },
   {
-    cat: ["support","all"],
+    cat: ["support", "all"],
     name: "Intercom",
     logo: "https://img.icons8.com/color/96/intercom.png",
     bg: "#1F8DED",
@@ -370,70 +340,70 @@ const INTEGRATIONS = [
 
   // ── SMS & Calling ─────────────────────────────────────────
   {
-    cat: ["sms","all"],
+    cat: ["sms", "all"],
     name: "Twilio",
     logo: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Twilio-logo-red.svg",
     bg: "#F22F46",
     desc: "Twilio is like a communication wizard for software developers, making it super easy to add messaging, voice, and video capabilities.",
   },
   {
-    cat: ["sms","all"],
+    cat: ["sms", "all"],
     name: "Sinch",
     logo: "https://img.icons8.com/color/96/sinch.png",
     bg: "#E91E63",
     desc: "Sinch is like a communication maestro for developers, offering a powerful platform to add messaging, voice, and video communications.",
   },
   {
-    cat: ["sms","all"],
+    cat: ["sms", "all"],
     name: "Nexmo",
     logo: "https://img.icons8.com/color/96/vonage.png",
     bg: "#1B75BB",
     desc: "Nexmo is like a communication wizard for developers, making it effortless to integrate messaging, voice, and other communication features.",
   },
   {
-    cat: ["sms","all"],
+    cat: ["sms", "all"],
     name: "Bandwidth",
     logo: "https://img.icons8.com/fluency/96/internet.png",
     bg: "#00ADB5",
     desc: "Bandwidth is like the highway for information on the internet. It refers to the capacity of a network to transmit data.",
   },
   {
-    cat: ["sms","all"],
+    cat: ["sms", "all"],
     name: "Plivo",
     logo: "https://img.icons8.com/color/96/phone.png",
     bg: "#00BCD4",
     desc: "Plivo is like a behind-the-scenes hero for communication in software applications. It provides tools and services for messaging and voice.",
   },
   {
-    cat: ["sms","all"],
+    cat: ["sms", "all"],
     name: "Tropo (Cisco)",
     logo: "https://img.icons8.com/color/96/cisco.png",
     bg: "#1BA0D7",
     desc: "Tropo is like a wizard for communication in software applications, making it easy for developers to add messaging and voice features.",
   },
   {
-    cat: ["sms","all"],
+    cat: ["sms", "all"],
     name: "Twilio SendGrid",
     logo: "https://img.icons8.com/color/96/sendgrid.png",
     bg: "#1A82E2",
     desc: "Twilio SendGrid is like a helpful messenger for businesses, ensuring that emails get delivered smoothly and reliably.",
   },
   {
-    cat: ["sms","all"],
+    cat: ["sms", "all"],
     name: "Agora",
     logo: "https://img.icons8.com/fluency/96/conference-call.png",
     bg: "#099DFD",
     desc: "Agora is like a virtual meeting room where developers can add real-time communication features to their applications.",
   },
   {
-    cat: ["sms","all"],
+    cat: ["sms", "all"],
     name: "Clickatell",
     logo: "https://img.icons8.com/fluency/96/sms.png",
     bg: "#00C176",
     desc: "Clickatell is like a messaging maestro for businesses, providing a platform that enables easy and efficient communication.",
   },
   {
-    cat: ["sms","all"],
+    cat: ["sms", "all"],
     name: "TokBox (Vonage)",
     logo: "https://img.icons8.com/color/96/vonage.png",
     bg: "#FF6428",
@@ -442,49 +412,49 @@ const INTEGRATIONS = [
 
   // ── Forms & Survey ────────────────────────────────────────
   {
-    cat: ["forms","all"],
+    cat: ["forms", "all"],
     name: "Google Forms",
     logo: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Google_Forms_2020_Logo.svg",
     bg: "#7B2FBE",
     desc: "Google Forms is an online tool provided by Google that allows users to create and distribute surveys, quizzes, and forms.",
   },
   {
-    cat: ["forms","all"],
+    cat: ["forms", "all"],
     name: "Wufoo",
     logo: "https://img.icons8.com/color/96/wufoo.png",
     bg: "#D63E2A",
     desc: "Wufoo is an online form builder that allows users to easily create and design forms for various purposes without needing coding skills.",
   },
   {
-    cat: ["forms","all"],
+    cat: ["forms", "all"],
     name: "Typeform",
     logo: "https://img.icons8.com/color/96/typeform.png",
     bg: "#262627",
     desc: "Typeform is an online platform that allows users to create interactive and engaging surveys, quizzes, forms, and questionnaires.",
   },
   {
-    cat: ["forms","all"],
+    cat: ["forms", "all"],
     name: "JotForm",
     logo: "https://img.icons8.com/color/96/jotform.png",
     bg: "#0A1551",
     desc: "JotForm is an online form-building platform that simplifies the process of creating and customizing forms for various purposes.",
   },
   {
-    cat: ["forms","all"],
+    cat: ["forms", "all"],
     name: "SurveyMonkey",
     logo: "https://img.icons8.com/color/96/survey.png",
     bg: "#00BF6F",
     desc: "SurveyMonkey is an online platform designed for creating and conducting surveys and questionnaires for data collection.",
   },
   {
-    cat: ["forms","all"],
+    cat: ["forms", "all"],
     name: "Gravity Forms",
     logo: "https://img.icons8.com/color/96/wordpress.png",
     bg: "#F26522",
     desc: "Gravity Forms is a WordPress plugin designed to simplify the process of creating and managing forms on a website.",
   },
   {
-    cat: ["forms","all"],
+    cat: ["forms", "all"],
     name: "Formstack",
     logo: "https://img.icons8.com/fluency/96/form.png",
     bg: "#21B573",
@@ -493,56 +463,56 @@ const INTEGRATIONS = [
 
   // ── Health & Fitness ──────────────────────────────────────
   {
-    cat: ["health","all"],
+    cat: ["health", "all"],
     name: "Fitbit API",
     logo: "https://img.icons8.com/color/96/fitbit.png",
     bg: "#00B0B9",
     desc: "The Fitbit API is a set of tools and protocols provided by Fitbit that allows developers to access and integrate Fitbit data.",
   },
   {
-    cat: ["health","all"],
+    cat: ["health", "all"],
     name: "Strava API",
     logo: "https://img.icons8.com/color/96/strava.png",
     bg: "#FC4C02",
     desc: "The Strava API is a set of tools and protocols provided by Strava, a popular fitness tracking platform for athletes.",
   },
   {
-    cat: ["health","all"],
+    cat: ["health", "all"],
     name: "Garmin Health API",
     logo: "https://img.icons8.com/color/96/garmin.png",
     bg: "#007CC3",
     desc: "The Garmin Health API is a set of tools and protocols provided by Garmin for accessing health and fitness data.",
   },
   {
-    cat: ["health","all"],
+    cat: ["health", "all"],
     name: "Samsung Health SDK",
     logo: "https://img.icons8.com/color/96/samsung.png",
     bg: "#1428A0",
     desc: "The Samsung Health Software Development Kit (SDK) is a set of tools and resources provided by Samsung to enable health app development.",
   },
   {
-    cat: ["health","all"],
+    cat: ["health", "all"],
     name: "Apple Health Kit",
     logo: "https://img.icons8.com/color/96/apple-health.png",
     bg: "#FF375F",
     desc: "Apple Health Kit is a framework developed by Apple that allows users to collect, store, and manage their health and fitness data.",
   },
   {
-    cat: ["health","all"],
+    cat: ["health", "all"],
     name: "Under Armour API",
     logo: "https://img.icons8.com/color/96/under-armour.png",
     bg: "#1D1D1B",
     desc: "Under Armour is a well-known American company that specializes in sportswear. Their API enables fitness data integration.",
   },
   {
-    cat: ["health","all"],
+    cat: ["health", "all"],
     name: "Google Fit API",
     logo: "https://img.icons8.com/color/96/google-fit.png",
     bg: "#EA4335",
     desc: "Google Fit API is a set of tools provided by Google that allows developers to create applications that access and utilize fitness data.",
   },
   {
-    cat: ["health","all"],
+    cat: ["health", "all"],
     name: "Open Humans API",
     logo: "https://img.icons8.com/fluency/96/human.png",
     bg: "#4CAF50",
@@ -551,56 +521,56 @@ const INTEGRATIONS = [
 
   // ── Finance Services ──────────────────────────────────────
   {
-    cat: ["finance","all"],
+    cat: ["finance", "all"],
     name: "QuickBooks API",
     logo: "https://img.icons8.com/color/96/quickbooks.png",
     bg: "#2CA01C",
     desc: "QuickBooks API is an interface provided by Intuit, the company behind QuickBooks accounting software, for seamless integration.",
   },
   {
-    cat: ["finance","all"],
+    cat: ["finance", "all"],
     name: "Zoho Books API",
     logo: "https://img.icons8.com/color/96/zoho.png",
     bg: "#E42527",
     desc: "Zoho Books API is a set of tools provided by Zoho, designed to facilitate the integration of external applications with Zoho Books.",
   },
   {
-    cat: ["finance","all"],
+    cat: ["finance", "all"],
     name: "Xero API",
     logo: "https://img.icons8.com/color/96/xero.png",
     bg: "#13B5EA",
     desc: "Xero API is an interface provided by Xero, a cloud-based accounting software, that allows developers to integrate external applications.",
   },
   {
-    cat: ["finance","all"],
+    cat: ["finance", "all"],
     name: "Sage Intacct API",
     logo: "https://img.icons8.com/color/96/sage.png",
     bg: "#00A651",
     desc: "Sage Intacct API is an interface provided by Sage Intacct, a cloud-based financial management software for enterprise integration.",
   },
   {
-    cat: ["finance","all"],
+    cat: ["finance", "all"],
     name: "Wave Financial API",
     logo: "https://img.icons8.com/fluency/96/financial-analytics.png",
     bg: "#0F6CB5",
     desc: "Wave Financial API is an interface provided by Wave, a financial software company, for integrating financial management tools.",
   },
   {
-    cat: ["finance","all"],
+    cat: ["finance", "all"],
     name: "Plaid API",
     logo: "https://img.icons8.com/color/96/plaid.png",
     bg: "#000000",
     desc: "Plaid API is a set of tools provided by Plaid, a financial technology company, allowing developers to create financial applications.",
   },
   {
-    cat: ["finance","all"],
+    cat: ["finance", "all"],
     name: "FreshBooks API",
     logo: "https://img.icons8.com/color/96/freshbooks.png",
     bg: "#1B9BD1",
     desc: "FreshBooks API is a set of tools provided by FreshBooks, an accounting software company, for seamless business integration.",
   },
   {
-    cat: ["finance","all"],
+    cat: ["finance", "all"],
     name: "Yodlee API",
     logo: "https://img.icons8.com/fluency/96/bank.png",
     bg: "#0047AB",
@@ -609,28 +579,28 @@ const INTEGRATIONS = [
 
   // ── DeFi / Crypto II ──────────────────────────────────────
   {
-    cat: ["defi","crypto","all"],
+    cat: ["defi", "crypto", "all"],
     name: "Smart Contract Integration",
     logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg",
     bg: "#627EEA",
     desc: "Smart contract integration refers to the incorporation of self-executing contracts, known as smart contracts, into a system.",
   },
   {
-    cat: ["defi","all"],
+    cat: ["defi", "all"],
     name: "CoinAPI",
     logo: "https://img.icons8.com/fluency/96/cryptocurrency.png",
     bg: "#F7931A",
     desc: "CoinAPI is a platform that provides access to a wide range of cryptocurrency data and services through a unified interface.",
   },
   {
-    cat: ["defi","all"],
+    cat: ["defi", "all"],
     name: "Wallet Integration",
     logo: "https://img.icons8.com/fluency/96/wallet.png",
     bg: "#9945FF",
     desc: "Wallet Integration refers to the process of incorporating a digital wallet into a system, application, or platform.",
   },
   {
-    cat: ["defi","crypto","all"],
+    cat: ["defi", "crypto", "all"],
     name: "Coinbase Pro API",
     logo: "https://img.icons8.com/color/96/coinbase.png",
     bg: "#0052FF",
@@ -665,15 +635,6 @@ const FEATURES = [
   },
 ];
 
-/* ─── Orbit hero logos ─────────────────────────────────────────────────── */
-const ORBIT_LOGOS = [
-  { src: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg", label: "Stripe" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png", label: "PayPal" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", label: "OpenAI" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg", label: "MetaMask" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/3/37/Firebase_Logo.svg", label: "Firebase" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg", label: "Slack" },
-];
 
 /* ─── Pill ──────────────────────────────────────────────────────────────── */
 const Pill = ({ Icon, label }) => (
@@ -795,52 +756,7 @@ const FeatCard = ({ feat, idx }) => {
   );
 };
 
-/* ─── Orbit Visual ──────────────────────────────────────────────────────── */
-const OrbitVisual = () => (
-  <div className="relative w-full h-full flex items-center justify-center" style={{ minHeight: 320 }}>
-    {/* Outer ring */}
-    <div className="absolute rounded-full border border-dashed border-white/10"
-      style={{ width: 340, height: 340 }} />
-    {/* Inner ring */}
-    <div className="absolute rounded-full border border-dashed border-white/8"
-      style={{ width: 240, height: 240 }} />
 
-    {/* Center logo */}
-    <div className="pulse-ring relative z-10 w-20 h-20 rounded-full bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-sm">
-      <span className="font-display text-2xl text-white">INT</span>
-    </div>
-
-    {/* Orbiting logos */}
-    {ORBIT_LOGOS.map((logo, i) => {
-      const angle = (i / ORBIT_LOGOS.length) * 360;
-      const rad = (angle * Math.PI) / 180;
-      const r = 160;
-      const x = Math.cos(rad) * r;
-      const y = Math.sin(rad) * r;
-      return (
-        <div key={i}
-          className="absolute w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-sm"
-          style={{ transform: `translate(${x}px, ${y}px)`, animation: `orbit-cw ${14 + i * 3}s linear infinite` }}>
-          <img src={logo.src} alt={logo.label} className="w-7 h-7 object-contain"
-            onError={(e) => { e.target.style.display = "none"; }} />
-        </div>
-      );
-    })}
-
-    {/* Connecting dots */}
-    {[...Array(8)].map((_, i) => {
-      const angle = (i / 8) * 360;
-      const rad = (angle * Math.PI) / 180;
-      const r = 120;
-      const x = Math.cos(rad) * r;
-      const y = Math.sin(rad) * r;
-      return (
-        <div key={i} className="absolute w-2 h-2 rounded-full"
-          style={{ background: i % 2 === 0 ? "#3b82f6" : "#f97316", opacity: 0.6, transform: `translate(${x}px, ${y}px)` }} />
-      );
-    })}
-  </div>
-);
 
 /* ─── CTA ───────────────────────────────────────────────────────────────── */
 const CTA = () => {
@@ -872,12 +788,12 @@ const CTA = () => {
         </p>
         <div className="flex gap-4 justify-center flex-wrap relative z-10">
           <a href="#"
-            className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-105"
+            className="px-5 sm:px-9 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-105"
             style={{ background: "linear-gradient(135deg,#f97316,#ea580c)", boxShadow: "0 6px 30px #f9731444" }}>
             Start a Conversation
           </a>
           <a href="#"
-            className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all text-blue-200 hover:text-white">
+            className="px-5 sm:px-9 py-3.5 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all text-blue-200 hover:text-white">
             View All Integrations →
           </a>
         </div>
@@ -893,7 +809,7 @@ export default function IntegrationsPage() {
   const [visibleCount, setVisibleCount] = useState(16);
 
   const filtered = INTEGRATIONS.filter(i => i.cat.includes(activeFilter));
-  const visible  = filtered.slice(0, visibleCount);
+  const visible = filtered.slice(0, visibleCount);
 
   const fade = (delay = 0) => ({
     opacity: heroVis ? 1 : 0,
@@ -915,78 +831,117 @@ export default function IntegrationsPage() {
       <Fonts />
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 lg:px-20 overflow-hidden gap-10 lg:gap-0"
-        style={{ minHeight: "88vh", paddingTop: "6rem", paddingBottom: "4rem" }}>
+      <section
+        className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-20 overflow-hidden"
+        style={{ minHeight: "88vh", paddingTop: "6rem", paddingBottom: "4rem" }}
+      >
 
         {/* BG glows */}
-        <div className="absolute top-20 left-1/4 w-72 h-72 rounded-full blur-3xl opacity-20 pointer-events-none"
-          style={{ background: "radial-gradient(circle,#3b82f6,transparent)" }} />
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-15 pointer-events-none"
-          style={{ background: "radial-gradient(circle,#f97316,transparent)" }} />
+        <div
+          className="absolute top-20 left-1/4 w-72 h-72 rounded-full blur-3xl opacity-20 pointer-events-none"
+          style={{ background: "radial-gradient(circle,#3b82f6,transparent)" }}
+        />
+        <div
+          className="absolute bottom-20 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-15 pointer-events-none"
+          style={{ background: "radial-gradient(circle,#f97316,transparent)" }}
+        />
 
-        {/* Left content */}
-        <div ref={heroRef} className="relative z-10 w-full lg:w-1/2 text-center lg:text-left">
+        {/* Content */}
+        <div ref={heroRef} className="relative z-10 w-full max-w-4xl mx-auto">
+
+          
+
           {/* Badge */}
-          <div style={fade(0)} className="flex justify-center lg:justify-start mb-6">
-            <span style={{ border: "1px solid #f9731555", color: "#fb923c", background: "#f9731511", padding: "6px 18px", borderRadius: "999px", fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 700 }}>
+          <div style={fade(0)} className="flex justify-center mb-6">
+            <span
+              style={{
+                border: "1px solid #f9731555",
+                color: "#fb923c",
+                background: "#f9731511",
+                padding: "6px 18px",
+                borderRadius: "999px",
+                fontSize: "0.7rem",
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+                fontWeight: 700
+              }}
+            >
               Pre-Built Integrations
             </span>
           </div>
 
           {/* Headline */}
           <div style={fade(0.1)}>
-            <h1 className="font-display text-white leading-none mb-2"
-              style={{ fontSize: "clamp(2.4rem,6vw,5rem)" }}>
+            <h1
+              className="font-display text-white leading-none mb-2"
+              style={{ fontSize: "clamp(2.4rem,6vw,5rem)" }}
+            >
               Experience Our
             </h1>
-            <h1 className="font-display leading-none mb-2"
-              style={{ fontSize: "clamp(2.4rem,6vw,5rem)", background: "linear-gradient(90deg,#f97316,#fbbf24)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+
+            <h1
+              className="font-display leading-none mb-2"
+              style={{
+                fontSize: "clamp(2.4rem,6vw,5rem)",
+                background: "linear-gradient(90deg,#f97316,#fbbf24)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent"
+              }}
+            >
               Pre-Built Integration
             </h1>
-            <h1 className="font-display text-white leading-none mb-7"
-              style={{ fontSize: "clamp(2.4rem,6vw,5rem)" }}>
+
+            <h1
+              className="font-display text-white leading-none mb-7"
+              style={{ fontSize: "clamp(2.4rem,6vw,5rem)" }}
+            >
               Services
             </h1>
           </div>
 
           {/* Subtext */}
-          <p className="text-blue-200 max-w-lg mb-8 leading-relaxed mx-auto lg:mx-0"
-            style={{ ...fade(0.25), fontSize: "clamp(0.9rem,1.8vw,1rem)" }}>
-            Our company specializes in providing pre-built integration services to streamline
-            and enhance various aspects of your business operations.
+          <p
+            className="text-blue-200 max-w-xl mx-auto mb-8 leading-relaxed"
+            style={{ ...fade(0.25), fontSize: "clamp(0.9rem,1.8vw,1rem)" }}
+          >
+            Our company specializes in providing pre-built integration services to
+            streamline and enhance various aspects of your business operations.
           </p>
 
           {/* Pills */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8" style={fade(0.3)}>
-            <Pill Icon={FaPlug}      label="50+ Integrations" />
+          <div className="flex flex-wrap justify-center gap-3 mb-8" style={fade(0.3)}>
+            <Pill Icon={FaPlug} label="50+ Integrations" />
             <Pill Icon={FaShieldAlt} label="Enterprise Grade" />
-            <Pill Icon={FaRocket}    label="Quick Setup" />
+            <Pill Icon={FaRocket} label="Quick Setup" />
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4" style={fade(0.4)}>
+          <div className="flex flex-wrap justify-center gap-4" style={fade(0.4)}>
             <button
-              className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-105 active:scale-95"
-              style={{ background: "linear-gradient(135deg,#f97316,#ea580c)", boxShadow: "0 6px 30px #f9731444" }}>
+              className="px-3 sm:px-9 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-105 active:scale-95"
+              style={{
+                background: "linear-gradient(135deg,#f97316,#ea580c)",
+                boxShadow: "0 6px 30px #f9731444"
+              }}
+            >
               Start a Conversation
             </button>
-            <button
-              className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all text-blue-200 hover:text-white">
+
+            <button className="px-3 sm:px-9 py-3.5 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all text-blue-200 hover:text-white">
               Explore Services →
             </button>
           </div>
-        </div>
 
-        {/* Right — orbit visual */}
-        <div className="relative z-10 w-full lg:w-1/2 flex items-center justify-center"
-          style={{ minHeight: 320, ...fade(0.2) }}>
-          <OrbitVisual />
         </div>
 
         {/* Scroll cue */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bounce-y opacity-30">
-          <div className="w-px h-10 mx-auto" style={{ background: "linear-gradient(to bottom,#3b82f6,transparent)" }} />
+          <div
+            className="w-px h-10 mx-auto"
+            style={{ background: "linear-gradient(to bottom,#3b82f6,transparent)" }}
+          />
         </div>
+
       </section>
 
       {/* ── STATS ────────────────────────────────────────────────────── */}
@@ -997,7 +952,7 @@ export default function IntegrationsPage() {
       </div>
 
       {/* ── INTEGRATIONS GRID ─────────────────────────────────────────── */}
-      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-20"
+      <section className="py-8 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-20"
         style={{ background: "linear-gradient(180deg,#040d1f,#050d1e,#040d1f)" }}>
 
         {/* Section header */}
@@ -1064,7 +1019,7 @@ export default function IntegrationsPage() {
       </section>
 
       {/* ── FEATURES ──────────────────────────────────────────────────── */}
-      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-20"
+      <section className="py-6 sm:py-20 lg:py-12 px-4 sm:px-6 lg:px-20"
         style={{ background: "linear-gradient(180deg,#050d1e,#040d1f)" }}>
         <SectionHeader
           eyebrow="Why Choose Us"

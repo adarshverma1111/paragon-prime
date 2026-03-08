@@ -12,13 +12,13 @@ import Homepage from "./components/Home/Homepage";
 import ConsultationPopup from "./components/Home/ConsultationPopup";
 import SupportSection from "./pages/SupportSection";
 import ScrollToTop from "./pages/ScrollToTop";
-import Contact from "./components/Home/ContactPage";
+import Contact from "./components/ContactUs/ContactPage";
 import ERPSolutions from "./pages/ERPSolutions";
 import CRMSolutions from "./pages/CRMSolutions";
 import AboutUs from "./components/Aboutus/AboutUs";
 import ServicesPage from "./components/Services/ServicesPage";
 import IndustriesPage from "./components/industries/IndustriesPage";
-import IntegrationsPage from "./components/Home/IntegrationsPage";
+import IntegrationsPage from "./components/Integrations/IntegrationsPage";
 
 function App() {
   return (

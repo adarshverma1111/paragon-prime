@@ -1,6 +1,6 @@
 import React from 'react'
 import ClientSuccessSection from './ClientSuccessSection'
-import ContactPage from './ContactPage'
+import ContactPage from '../ContactUs/ContactPage'
 import HeroSection from './HeroSection'
 import OurClients from './OurClients'
 import OurServices from './OurServices'
