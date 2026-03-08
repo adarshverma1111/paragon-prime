@@ -153,7 +153,7 @@ export default function WebsDevelopment() {
                     transition={{ duration: 1 }}
                     className="max-w-4xl relative z-10"
                 >
-                    <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+                    <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
                         Website Development
                     </h1>
 
