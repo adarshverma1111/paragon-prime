@@ -117,7 +117,7 @@ export default function AboutUs() {
 
             {/* HERO */}
             <section
-                className="relative py-28 flex flex-col items-center justify-center text-center px-6 overflow-hidden"
+                className="relative py-28 pb-10 flex flex-col items-center justify-center text-center px-6 overflow-hidden"
                 style={{ background: "linear-gradient(135deg, #020917 0%, #040d1f 50%, #060a14 100%)" }}
             >
                 <div className="absolute top-16 left-1/4 w-72 h-72 rounded-full blur-3xl opacity-20 pointer-events-none"
@@ -167,7 +167,7 @@ export default function AboutUs() {
             </section>
 
             {/* MISSION */}
-            <section className="py-24 px-6 bg-[#040d1f] overflow-hidden">
+            <section className="py-10 px-6 bg-[#040d1f] overflow-hidden">
                 <div
                     ref={missionRef}
                     className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center"
@@ -291,7 +291,7 @@ export default function AboutUs() {
 
             {/* SERVICES */}
             <section
-                className="py-24 px-6"
+                className="py-12 px-6"
                 style={{ background: "linear-gradient(180deg, #040d1f, #050d1e, #040d1f)" }}
             >
                 <div className="max-w-6xl mx-auto">
@@ -370,7 +370,7 @@ export default function AboutUs() {
             </section>
 
             {/* SKILLS */}
-            <section className="py-24 px-6" style={{ background: "#020917" }}>
+            <section className="py-12 px-6" style={{ background: "#020917" }}>
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
                     <div>
                         <div className="text-orange-400 text-xs tracking-widest uppercase font-semibold mb-3">Our Expertise</div>
@@ -400,7 +400,7 @@ export default function AboutUs() {
                 </div>
             </section>
             {/* CTA */}
-            <section className="py-24 px-6" style={{ background: "#020917" }}>
+            <section className="py-12 px-6" style={{ background: "#020917" }}>
                 <div className="max-w-3xl mx-auto text-center rounded-3xl p-12 border border-white/10 relative overflow-hidden"
                     style={{ background: "linear-gradient(135deg, #0f172a, #1e1b4b55)" }}>
                     <div className="absolute inset-0 pointer-events-none"
