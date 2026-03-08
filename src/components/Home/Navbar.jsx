@@ -64,13 +64,13 @@ const Navbar = () => {
               </Link>
 
               <Link to="/contact">
-                <button className="px-6 py-2 text-sm text-white bg-[#FB7118] rounded-full hover:bg-[#023A73] transition shadow-lg">
+                <button className="px-6 py-2 text-sm font-semibold text-white bg-[#FB7118] rounded-full hover:bg-[#023A73] transition shadow-lg">
                   Contact Us
                 </button>
               </Link>
 
               <Link to="/meeting">
-                <button className="px-6 py-2 text-sm text-white bg-[#023A73] rounded-full hover:bg-black transition shadow-lg">
+                <button className="px-6 py-2 text-sm font-semibold text-white bg-[#023A73] border border-[#023A73] rounded-full transition-all duration-300 hover:bg-[#012a55] hover:border-[#012a55] hover:shadow-[0_0_20px_rgba(2,58,115,0.4)]">
                   Schedule Meeting
                 </button>
               </Link>
@@ -111,11 +111,11 @@ const Navbar = () => {
                   </button>
                 </Link>
 
-                 <Link to="/meeting">
-                <button className="px-6 py-2 text-sm text-white bg-[#023A73] rounded-full hover:bg-black transition shadow-lg">
-                  Schedule Meeting
-                </button>
-              </Link>
+                <Link to="/meeting">
+                  <button className="px-6 py-2 text-sm font-semibold text-white bg-[#023A73] border border-[#023A73] rounded-full transition-all duration-300 hover:bg-[#012a55] hover:border-[#012a55] hover:shadow-[0_0_20px_rgba(2,58,115,0.4)]">
+                    Schedule Meeting
+                  </button>
+                </Link>
 
               </div>
 

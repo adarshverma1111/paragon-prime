@@ -137,7 +137,7 @@ export default function OurServices() {
 
                 <button
                   onClick={() => navigate(service.route)}
-                  className="px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 border border-[#f5a623]/40 text-[#f5a623] hover:bg-[#f5a623] hover:text-black hover:shadow-[0_0_20px_rgba(245,166,35,0.4)]"
+                  className="px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 border border-[#023A73] bg-[#023A73] text-white hover:bg-[#012a55] hover:border-[#012a55] hover:shadow-[0_0_20px_rgba(2,58,115,0.4)]"
                 >
                   Explore Service
                 </button>
