@@ -16,7 +16,8 @@ import Contact from "./components/Home/ContactPage";
 import ERPSolutions from "./pages/ERPSolutions";
 import CRMSolutions from "./pages/CRMSolutions";
 import AboutUs from "./components/Aboutus/AboutUs";
-import ServicesPage from "./components/Home/ServicesPage";
+import ServicesPage from "./components/Services/ServicesPage";
+import IndustriesPage from "./components/industries/IndustriesPage";
 
 function App() {
   return (
