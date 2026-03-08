@@ -328,7 +328,7 @@ export default function ServicesPage() {
           {/* CTAs */}
           <div className="flex flex-wrap justify-center gap-4" style={fade(0.4)}>
             <a href="#"
-              className="px-3 sm:px-9 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-105 active:scale-95"
+              className="px-3 sm:px-9 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-105 active:scale-95 "
               style={{ background: "linear-gradient(135deg,#f97316,#ea580c)", boxShadow: "0 6px 30px #f9731444" }}>
               Consult Our Experts
             </a>
