@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+
+
 import {
   FaUniversity, FaHeartbeat, FaShoppingCart, FaGraduationCap,
   FaIndustry, FaHome, FaTruck, FaGavel, FaChartBar,
@@ -262,17 +264,21 @@ const SectionHeader = ({ eyebrow, titleWhite, titleGrad, gradColors, sub }) => {
 };
 
 /* ─── Talk Button ───────────────────────────────────────────────────────── */
-const TalkBtn = ({ accent }) => (
+const TalkBtn = () => (
   <button
-    className="talk-btn inline-flex w-fit self-start items-center gap-2 mt-6 px-4 py-2 rounded-full font-semibold text-sm text-white"
-    style={{
-      background: `linear-gradient(135deg, ${accent}, ${accent}cc)`,
-      boxShadow: `0 6px 24px ${accent}33`
-    }}
+    className="talk-btn inline-flex w-fit self-start items-center gap-2 mt-6
+    px-4 py-2 text-sm font-semibold text-white
+    rounded-full border-none outline-none
+    bg-gradient-to-r from-[#000046] via-[#1CB5E0] to-[#000046]
+    bg-[length:200%_auto]
+    shadow-[0_0_20px_#eee]
+    transition-all duration-500
+    hover:bg-right"
   >
     Talk to Expert <FaArrowRight size={11} />
   </button>
 );
+
 
 /* ─── Industry Detail Section ───────────────────────────────────────────── */
 const IndustryDetail = ({ ind, accent, idx }) => {
