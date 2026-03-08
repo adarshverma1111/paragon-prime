@@ -267,12 +267,13 @@ const SectionHeader = ({ eyebrow, titleWhite, titleGrad, gradColors, sub }) => {
 const TalkBtn = () => (
   <button
     className="talk-btn inline-flex w-fit self-start items-center gap-2 mt-6
-    px-4 py-2 text-sm font-semibold text-white
-    rounded-full border-none outline-none
-    bg-gradient-to-r from-[#000046] via-[#1CB5E0] to-[#000046]
-    bg-[length:200%_auto]
-    transition-all duration-500
-    hover:bg-right"
+  px-4 py-2 text-sm font-semibold text-white
+  rounded-full border-none outline-none
+  border-b border-blue-900/60
+  bg-gradient-to-r from-[#000046] via-[#1CB5E0] to-[#000046]
+  bg-[length:200%_auto]
+  transition-all duration-500
+  hover:bg-right"
   >
     Talk to Expert <FaArrowRight size={11} />
   </button>
@@ -409,9 +410,15 @@ const CTA = () => {
           Let's talk — no commitment, just clarity.
         </p>
         <div className="flex gap-4 justify-center flex-wrap relative z-10">
-          <a href="#"
-            className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-105"
-            style={{ background: "linear-gradient(135deg,#f97316,#ea580c)", boxShadow: "0 6px 30px #f9731444" }}>
+          <a
+            href="#"
+            className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm text-white
+                       transition-all hover:scale-105
+                       bg-[length:200%_auto]
+                       bg-gradient-to-r from-[#fe8c00] via-[#f83600] to-[#fe8c00]
+                       shadow-[0_0_20px_#eee]
+                       hover:bg-right"
+          >
             Talk to an Expert
           </a>
           <a href="#"
