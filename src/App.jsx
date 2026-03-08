@@ -18,6 +18,7 @@ import CRMSolutions from "./pages/CRMSolutions";
 import AboutUs from "./components/Aboutus/AboutUs";
 import ServicesPage from "./components/Services/ServicesPage";
 import IndustriesPage from "./components/industries/IndustriesPage";
+import IntegrationsPage from "./components/Home/IntegrationsPage";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<ServicesPage/>} />
         <Route path="/industries" element={<IndustriesPage/>} />
+        <Route path="/integrations" element={<IntegrationsPage/>} />
 
         {/* 
         
