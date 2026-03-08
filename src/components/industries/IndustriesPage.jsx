@@ -271,7 +271,6 @@ const TalkBtn = () => (
     rounded-full border-none outline-none
     bg-gradient-to-r from-[#000046] via-[#1CB5E0] to-[#000046]
     bg-[length:200%_auto]
-    shadow-[0_0_20px_#eee]
     transition-all duration-500
     hover:bg-right"
   >
