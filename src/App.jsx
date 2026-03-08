@@ -19,6 +19,7 @@ import AboutUs from "./components/Aboutus/AboutUs";
 import ServicesPage from "./components/Services/ServicesPage";
 import IndustriesPage from "./components/industries/IndustriesPage";
 import IntegrationsPage from "./components/Integrations/IntegrationsPage";
+import TermsOfServices from "./pages/TermsOfServices";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path="/CRM-solution" element={<CRMSolutions />} />
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfServices />} />
         <Route path="/support" element={<SupportSection />} />
       </Routes>
 
