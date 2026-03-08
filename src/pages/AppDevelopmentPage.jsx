@@ -61,6 +61,29 @@ const sections = [
     },
 ];
 
+const whyChoose = [
+    {
+        title: "Expert Mobile Engineers",
+        desc: "Our experienced developers build high-performance mobile applications using modern frameworks and best coding practices.",
+        icon: <FaMobileAlt />,
+    },
+    {
+        title: "Scalable Architecture",
+        desc: "We design applications that scale effortlessly with your business growth and user demand.",
+        icon: <FaLayerGroup />,
+    },
+    {
+        title: "High Performance Apps",
+        desc: "Optimized code and architecture ensure lightning-fast performance and smooth user experience.",
+        icon: <FaCogs />,
+    },
+    {
+        title: "Faster Time to Market",
+        desc: "Agile development methodology allows us to deliver your mobile app faster without compromising quality.",
+        icon: <FaRocket />,
+    },
+];
+
 const imageVariant = {
     hidden: { opacity: 0, x: "20%" },
     show: {
@@ -181,6 +204,71 @@ export default function AppDevelopment() {
                 ))}
 
             </div>
+
+            {/* WHY CHOOSE US */}
+            <section className="relative py-12 px-6 lg:px-20 overflow-hidden">
+
+                {/* Glow Background */}
+                <div className="absolute top-20 left-1/3 w-[350px] h-[350px] bg-blue-500/10 blur-[120px] rounded-full" />
+                <div className="absolute bottom-10 right-1/4 w-[350px] h-[350px] bg-orange-500/10 blur-[120px] rounded-full" />
+
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16 relative z-10"
+                >
+                    <p className="text-orange-400 uppercase tracking-[4px] text-sm mb-4">
+                        Why Choose Us
+                    </p>
+
+                    <h2 className="text-4xl md:text-5xl font-bold">
+                        Why Our{" "}
+                        <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+                            App Development
+                        </span>{" "}
+                        Stands Out
+                    </h2>
+
+                    <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+                        We combine innovation, technology, and strategy to build powerful mobile
+                        applications that deliver real business impact.
+                    </p>
+                </motion.div>
+
+                {/* Cards */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+
+                    {whyChoose.map((item, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.2 }}
+                            viewport={{ once: true }}
+                            whileHover={{ y: -8 }}
+                            className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:border-orange-400/40 transition-all duration-300 group"
+                        >
+
+                            <div className="text-3xl text-orange-400 mb-4 group-hover:scale-110 transition">
+                                {item.icon}
+                            </div>
+
+                            <h3 className="text-xl font-semibold mb-3">
+                                {item.title}
+                            </h3>
+
+                            <p className="text-gray-400 text-sm leading-relaxed">
+                                {item.desc}
+                            </p>
+
+                        </motion.div>
+                    ))}
+
+                </div>
+
+            </section>
             {/* CTA */}
             <section className="relative py-16 md:py-20 px-6 lg:px-20 overflow-hidden">
 
