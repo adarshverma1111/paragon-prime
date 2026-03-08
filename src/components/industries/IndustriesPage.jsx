@@ -280,8 +280,6 @@ const TalkBtn = () => (
   </button>
 );
 
-
-
 /* ─── Industry Detail Section ───────────────────────────────────────────── */
 const IndustryDetail = ({ ind, accent, idx }) => {
   const [ref, vis] = useInView(0.1);
@@ -418,7 +416,6 @@ const CTA = () => {
                        transition-all hover:scale-105
                        bg-[length:200%_auto]
                        bg-gradient-to-r from-[#fe8c00] via-[#f83600] to-[#fe8c00]
-                       shadow-[0_0_20px_#eee]
                        hover:bg-right"
           >
             Talk to an Expert
@@ -542,8 +539,11 @@ export default function IndustriesPage() {
           {/* CTAs */}
           <div className="flex flex-wrap justify-center gap-4" style={fade(0.4)}>
             <button
-              className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-105 active:scale-95"
-              style={{ background: "linear-gradient(135deg,#f97316,#ea580c)", boxShadow: "0 6px 30px #f9731444" }}>
+               className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm text-white
+                       transition-all hover:scale-105
+                       bg-[length:200%_auto]
+                       bg-gradient-to-r from-[#fe8c00] via-[#f83600] to-[#fe8c00]
+                       hover:bg-right">
               Talk to an Expert
             </button>
             <a href="#technology"
