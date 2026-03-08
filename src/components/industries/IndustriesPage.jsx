@@ -412,7 +412,7 @@ const CTA = () => {
         <div className="flex gap-4 justify-center flex-wrap relative z-10">
           <a
             href="#"
-            className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm text-white
+            className="px-5 sm:px-9 py-3.5 rounded-full font-semibold text-sm text-white
                        transition-all hover:scale-105
                        bg-[length:200%_auto]
                        bg-gradient-to-r from-[#fe8c00] via-[#f83600] to-[#fe8c00]
@@ -539,7 +539,7 @@ export default function IndustriesPage() {
           {/* CTAs */}
           <div className="flex flex-wrap justify-center gap-4" style={fade(0.4)}>
             <button
-               className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm text-white
+              className="px-5 sm:px-9 py-3.5 rounded-full font-semibold text-sm text-white
                        transition-all hover:scale-105
                        bg-[length:200%_auto]
                        bg-gradient-to-r from-[#fe8c00] via-[#f83600] to-[#fe8c00]
