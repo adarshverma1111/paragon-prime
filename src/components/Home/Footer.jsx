@@ -89,8 +89,8 @@ export default function ParagonFooter() {
               </li>
 
               <li>
-                <Link to="/clients" className="text-gray-300 text-sm hover:text-[#134E8E] transition">
-                  &gt; Clients
+                <Link to="/industries" className="text-gray-300 text-sm hover:text-[#134E8E] transition">
+                  &gt; Industries
                 </Link>
               </li>
 
