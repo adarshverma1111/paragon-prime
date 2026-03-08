@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { FaCode, FaMobileAlt, FaRocket, FaSearch } from "react-icons/fa";
 
 /* ---------------- SERVICES ---------------- */
@@ -59,38 +59,38 @@ const sections = [
     },
 ];
 
-/* ---------------- FEATURES (NEW DYNAMIC COMPONENT) ---------------- */
+/* ---------------- FEATURES ---------------- */
 
 const features = [
     {
         icon: "⚡",
         title: "Lightning Fast Performance",
-        desc: "Optimized architecture and code splitting ensures blazing fast page load speed.",
+        desc: "Optimized architecture ensures blazing fast page speed.",
     },
     {
         icon: "🔒",
         title: "Enterprise Security",
-        desc: "Secure authentication and industry-standard security practices.",
+        desc: "Secure authentication and best security practices.",
     },
     {
         icon: "🌍",
         title: "Global Scalability",
-        desc: "Infrastructure designed to handle traffic growth and global expansion.",
+        desc: "Infrastructure built for traffic growth.",
     },
     {
         icon: "📈",
         title: "Data Driven Insights",
-        desc: "Analytics integration to track performance and user engagement.",
+        desc: "Analytics to track engagement and performance.",
     },
     {
         icon: "⚙️",
         title: "Automation & Integrations",
-        desc: "Third-party APIs and automated workflows to streamline operations.",
+        desc: "Third-party APIs and automation workflows.",
     },
     {
         icon: "🚀",
         title: "Future Ready Technology",
-        desc: "Built using modern frameworks and scalable cloud architecture.",
+        desc: "Built using modern frameworks and cloud systems.",
     },
 ];
 
@@ -108,30 +108,32 @@ const techStack = [
     "Docker",
     "GraphQL",
     "Firebase",
-    "Vercel"
+    "Vercel",
 ];
 
 /* ---------------- ANIMATION ---------------- */
 
 const imageVariant = {
-    hidden: { opacity: 0, x: 60 },
+    hidden: { opacity: 0, y: 30 },
     show: {
         opacity: 1,
-        x: 0,
-        transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
+        y: 0,
+        transition: { duration: 0.7, ease: "easeOut" },
     },
 };
 
 const textVariant = {
-    hidden: { opacity: 0, x: -60 },
+    hidden: { opacity: 0, y: 30 },
     show: {
         opacity: 1,
-        x: 0,
-        transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
+        y: 0,
+        transition: { duration: 0.7, ease: "easeOut" },
     },
 };
 
 export default function WebsDevelopment() {
+    const shouldReduceMotion = useReducedMotion();
+
     return (
         <div className="bg-gradient-to-b from-[#0a0f1c] via-[#0f172a] to-[#0a0f1c] text-white overflow-x-hidden">
 
@@ -148,9 +150,9 @@ export default function WebsDevelopment() {
                 </div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: -40 }}
+                    initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 0.8 }}
                     className="max-w-4xl relative z-10"
                 >
                     <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
@@ -165,99 +167,80 @@ export default function WebsDevelopment() {
 
             {/* SERVICES */}
 
-            <div className="relative overflow-hidden">
+            {sections.map((section, index) => (
+                <section
+                    key={index}
+                    className="relative py-16 px-6 lg:px-20 border-t border-white/5"
+                >
 
-                {/* Background Pattern */}
-                <div
-                    className="absolute inset-0 opacity-[0.08] pointer-events-none"
-                    style={{
-                        backgroundImage: `
-        radial-gradient(circle at 1px 1px, white 1px, transparent 0),
-        radial-gradient(circle at 50% 50%, rgba(255,165,0,0.15), transparent 60%)
-      `,
-                        backgroundSize: "40px 40px, 800px 800px",
-                    }}
-                />
-
-                {sections.map((section, index) => (
-                    <section
-                        key={index}
-                        className="relative py-16 px-6 lg:px-20 border-t border-white/5"
+                    <div
+                        className={`flex flex-col lg:flex-row items-center gap-16 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                            }`}
                     >
-                        <div
-                            className={`flex flex-col lg:flex-row items-center gap-16 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""
-                                }`}
+
+                        {/* IMAGE */}
+
+                        <motion.div
+                            variants={imageVariant}
+                            initial={shouldReduceMotion ? false : "hidden"}
+                            whileInView={shouldReduceMotion ? {} : "show"}
+                            viewport={{ once: true, margin: "-100px" }}
+                            className="lg:w-1/2 relative"
                         >
 
-                            {/* IMAGE */}
+                            <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 blur-2xl rounded-3xl" />
 
-                            <motion.div
-                                variants={imageVariant}
-                                initial="hidden"
-                                whileInView="show"
-                                viewport={{ once: true }}
-                                className="lg:w-1/2 relative"
-                            >
-                                {/* Glow behind image */}
-                                <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 blur-2xl rounded-3xl" />
+                            <img
+                                src={`${section.image}?auto=format&fit=crop&w=1200`}
+                                className="relative rounded-3xl shadow-2xl border border-white/10"
+                            />
 
-                                <img
-                                    src={`${section.image}?auto=format&fit=crop&w=1200`}
-                                    className="relative rounded-3xl shadow-2xl border border-white/10"
-                                />
-                            </motion.div>
+                        </motion.div>
 
-                            {/* TEXT */}
+                        {/* TEXT */}
 
-                            <motion.div
-                                variants={textVariant}
-                                initial="hidden"
-                                whileInView="show"
-                                viewport={{ once: true }}
-                                className="lg:w-1/2"
-                            >
-                                <div className="text-orange-400 text-3xl mb-4">
-                                    {section.icon}
-                                </div>
+                        <motion.div
+                            variants={textVariant}
+                            initial={shouldReduceMotion ? false : "hidden"}
+                            whileInView={shouldReduceMotion ? {} : "show"}
+                            viewport={{ once: true, margin: "-100px" }}
+                            className="lg:w-1/2"
+                        >
 
-                                <h2 className="text-4xl font-bold mb-6">
-                                    {section.title}
-                                </h2>
+                            <div className="text-orange-400 text-3xl mb-4">
+                                {section.icon}
+                            </div>
 
-                                <p className="text-gray-400 mb-8 leading-relaxed">
-                                    {section.description}
-                                </p>
+                            <h2 className="text-4xl font-bold mb-6">
+                                {section.title}
+                            </h2>
 
-                                <ul className="space-y-3">
-                                    {section.points.map((point, i) => (
-                                        <li
-                                            key={i}
-                                            className="text-gray-300 border-b border-white/10 pb-2"
-                                        >
-                                            {point}
-                                        </li>
-                                    ))}
-                                </ul>
+                            <p className="text-gray-400 mb-8 leading-relaxed">
+                                {section.description}
+                            </p>
 
-                            </motion.div>
+                            <ul className="space-y-3">
+                                {section.points.map((point, i) => (
+                                    <li
+                                        key={i}
+                                        className="text-gray-300 border-b border-white/10 pb-2"
+                                    >
+                                        {point}
+                                    </li>
+                                ))}
+                            </ul>
 
-                        </div>
-                    </section>
-                ))}
+                        </motion.div>
 
-            </div>
+                    </div>
+                </section>
+            ))}
 
-            {/* FEATURES SECTION (NEW) */}
+            {/* FEATURES */}
 
             <section className="py-24 px-6 lg:px-20 border-t border-white/5">
 
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
+                <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold mb-4">
                         Why Choose Our Development
                     </h2>
@@ -266,19 +249,20 @@ export default function WebsDevelopment() {
                         We combine cutting-edge technology and scalable architecture
                         to build high-performance digital platforms.
                     </p>
-                </motion.div>
+                </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     {features.map((feature, i) => (
+
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 50 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: i * 0.1 }}
-                            viewport={{ once: true }}
-                            whileHover={{ y: -10 }}
-                            className="group bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:border-orange-400/40 transition duration-300"
+                            viewport={{ once: true, margin: "-80px" }}
+                            transition={{ duration: 0.5, delay: i * 0.05 }}
+                            whileHover={{ y: -6 }}
+                            className="group bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:border-orange-400/40 transition"
                         >
 
                             <div className="text-4xl mb-4">
@@ -294,13 +278,13 @@ export default function WebsDevelopment() {
                             </p>
 
                         </motion.div>
+
                     ))}
 
                 </div>
-
             </section>
 
-            {/* TECH STACK SLIDER */}
+            {/* TECH STACK */}
 
             <section className="py-20 px-6 lg:px-20 border-t border-white/5 overflow-hidden">
 
@@ -311,12 +295,10 @@ export default function WebsDevelopment() {
                     </h2>
 
                     <p className="text-gray-400 max-w-xl mx-auto">
-                        We use modern technologies to build scalable, secure
-                        and high-performance digital products.
+                        Modern technologies to build scalable products.
                     </p>
 
                 </div>
-
 
                 <div className="relative w-full overflow-hidden">
 
@@ -324,7 +306,7 @@ export default function WebsDevelopment() {
                         animate={{ x: ["0%", "-50%"] }}
                         transition={{
                             repeat: Infinity,
-                            duration: 20,
+                            duration: 35,
                             ease: "linear",
                         }}
                         className="flex gap-8 w-max"
@@ -344,33 +326,30 @@ export default function WebsDevelopment() {
                     </motion.div>
 
                 </div>
-
             </section>
 
             {/* CTA */}
 
             <section className="relative py-16 md:py-20 px-6 lg:px-20 overflow-hidden">
 
-                {/* Background Image */}
                 <div className="absolute inset-0">
                     <img
-                        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80"
-                        alt="CTA Background"
+                        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
                         className="w-full h-full object-cover"
                     />
-                    {/* Dark Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/85 to-black/90" />
+                    <div className="absolute inset-0 bg-black/90" />
                 </div>
 
-                {/* Glow Layers */}
-                <div className="absolute top-10 left-1/3 w-[350px] h-[350px] bg-orange-500/10 blur-[130px] rounded-full" />
-                <div className="absolute bottom-10 right-1/4 w-[300px] h-[300px] bg-yellow-500/10 blur-[110px] rounded-full" />
+                {/* Reduced blur for mobile performance */}
+
+                <div className="absolute top-10 left-1/3 w-[350px] h-[350px] bg-orange-500/10 blur-[80px] rounded-full" />
+                <div className="absolute bottom-10 right-1/4 w-[300px] h-[300px] bg-yellow-500/10 blur-[70px] rounded-full" />
 
                 <motion.div
-                    initial={{ opacity: 0, y: 60 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
                     className="relative text-center max-w-3xl mx-auto z-10"
                 >
 
@@ -386,17 +365,15 @@ export default function WebsDevelopment() {
                     </h2>
 
                     <p className="text-gray-300 text-base md:text-lg mb-8 max-w-xl mx-auto">
-                        We design and engineer powerful websites that not only look stunning
-                        but drive measurable growth and long-term business success.
+                        We design and engineer powerful websites that drive measurable growth.
                     </p>
 
                     <motion.button
-                        whileHover={{ scale: 1.06 }}
+                        whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="px-10 py-4 text-base font-semibold rounded-full 
-                       bg-gradient-to-r from-orange-500 to-yellow-500 
-                       text-black shadow-[0_0_30px_rgba(255,165,0,0.4)]
-                       transition-all duration-300"
+            bg-gradient-to-r from-orange-500 to-yellow-500 
+            text-black shadow-[0_0_25px_rgba(255,165,0,0.4)]"
                     >
                         Start Your Project
                     </motion.button>
