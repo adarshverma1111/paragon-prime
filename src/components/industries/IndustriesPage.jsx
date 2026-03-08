@@ -83,10 +83,10 @@ function useInView(threshold = 0.13) {
 
 /* ─── Data ──────────────────────────────────────────────────────────────── */
 const STATS = [
-  { value: "12+",  label: "Industries Served" },
+  { value: "12+", label: "Industries Served" },
   { value: "250+", label: "Projects Delivered" },
-  { value: "98%",  label: "Client Satisfaction" },
-  { value: "40+",  label: "Domain Experts" },
+  { value: "98%", label: "Client Satisfaction" },
+  { value: "40+", label: "Domain Experts" },
 ];
 
 const SECTORS = [
@@ -264,8 +264,11 @@ const SectionHeader = ({ eyebrow, titleWhite, titleGrad, gradColors, sub }) => {
 /* ─── Talk Button ───────────────────────────────────────────────────────── */
 const TalkBtn = ({ accent }) => (
   <button
-    className="talk-btn inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full font-semibold text-sm text-white"
-    style={{ background: `linear-gradient(135deg, ${accent}, ${accent}cc)`, boxShadow: `0 6px 24px ${accent}33` }}
+    className="talk-btn inline-flex w-fit self-start items-center gap-2 mt-6 px-4 py-2 rounded-full font-semibold text-sm text-white"
+    style={{
+      background: `linear-gradient(135deg, ${accent}, ${accent}cc)`,
+      boxShadow: `0 6px 24px ${accent}33`
+    }}
   >
     Talk to Expert <FaArrowRight size={11} />
   </button>
@@ -470,7 +473,7 @@ export default function IndustriesPage() {
   }, []);
 
   return (
-    <div className="ind-root text-white overflow-x-hidden"
+    <div className="ind-root text-white overflow-x-hidden pt-12"
       style={{ background: "linear-gradient(135deg,#020917 0%,#040d1f 50%,#060a14 100%)" }}>
       <Fonts />
 
@@ -510,9 +513,9 @@ export default function IndustriesPage() {
 
           {/* Pills */}
           <div className="flex flex-wrap justify-center gap-3 mb-8" style={fade(0.2)}>
-            <Pill Icon={FaUsers}     label="12+ Industries" />
+            <Pill Icon={FaUsers} label="12+ Industries" />
             <Pill Icon={FaShieldAlt} label="Domain-Led Teams" />
-            <Pill Icon={FaWrench}    label="Proven Frameworks" />
+            <Pill Icon={FaWrench} label="Proven Frameworks" />
           </div>
 
           {/* Sub */}
