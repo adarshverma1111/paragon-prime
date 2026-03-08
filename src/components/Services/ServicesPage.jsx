@@ -245,12 +245,12 @@ const CTA = () => {
         </p>
         <div className="flex gap-4 justify-center flex-wrap relative z-10">
           <a href="#"
-            className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-105"
+            className="px-5 sm:px-9 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-105"
             style={{ background: "linear-gradient(135deg,#f97316,#ea580c)", boxShadow: "0 6px 30px #f9731444" }}>
             Start a Project
           </a>
           <a href="#"
-            className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all text-blue-200 hover:text-white">
+            className="px-5 sm:px-9 py-3.5 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all text-blue-200 hover:text-white">
             Schedule a Call 
           </a>
         </div>
@@ -328,12 +328,12 @@ export default function ServicesPage() {
           {/* CTAs */}
           <div className="flex flex-wrap justify-center gap-4" style={fade(0.4)}>
             <a href="#"
-              className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-105 active:scale-95"
+              className="px-4 sm:px-9 py-3.5 rounded-full font-semibold text-sm transition-all hover:scale-105 active:scale-95"
               style={{ background: "linear-gradient(135deg,#f97316,#ea580c)", boxShadow: "0 6px 30px #f9731444" }}>
               Consult Our Experts
             </a>
             <a href="#"
-              className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all text-blue-200 hover:text-white">
+              className="px-5 sm:px-9 py-3.5 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all text-blue-200 hover:text-white">
               View Portfolio →
             </a>
           </div>

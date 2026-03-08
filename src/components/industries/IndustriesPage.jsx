@@ -267,7 +267,7 @@ const SectionHeader = ({ eyebrow, titleWhite, titleGrad, gradColors, sub }) => {
 const TalkBtn = () => (
   <button
     className="talk-btn inline-flex w-fit self-start items-center gap-2 mt-6
-    px-4 py-2 text-sm font-semibold
+    px-5 py-3 text-sm font-semibold
     text-blue-600
     bg-transparent
     border border-blue-600
@@ -547,7 +547,7 @@ export default function IndustriesPage() {
               Talk to an Expert
             </button>
             <a href="#technology"
-              className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all text-blue-200 hover:text-white"
+              className="px-4 sm:px-9 py-3.5 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all text-blue-200 hover:text-white"
               onClick={(e) => { e.preventDefault(); scrollTo("technology"); }}>
               Explore Industries →
             </a>

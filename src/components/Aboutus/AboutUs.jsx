@@ -142,14 +142,14 @@ export default function AboutUs() {
                         Paragon Prime empowers businesses with cutting-edge digital solutions, combining creative design, modern technology, and strategic marketing to deliver exceptional online experiences.</p>
                     <div className="flex gap-4 justify-center flex-wrap"
                         style={{ opacity: heroVis ? 1 : 0, transform: heroVis ? "translateY(0)" : "translateY(20px)", transition: "all 0.7s ease 0.3s" }}>
-                        <a href="#" className="px-7 sm:px-9 py-3.5 rounded-full font-semibold text-sm text-white
+                        <a href="#" className="px-5 sm:px-9 py-3.5 rounded-full font-semibold text-sm text-white
                        transition-all hover:scale-105
                        bg-[length:200%_auto]
                        bg-gradient-to-r from-[#fe8c00] via-[#f83600] to-[#fe8c00]
                        hover:bg-right">
                             Explore Services
                         </a>
-                        <a href="#" className="px-7 py-3 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all hover:scale-105 text-blue-200">
+                        <a href="#" className="px-5 py-3 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all hover:scale-105 text-blue-200">
                             Meet the Team →
                         </a>
                     </div>
