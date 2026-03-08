@@ -90,11 +90,34 @@ const sections = [
   },
 ];
 
+const whyChoose = [
+  {
+    icon: <FaUserFriends />,
+    title: "360° Customer View",
+    desc: "Unified customer profiles that give your sales, marketing, and support teams complete visibility across every interaction."
+  },
+  {
+    icon: <FaRobot />,
+    title: "AI Powered Automation",
+    desc: "Automate repetitive workflows with AI-driven insights, predictive alerts, and smart recommendations."
+  },
+  {
+    icon: <FaChartPie />,
+    title: "Real-Time Revenue Insights",
+    desc: "Advanced analytics dashboards provide real-time visibility into pipeline performance and revenue growth."
+  },
+  {
+    icon: <FaHandshake />,
+    title: "Sales & Marketing Alignment",
+    desc: "Align your teams around one unified platform to improve collaboration, conversions, and customer engagement."
+  },
+];
+
 const stats = [
   { value: "320+", label: "CRM Deployments" },
-  { value: "2.8×",  label: "Pipeline Growth" },
-  { value: "68%",  label: "Faster Lead Response" },
-  { value: "94%",  label: "Customer Retention" },
+  { value: "2.8×", label: "Pipeline Growth" },
+  { value: "68%", label: "Faster Lead Response" },
+  { value: "94%", label: "Customer Retention" },
 ];
 
 const imageVariant = {
@@ -140,13 +163,12 @@ export default function CRMSolutions() {
           transition={{ duration: 1 }}
           className="max-w-4xl relative z-10"
         >
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
             CRM Solutions
           </h1>
-          <p className="text-gray-300 text-lg md:text-xl">
-            We build intelligent CRM platforms that unify your sales,
-            marketing, and customer success teams — driving revenue growth,
-            deeper relationships, and lasting loyalty at every stage.
+
+          <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-xl mx-auto md:mx-0 leading-relaxed">
+            Intelligent CRM platforms that unify sales, marketing, and customer success — helping teams build stronger customer relationships.
           </p>
         </motion.div>
       </section>
@@ -160,9 +182,8 @@ export default function CRMSolutions() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className={`flex flex-col items-center justify-center py-10 px-6 ${
-              i < stats.length - 1 ? "border-r border-white/10" : ""
-            }`}
+            className={`flex flex-col items-center justify-center py-10 px-6 ${i < stats.length - 1 ? "border-r border-white/10" : ""
+              }`}
           >
             <span className="text-4xl lg:text-5xl font-bold mb-1 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
               {s.value}
@@ -182,9 +203,8 @@ export default function CRMSolutions() {
             className="relative z-10 py-12 px-6 lg:px-20 border-t border-white/5"
           >
             <div
-              className={`flex flex-col lg:flex-row items-center gap-16 ${
-                index % 2 !== 0 ? "lg:flex-row-reverse" : ""
-              }`}
+              className={`flex flex-col lg:flex-row items-center gap-16 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                }`}
             >
 
               {/* Image */}
@@ -238,6 +258,74 @@ export default function CRMSolutions() {
           </section>
         ))}
       </div>
+
+      {/* WHY CHOOSE CRM */}
+      <section className="relative py-12 px-6 lg:px-20 overflow-hidden">
+
+        {/* Glow Background */}
+        <div className="absolute top-20 left-1/3 w-[350px] h-[350px] bg-orange-500/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-10 right-1/4 w-[350px] h-[350px] bg-blue-500/10 blur-[120px] rounded-full" />
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16 relative z-10"
+        >
+
+          <p className="text-orange-400 uppercase tracking-[4px] text-sm mb-4">
+            Why Choose Us
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-bold">
+            Why Our{" "}
+            <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+              CRM Solutions
+            </span>{" "}
+            Stand Out
+          </h2>
+
+          <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+            We build powerful CRM systems that unify teams, automate workflows,
+            and provide deep insights to help businesses build stronger
+            customer relationships and scale revenue.
+          </p>
+
+        </motion.div>
+
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+
+          {whyChoose.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10 }}
+              className="group bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:border-orange-400/40 transition duration-300"
+            >
+
+              <div className="text-3xl text-orange-400 mb-4 transition-transform duration-300 group-hover:scale-110">
+                {item.icon}
+              </div>
+
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-orange-400 transition">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {item.desc}
+              </p>
+
+            </motion.div>
+          ))}
+
+        </div>
+
+      </section>
 
       {/* ── CTA ── */}
       <section className="relative py-16 md:py-20 px-6 lg:px-20 overflow-hidden">

@@ -78,7 +78,7 @@ const SupportSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-f1f1f1 overflow-hidden py-20 px-4 sm:px-8"
+      className="relative bg-f1f1f1 overflow-hidden py-25 px-4 sm:px-8"
       style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
     >
       <div

@@ -90,10 +90,33 @@ const sections = [
   },
 ];
 
+const whyChoose = [
+  {
+    icon: <FaDatabase />,
+    title: "Unified Data Architecture",
+    desc: "Centralize all enterprise data into a single platform to eliminate silos and provide real-time operational visibility."
+  },
+  {
+    icon: <FaNetworkWired />,
+    title: "Seamless System Integrations",
+    desc: "Connect ERP with CRMs, payment gateways, logistics systems, and legacy platforms using secure API architectures."
+  },
+  {
+    icon: <FaShieldAlt />,
+    title: "Enterprise Grade Security",
+    desc: "Protect sensitive business data with advanced encryption, role-based access control, and compliance-ready frameworks."
+  },
+  {
+    icon: <FaChartLine />,
+    title: "Advanced Business Intelligence",
+    desc: "Gain real-time insights through predictive analytics, automated reporting, and interactive dashboards."
+  },
+];
+
 const stats = [
   { value: "150+", label: "ERP Deployments" },
-  { value: "40%",  label: "Avg. Cost Reduction" },
-  { value: "3×",   label: "Faster Reporting" },
+  { value: "40%", label: "Avg. Cost Reduction" },
+  { value: "3×", label: "Faster Reporting" },
   { value: "99.99%", label: "Uptime SLA" },
 ];
 
@@ -140,13 +163,13 @@ export default function ERPSolutions() {
           transition={{ duration: 1 }}
           className="max-w-4xl relative z-10"
         >
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
             ERP Solutions
           </h1>
-          <p className="text-gray-300 text-lg md:text-xl">
-            We engineer unified enterprise platforms that streamline Finance,
-            HR, Supply Chain, and Operations — giving your business the
-            clarity and control to scale with confidence.
+
+          <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-xl mx-auto md:mx-0 leading-relaxed">
+            Unified ERP platforms designed to streamline finance, HR, supply chain, and operations
+             — giving your business the clarity to scale with confidence.
           </p>
         </motion.div>
       </section>
@@ -160,9 +183,8 @@ export default function ERPSolutions() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className={`flex flex-col items-center justify-center py-10 px-6 ${
-              i < stats.length - 1 ? "border-r border-white/10" : ""
-            }`}
+            className={`flex flex-col items-center justify-center py-10 px-6 ${i < stats.length - 1 ? "border-r border-white/10" : ""
+              }`}
           >
             <span className="text-4xl lg:text-5xl font-bold mb-1 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
               {s.value}
@@ -182,9 +204,8 @@ export default function ERPSolutions() {
             className="relative z-10 py-12 px-6 lg:px-20 border-t border-white/5"
           >
             <div
-              className={`flex flex-col lg:flex-row items-center gap-16 ${
-                index % 2 !== 0 ? "lg:flex-row-reverse" : ""
-              }`}
+              className={`flex flex-col lg:flex-row items-center gap-16 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                }`}
             >
 
               {/* Image */}
@@ -238,6 +259,71 @@ export default function ERPSolutions() {
           </section>
         ))}
       </div>
+
+      {/* WHY CHOOSE ERP */}
+      <section className="relative py-12 px-6 lg:px-20 overflow-hidden">
+
+        {/* Glow */}
+        <div className="absolute top-20 left-1/3 w-[350px] h-[350px] bg-orange-500/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-10 right-1/4 w-[350px] h-[350px] bg-blue-500/10 blur-[120px] rounded-full" />
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16 relative z-10"
+        >
+          <p className="text-orange-400 uppercase tracking-[4px] text-sm mb-4">
+            Why Choose Us
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-bold">
+            Why Our{" "}
+            <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+              ERP Solutions
+            </span>{" "}
+            Stand Out
+          </h2>
+
+          <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+            Our ERP platforms combine scalability, security, and advanced analytics
+            to streamline operations, reduce complexity, and empower smarter
+            enterprise decision making.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+
+          {whyChoose.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10 }}
+              className="group bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:border-orange-400/40 transition duration-300"
+            >
+
+              <div className="text-3xl text-orange-400 mb-4 transition-transform duration-300 group-hover:scale-110">
+                {item.icon}
+              </div>
+
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-orange-400 transition">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {item.desc}
+              </p>
+
+            </motion.div>
+          ))}
+
+        </div>
+
+      </section>
 
       {/* ── CTA ── */}
       <section className="relative py-16 md:py-20 px-6 lg:px-20 overflow-hidden">

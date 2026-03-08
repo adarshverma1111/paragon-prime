@@ -126,14 +126,12 @@ export default function DigitalMarketing() {
                     transition={{ duration: 1 }}
                     className="max-w-4xl relative z-10"
                 >
-                    <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
                         Digital Marketing
                     </h1>
 
-                    <p className="text-gray-300 text-lg md:text-xl">
-                        We accelerate brand growth through powerful digital strategies,
-                        targeted campaigns, and data-driven marketing solutions that
-                        deliver measurable results.
+                    <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-xl mx-auto md:mx-0 leading-relaxed">
+                        Data-driven digital marketing strategies that boost visibility, engagement, and measurable growth.
                     </p>
                 </motion.div>
             </section>

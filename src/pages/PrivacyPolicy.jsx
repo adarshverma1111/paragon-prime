@@ -92,7 +92,7 @@ export default function PrivacyPolicy() {
         </section>
 
         {/* CONTENT */}
-        <div className="max-w-5xl mx-auto px-6 pb-32 space-y-20">
+        <div className="max-w-5xl mx-auto px-6 pb-20 space-y-20 -mt-16">
 
           {sections.map((section, index) => (
             <motion.div

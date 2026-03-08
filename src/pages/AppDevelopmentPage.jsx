@@ -126,14 +126,12 @@ export default function AppDevelopment() {
                     transition={{ duration: 1 }}
                     className="max-w-4xl relative z-10"
                 >
-                    <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
                         App Development
                     </h1>
 
-                    <p className="text-gray-300 text-lg md:text-xl">
-                        We build next-generation mobile applications that combine
-                        cutting-edge technology with exceptional user experiences
-                        to accelerate digital growth.
+                    <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-xl mx-auto md:mx-0 leading-relaxed">
+                       We build next-generation mobile apps that deliver powerful performance and exceptional user experiences.
                     </p>
                 </motion.div>
             </section>
