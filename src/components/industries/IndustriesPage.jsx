@@ -267,17 +267,19 @@ const SectionHeader = ({ eyebrow, titleWhite, titleGrad, gradColors, sub }) => {
 const TalkBtn = () => (
   <button
     className="talk-btn inline-flex w-fit self-start items-center gap-2 mt-6
-  px-4 py-2 text-sm font-semibold text-white
-  rounded-full border-none outline-none
-  border-b border-blue-900/60
-  bg-gradient-to-r from-[#000046] via-[#1CB5E0] to-[#000046]
-  bg-[length:200%_auto]
-  transition-all duration-500
-  hover:bg-right"
+    px-4 py-2 text-sm font-semibold
+    text-blue-600
+    bg-transparent
+    border border-blue-600
+    rounded-full
+    transition-all duration-300
+    hover:bg-blue-600 hover:text-white
+    hover:shadow-md hover:shadow-blue-500/30"
   >
     Talk to Expert <FaArrowRight size={11} />
   </button>
 );
+
 
 
 /* ─── Industry Detail Section ───────────────────────────────────────────── */
