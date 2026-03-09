@@ -45,7 +45,7 @@ function App() {
         <Route path="/CRM-solution" element={<CRMSolutions />} />
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms" element={<TermsOfServices />} />
+        <Route path="/terms" element={<TermsOfServices/>} />
         <Route path="/support" element={<SupportSection />} />
       </Routes>
 
