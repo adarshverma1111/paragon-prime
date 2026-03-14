@@ -69,7 +69,7 @@ export default function ConsultationPopup() {
     setIsSending(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch("https://paragon-prime0.onrender.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
