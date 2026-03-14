@@ -28,7 +28,7 @@ export default function ConsultationPopup() {
   const [errorMessage, setErrorMessage] = useState("");
   const timerRef = useRef(null);
 
-   useEffect(() => {
+  useEffect(() => {
     sessionStorage.removeItem("consultationPopupShown");
     timerRef.current = setTimeout(() => {
       setVisible(true);
@@ -68,20 +68,32 @@ export default function ConsultationPopup() {
 
     setIsSending(true);
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 9000); // 15s timeout
+
     try {
-      const response = await fetch("https://paragon-prime0.onrender.com/api/contact", {
+      const endpoint =
+        process.env.REACT_APP_CONTACT_ENDPOINT ||
+        "http://localhost:5000/api/contact";
+
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(form),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId);
 
       const data = await response.json();
 
       if (!response.ok || !data.success) {
         setErrorMessage(
-          data.message || "Unable to send message. Please try again.",
+          data.errors?.[0] ||
+            data.message ||
+            "Unable to send message. Please try again.",
         );
         return;
       }
@@ -94,10 +106,15 @@ export default function ConsultationPopup() {
       }, 2200);
     } catch (error) {
       console.error("Contact submit error:", error);
-      setErrorMessage(
-        "Unable to reach backend. Start backend server and retry.",
-      );
+      if (error.name === "AbortError") {
+        setErrorMessage("Request timed out. Please try again.");
+      } else {
+        setErrorMessage(
+          "Unable to reach backend. Start backend server and retry.",
+        );
+      }
     } finally {
+      clearTimeout(timeoutId);
       setIsSending(false);
     }
   };

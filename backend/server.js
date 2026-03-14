@@ -17,7 +17,7 @@ app.use(
     origin: process.env.FRONTEND_URL || "http://localhost:3000",
     methods: ["POST"],
     credentials: true,
-  })
+  }),
 );
 
 // Rate limiter: max 10 form submissions per IP per 15 minutes
@@ -51,6 +51,29 @@ app.use((err, req, res, next) => {
 });
 
 // ─── Start ────────────────────────────────────────────────────
-app.listen(PORT, () => {
-  console.log(`✅  Server running at http://localhost:${PORT}`);
-});
+const startServer = (port) => {
+  const server = app.listen(port, () => {
+    console.log(`✅  Server running at http://localhost:${port}`);
+  });
+
+  server.on("error", (err) => {
+    if (err.code === "EADDRINUSE") {
+      console.error(
+        `⚠️  Port ${port} is already in use. ` +
+          "Stop the other process or use a different PORT env value.",
+      );
+      if (port === 5000) {
+        const fallbackPort = 5001;
+        console.log(`🔁 Trying fallback port ${fallbackPort}...`);
+        startServer(fallbackPort);
+      } else {
+        process.exit(1);
+      }
+    } else {
+      console.error("Unhandled server error:", err);
+      process.exit(1);
+    }
+  });
+};
+
+startServer(PORT);
