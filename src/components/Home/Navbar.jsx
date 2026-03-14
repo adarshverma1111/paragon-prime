@@ -63,7 +63,7 @@ const Navbar = () => {
                 Integrations
               </Link>
 
-              <Link to="/contact">
+              <Link to="/contactHero">
                 <button className="px-6 py-2 text-sm font-semibold text-white bg-[#FB7118] rounded-full hover:bg-[#023A73] transition shadow-lg">
                   Contact Us
                 </button>
@@ -105,7 +105,7 @@ const Navbar = () => {
                   Integrations
                 </Link>
 
-                <Link to="/contact" onClick={() => setExpanded(false)}>
+                <Link to="/contactHero" onClick={() => setExpanded(false)}>
                   <button className="mt-2 px-5 py-2 text-sm text-white bg-[#FB7118] rounded-full w-fit hover:bg-[#023A73] transition shadow-lg">
                     Contact Us
                   </button>

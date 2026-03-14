@@ -20,6 +20,7 @@ import ServicesPage from "./components/Services/ServicesPage";
 import IndustriesPage from "./components/industries/IndustriesPage";
 import IntegrationsPage from "./components/Integrations/IntegrationsPage";
 import TermsOfServices from "./pages/TermsOfServices";
+import ContactHero from "./components/ContactUs/ContactHero";
 
 function App() {
   return (
@@ -31,13 +32,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/services" element={<ServicesPage/>} />
-        <Route path="/industries" element={<IndustriesPage/>} />
-        <Route path="/integrations" element={<IntegrationsPage/>} />
-
-        {/* 
-        
-        <Route path="/contact" element={<ContactPage />} /> */}
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/industries" element={<IndustriesPage />} />
+        <Route path="/integrations" element={<IntegrationsPage />} />
+        <Route path="/contactHero" element={<ContactHero />} />
         <Route path="/" element={<WelcomePage />} />
         <Route path="/web-development" element={<Webdevelopment />} />
         <Route path="/app-development" element={<AppDevelopmentPage />} />
@@ -45,7 +43,7 @@ function App() {
         <Route path="/CRM-solution" element={<CRMSolutions />} />
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms" element={<TermsOfServices/>} />
+        <Route path="/terms" element={<TermsOfServices />} />
         <Route path="/support" element={<SupportSection />} />
       </Routes>
 
