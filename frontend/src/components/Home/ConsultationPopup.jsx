@@ -74,7 +74,7 @@ export default function ConsultationPopup() {
     try {
       // ✅ Points to your Node backend — set REACT_APP_CONTACT_ENDPOINT in .env
       const endpoint =
-        "https://paragon-prime-okk.onrender.com";
+        "https://paragon-prime-okk.onrender.com/api/contact";
 
       const response = await fetch(endpoint, {
         method: "POST",
