@@ -48,11 +48,21 @@ app.use(
 );
 
 // ─── Nodemailer Transporter ───────────────────────────────────────────────────
+// const transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: MAIL_USER,
+//     pass: MAIL_PASS,
+//   },
+// });
+
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com", // Gmail SMTP
+  port: 465,              // SSL port
+  secure: true,           // true for 465, false for 587
   auth: {
-    user: MAIL_USER,
-    pass: MAIL_PASS,
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
   },
 });
 
