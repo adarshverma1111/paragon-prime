@@ -15,7 +15,7 @@ const MAIL_PASS = process.env.MAIL_PASS;
 
 if (!MAIL_USER || !MAIL_PASS) {
   console.error("\n──────────────────────────────────────────────");
-  console.error("❌  MISSING EMAIL CREDENTIALS IN .env FILE");
+  console.error("MISSING EMAIL CREDENTIALS IN .env FILE");
   console.error("──────────────────────────────────────────────");
   console.error("Create a .env file in your backend folder with:");
   console.error("  MAIL_USER=your_gmail@gmail.com");
@@ -58,7 +58,7 @@ const transporter = nodemailer.createTransport({
 
 transporter.verify((error) => {
   if (error) {
-    console.error("❌ Mail transporter error:", error.message);
+    console.error(" Mail transporter error:", error.message);
     console.error(
       "   → Make sure MAIL_PASS is a Gmail App Password, NOT your login password",
     );
