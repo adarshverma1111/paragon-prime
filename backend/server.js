@@ -56,6 +56,11 @@ app.use(
 //   },
 // });
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 const transporter = nodemailer.createTransport({
   host: "smtp.sendgrid.net",
   port: 587,
@@ -78,6 +83,8 @@ transporter.verify((error) => {
     console.log("✅ Mail transporter ready — sending from:", MAIL_USER);
   }
 });
+
+
 
 // ─── Validation Helper ────────────────────────────────────────────────────────
 function validateContactForm({ fullName, email, phone }) {
