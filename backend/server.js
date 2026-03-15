@@ -57,12 +57,11 @@ app.use(
 // });
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com", // Gmail SMTP
-  port: 465,              // SSL port
-  secure: true,           // true for 465, false for 587
+  host: "smtp.sendgrid.net",
+  port: 587,
   auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
+    user: "apikey",               // literally "apikey"
+    pass: process.env.SENDGRID_API_KEY,
   },
 });
 
