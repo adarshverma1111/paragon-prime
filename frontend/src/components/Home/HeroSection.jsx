@@ -74,7 +74,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="text-sm tracking-widest text-gray-300 uppercase"
           >
-            A Hub for Designers, Developers & Marketers
+            A Hub for Designers, Developers & Marketers.
           </motion.p>
 
           <motion.h1
