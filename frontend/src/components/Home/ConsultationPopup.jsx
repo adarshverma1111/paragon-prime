@@ -73,17 +73,28 @@ export default function ConsultationPopup() {
 
     try {
       // ✅ Points to your Node backend — set REACT_APP_CONTACT_ENDPOINT in .env
-      const endpoint =
-        "http://localhost:5000/api/contact";
+      // const endpoint =
+      //   "http://localhost:5000/api/contact";
 
-      const response = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-        signal: controller.signal,
-      });
+      // const response = await fetch(endpoint, {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(form),
+      //   signal: controller.signal,
+      // });
+
+      const endpoint = import.meta.env.VITE_CONTACT_ENDPOINT || "http://localhost:5000/api/contact";
+
+const response = await fetch(endpoint, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(form),
+  signal: controller.signal,
+});
 
       clearTimeout(timeoutId);
 
