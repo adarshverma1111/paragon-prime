@@ -8,7 +8,7 @@ export default function ContactHero() {
     >
       {/* HERO SECTION */}
       <section
-        className="relative w-full py-24 px-6 sm:px-10 lg:px-20 text-white bg-cover bg-center"
+        className="relative w-full py-35 px-6 sm:px-10 lg:px-20 text-white bg-cover bg-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1521791136064-7986c2920216')",
