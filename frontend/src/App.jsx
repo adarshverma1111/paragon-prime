@@ -45,6 +45,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfServices />} />
         <Route path="/support" element={<SupportSection />} />
+        <Route path="/meeting" element={<ConsultationPopup/>} />
       </Routes>
 
       {/* Footer on all pages */}
