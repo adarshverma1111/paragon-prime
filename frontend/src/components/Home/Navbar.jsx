@@ -41,9 +41,9 @@ const Navbar = () => {
             </button>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center space-x-10">
+            <nav className="hidden md:flex items-center space-x-10" >
 
-              <Link to="/" className="text-gray-600 hover:text-black text-sm cursor-pointer">
+              <Link to="/" className="text-gray-600 hover:text-black text-sm cursor-pointer" >
                 Home
               </Link>
 

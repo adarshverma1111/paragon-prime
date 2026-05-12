@@ -126,7 +126,7 @@ export default function DigitalMarketing() {
                     transition={{ duration: 1 }}
                     className="max-w-4xl relative z-10"
                 >
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                         Digital Marketing
                     </h1>
 
@@ -179,7 +179,7 @@ export default function DigitalMarketing() {
                                     {section.icon}
                                 </div>
 
-                                <h2 className="text-4xl font-bold mb-6">
+                                <h2 className="text-4xl font-bold mb-6"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                                     {section.title}
                                 </h2>
 
@@ -224,7 +224,7 @@ export default function DigitalMarketing() {
                         Why Choose Us
                     </p>
 
-                    <h2 className="text-4xl md:text-5xl font-bold">
+                    <h2 className="text-4xl md:text-5xl font-bold"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                         Why Our{" "}
                         <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
                             Digital Marketing
@@ -296,7 +296,7 @@ export default function DigitalMarketing() {
                         Let’s Grow Together
                     </p>
 
-                    <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                         Ready to Scale Your
                         <span className="bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
                             Digital Presence?

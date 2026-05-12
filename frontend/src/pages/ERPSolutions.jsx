@@ -163,7 +163,7 @@ export default function ERPSolutions() {
           transition={{ duration: 1 }}
           className="max-w-4xl relative z-10"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
             ERP Solutions
           </h1>
 
@@ -237,7 +237,7 @@ export default function ERPSolutions() {
                   {section.icon}
                 </div>
 
-                <h2 className="text-4xl font-bold mb-6">{section.title}</h2>
+                <h2 className="text-4xl font-bold mb-6"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>{section.title}</h2>
 
                 <p className="text-gray-400 mb-8 leading-relaxed">
                   {section.description}
@@ -278,7 +278,7 @@ export default function ERPSolutions() {
             Why Choose Us
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-4xl md:text-5xl font-bold"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
             Why Our{" "}
             <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
               ERP Solutions
@@ -310,7 +310,7 @@ export default function ERPSolutions() {
                 {item.icon}
               </div>
 
-              <h3 className="text-xl font-semibold mb-3 group-hover:text-orange-400 transition">
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-orange-400 transition"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                 {item.title}
               </h3>
 
@@ -348,7 +348,7 @@ export default function ERPSolutions() {
             Transform Your Enterprise
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
             Ready to Unify Your{" "}
             <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
               Operations?

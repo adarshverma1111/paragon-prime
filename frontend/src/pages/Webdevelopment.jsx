@@ -163,7 +163,7 @@ export default function WebsDevelopment() {
                     transition={{ duration: 1 }}
                     className="max-w-4xl relative z-10"
                 >
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                         Website Development
                     </h1>
 
@@ -230,7 +230,7 @@ export default function WebsDevelopment() {
                                     {section.icon}
                                 </div>
 
-                                <h2 className="text-4xl font-bold mb-6">
+                                <h2 className="text-4xl font-bold mb-6"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                                     {section.title}
                                 </h2>
 
@@ -268,7 +268,7 @@ export default function WebsDevelopment() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl font-bold mb-4">
+                    <h2 className="text-4xl font-bold mb-4"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                         Why Choose Our Development
                     </h2>
 
@@ -296,7 +296,7 @@ export default function WebsDevelopment() {
                                 {feature.icon}
                             </div>
 
-                            <h3 className="text-xl font-semibold mb-3 group-hover:text-orange-400 transition">
+                            <h3 className="text-xl font-semibold mb-3 group-hover:text-orange-400 transition"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                                 {feature.title}
                             </h3>
 
@@ -317,7 +317,7 @@ export default function WebsDevelopment() {
 
                 <div className="text-center mb-14">
 
-                    <h2 className="text-4xl font-bold mb-4">
+                    <h2 className="text-4xl font-bold mb-4"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                         Our Technology Stack
                     </h2>
 
@@ -389,7 +389,7 @@ export default function WebsDevelopment() {
                         Let’s Build The Future
                     </p>
 
-                    <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                         Ready to Create a{" "}
                         <span className="bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
                             High-Impact Digital Experience?

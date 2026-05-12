@@ -104,7 +104,7 @@ const SupportSection = () => {
           >
             Always Available
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 leading-tight"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
             Our <span className="text-orange-500">24/7</span> Support Services
           </h2>
           <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto" style={{ fontFamily: "'Arial', sans-serif" }}>

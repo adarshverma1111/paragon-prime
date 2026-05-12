@@ -126,7 +126,7 @@ export default function AppDevelopment() {
                     transition={{ duration: 1 }}
                     className="max-w-4xl relative z-10"
                 >
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                         App Development
                     </h1>
 
@@ -178,7 +178,7 @@ export default function AppDevelopment() {
                                     {section.icon}
                                 </div>
 
-                                <h2 className="text-4xl font-bold mb-6">
+                                <h2 className="text-4xl font-bold mb-6" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                                     {section.title}
                                 </h2>
 
@@ -217,13 +217,13 @@ export default function AppDevelopment() {
                     viewport={{ once: true }}
                     className="text-center mb-16 relative z-10"
                 >
-                    <p className="text-orange-400 uppercase tracking-[4px] text-sm mb-4">
+                    <p className="text-orange-400 uppercase tracking-[4px] text-sm mb-4"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                         Why Choose Us
                     </p>
 
-                    <h2 className="text-4xl md:text-5xl font-bold">
+                    <h2 className="text-4xl md:text-5xl font-bold"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                         Why Our{" "}
-                        <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                             App Development
                         </span>{" "}
                         Stands Out
@@ -297,7 +297,7 @@ export default function AppDevelopment() {
                         Let’s Build The Future
                     </p>
 
-                    <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                         Ready to Create a{" "}
                         <span className="bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
                             High-Impact Digital Experience?
