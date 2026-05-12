@@ -163,7 +163,7 @@ export default function ERPSolutions() {
           transition={{ duration: 1 }}
           className="max-w-4xl relative z-10"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-snug md:leading-tight mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
             ERP Solutions
           </h1>
 

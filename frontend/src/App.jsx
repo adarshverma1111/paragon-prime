@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import Navbar from "./components/Home/Navbar";
 import Footer from "./components/Home/Footer";
-
 import WelcomePage from "./components/Home/WelcomePage";
 import Webdevelopment from "./pages/Webdevelopment";
 import AppDevelopmentPage from "./pages/AppDevelopmentPage";
@@ -45,7 +43,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfServices />} />
         <Route path="/support" element={<SupportSection />} />
-        <Route path="/meeting" element={<ConsultationPopup/>} />
+        <Route path="/meeting" element={<ConsultationPopup />} />
       </Routes>
 
       {/* Footer on all pages */}
