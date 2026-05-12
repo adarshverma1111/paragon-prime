@@ -62,8 +62,8 @@ export default function SoftwareSolutions() {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            Software <span className="text-orange-500">Solutions</span>
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+            Software <span className="text-orange-500" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Solutions</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Comprehensive software solutions designed to streamline your business operations and drive growth
@@ -109,7 +109,7 @@ export default function SoftwareSolutions() {
                   </div>
 
                   <div className="p-6 text-center">
-                    <h3 className="text-white font-bold text-sm mb-3">
+                    <h3 className="text-white font-bold text-sm mb-3" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                       {card.title}
                     </h3>
                     <p className="text-gray-400 text-sm leading-relaxed">

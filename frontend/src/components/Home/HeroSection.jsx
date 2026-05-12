@@ -46,7 +46,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden min-h-[80vh] bg-black">
+    <section className="relative overflow-hidden min-h-[80vh] bg-black ">
 
       {/* Background Video */}
       <video
@@ -64,15 +64,15 @@ const HeroSection = () => {
      
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-5 flex items-center min-h-[85vh] md:min-h-screen">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 flex flex-col items-center justify-center min-h-[85vh] md:min-h-screen text-center">
 
-        <div className="lg:w-2/3 mt-32">
+        <div className="lg:w-3/4 mt-16 lg:mt-12">
 
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-sm tracking-widest text-gray-300 uppercase"
+            className="text-sm tracking-widest text-gray-300 uppercase text-center"
           >
             A Hub for Designers, Developers & Marketers.
           </motion.p>
@@ -81,9 +81,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-7xl xl:text-8xl"
+            className="mt-6 text-5xl font-bold leading-tight text-white tracking-[0.02em] sm:tracking-[0.035em] md:tracking-[0.04em] lg:tracking-[0.045em] xl:tracking-[0.05em] sm:whitespace-nowrap md:text-6xl lg:text-7xl xl:text-8xl"
+            style={{ fontFamily: "'Bebas Neue', sans-serif", lineHeight: 1.02 }}
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
               From Concept to
             </span>{" "}
             Creation
@@ -93,7 +94,8 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="max-w-xl mt-6 text-lg text-gray-200"
+            className="max-w-xl mx-auto mt-6 text-lg text-gray-200"
+            
           >
             We turn ideas into high-performance digital products. Our team builds
             smart, scalable, and user-focused software that solves real-world
@@ -105,7 +107,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex flex-wrap items-center gap-5 mt-12"
+            className="flex flex-wrap items-center justify-center gap-5 mt-12"
           >
 
             <button className="px-8 py-3 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-blue-600 to-orange-500 hover:scale-105 transition-all duration-300">
@@ -123,7 +125,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="flex flex-wrap items-center gap-10 mt-10 text-gray-300 text-sm"
+            className="flex flex-wrap items-center justify-center gap-10 mt-10 text-gray-300 text-sm"
           >
 
             <div className="flex items-center gap-2">

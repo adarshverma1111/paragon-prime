@@ -244,9 +244,10 @@ export default function SoftwareProcess() {
               fontSize: "clamp(1.6rem, 4vw, 2.8rem)",
               color: "#fdfdff",
               letterSpacing: "-0.01em",
+              fontFamily: "'Bebas Neue', sans-serif",
             }}
           >
-            Our Software<br /> <span style={{ color: '#FB7118' }}>Development</span> Process
+            Our Software<br /> <span style={{ color: '#FB7118', fontFamily: "'Bebas Neue', sans-serif" }}>Development</span> Process
           </h2>
         </div>
 

@@ -198,7 +198,7 @@ export default function OurClients() {
             Our Clients
           </p>
 
-          <h2 className="text-white font-bold text-3xl md:text-4xl leading-tight">
+          <h2 className="text-white font-bold text-3xl md:text-4xl leading-tight" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
             Loved by Startups, Trusted by
             <br className="hidden md:block"/>
             Enterprises

@@ -97,8 +97,8 @@ export default function OurWork() {
             Driving Digital Success
           </p>
 
-          <h1 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-white leading-[1.2] tracking-wide mb-8">
-            Innovative <span style={{ color: "#023A73" }}>Web</span> & Digital
+          <h1 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-white leading-[1.2] tracking-wide mb-8" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+            Innovative <span style={{ color: "#023A73", fontFamily: "'Bebas Neue', sans-serif"}}>Web</span> & Digital
             Solutions
           </h1>
 

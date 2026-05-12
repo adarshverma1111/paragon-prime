@@ -45,8 +45,9 @@ export default function PartnershipSlider() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3"
+           style={{ fontFamily: "'Bebas Neue', sans-serif" }}
         >
-          Partnership & <span className="text-orange-500">Collaborations</span>
+          Partnership & <span className="text-orange-500"  style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Collaborations</span>
         </motion.h2>
 
         <motion.p

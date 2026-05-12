@@ -161,8 +161,8 @@ export default function HeroSection() {
     }} className="flex items-center">
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
-        * { font-family: 'Outfit', system-ui, sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+        * { font-family: 'DM Sans', sans-serif; }
 
         .tag-chip {
           display: inline-flex; align-items: center; gap: 6px;
@@ -264,8 +264,8 @@ export default function HeroSection() {
 
             {/* Heading */}
             <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.4rem)", fontWeight: 900, lineHeight: 1.08, margin: "0 0 20px", color: "#f1f5f9" }}>
-              <span style={{ color: "#f97316" }}>Paragon</span>{" "}
-              <span style={{ color: "#ffffff" }}>Prime</span>
+              <span style={{ color: "#f97316", fontFamily: "'Bebas Neue', sans-serif" }}>Paragon</span>{" "}
+              <span style={{ color: "#ffffff", fontFamily: "'Bebas Neue', sans-serif" }}>Prime</span>
               <br />
               <span style={{ color: "#93c5fd", fontSize: "0.65em", fontWeight: 700 }}></span>
             </h1>
@@ -293,7 +293,7 @@ export default function HeroSection() {
             <div style={{ display: "flex", gap: 12, marginBottom: 32, flexWrap: "wrap" }}>
               {STATS.map(({ value, label }) => (
                 <div className="stat-card" key={label}>
-                  <div style={{ fontSize: 22, fontWeight: 900, color: "#f97316", lineHeight: 1 }}>{value}</div>
+                  <div style={{ fontSize: 22, fontWeight: 900, color: "#f97316", lineHeight: 1, fontFamily: "'Bebas Neue', sans-serif" }}>{value}</div>
                   <div style={{ fontSize: 11, color: "#64748b", marginTop: 4, letterSpacing: "0.08em", textTransform: "uppercase" }}>{label}</div>
                 </div>
               ))}

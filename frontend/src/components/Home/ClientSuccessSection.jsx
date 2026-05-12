@@ -58,7 +58,7 @@ export default function ClientSuccessSection() {
           >
             <h2
               className="font-black leading-tight"
-              style={{ fontSize: "clamp(1.75rem, 3.2vw, 2.6rem)", color: "#ffffff" }}
+              style={{ fontSize: "clamp(1.75rem, 3.2vw, 2.6rem)", color: "#ffffff", fontFamily: "'Bebas Neue', sans-serif" }}
             >
               See how we've helped our clients succeed...
             </h2>

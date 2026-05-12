@@ -3,14 +3,14 @@ import React, { useState } from "react";
 export default function Contact() {
   const [form, setForm] = useState({
     firstName: "",
-    lastName:  "",
-    email:     "",
-    phone:     "",
-    address:   "",
-    message:   "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address: "",
+    message: "",
   });
-  const [feedback, setFeedback]   = useState("");
-  const [error, setError]         = useState("");
+  const [feedback, setFeedback] = useState("");
+  const [error, setError] = useState("");
   const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e) => {
@@ -30,17 +30,17 @@ export default function Contact() {
 
     const payload = {
       firstName: firstName.trim(),
-      lastName:  lastName.trim(),
-      email:     email.trim(),
-      phone:     phone.trim(),
-      address:   form.address.trim(),
-      query:     form.message.trim(),
+      lastName: lastName.trim(),
+      email: email.trim(),
+      phone: phone.trim(),
+      address: form.address.trim(),
+      query: form.message.trim(),
     };
 
     setIsSending(true);
 
     const controller = new AbortController();
-    const timeoutId  = setTimeout(() => controller.abort(), 9000);
+    const timeoutId = setTimeout(() => controller.abort(), 9000);
 
     try {
       // ── Contact page uses /api/contact/page ─────────────────
@@ -49,10 +49,10 @@ export default function Contact() {
         "http://localhost:5000/api/contact/page";
 
       const resp = await fetch(endpoint, {
-        method:  "POST",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
-        body:    JSON.stringify(payload),
-        signal:  controller.signal,
+        body: JSON.stringify(payload),
+        signal: controller.signal,
       });
 
       clearTimeout(timeoutId);
@@ -85,10 +85,11 @@ export default function Contact() {
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
       {/* ── Left brand panel ── */}
-      <div className="hidden lg:flex flex-1 bg-[#06121c] text-white items-center justify-center p-10">
+      <div className="hidden lg:flex flex-1 bg-[#06121c] text-white items-center justify-center p-10 ">
         <div className="max-w-md text-center">
-          <h2 className="text-3xl font-bold mb-4">Paragon Prime</h2>
-          <p className="text-gray-300">
+          <h2 className="text-3xl font-bold mb-4"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Paragon Prime</h2>
+          <p className="text-gray-300" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
             Empowering businesses with innovative technology solutions. We
             transform ideas into reality with cutting-edge development and
             digital excellence.
@@ -99,7 +100,7 @@ export default function Contact() {
       {/* ── Right form panel ── */}
       <div className="flex-1 px-6 sm:px-10 lg:px-14 xl:px-20 py-8 bg-[#0f172a] text-white">
         <div className="w-full max-w-3xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-6">Contact Us</h2>
+          <h2 className="text-2xl font-semibold mb-6"  style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Contact Us</h2>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
             {/* First / Last name */}
@@ -189,7 +190,7 @@ export default function Contact() {
             </div>
 
             {/* Feedback / Error */}
-            {error    && <p className="text-red-300   text-sm" role="alert">{error}</p>}
+            {error && <p className="text-red-300   text-sm" role="alert">{error}</p>}
             {feedback && <p className="text-green-300 text-sm" role="status">{feedback}</p>}
 
             {/* Submit */}

@@ -63,8 +63,8 @@ export default function OurServices() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-5">
-          What We <span className="text-orange-500">Offer</span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-5" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+          What We <span className="text-orange-500" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Offer</span>
         </h2>
         <p className="text-gray-400 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
           We provide comprehensive technology solutions to help your business thrive in the digital age.
@@ -98,7 +98,7 @@ export default function OurServices() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-orange-500 font-black text-xl mb-4">
+                  <h3 className="text-orange-500 font-black text-xl mb-4" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                     {service.title}
                   </h3>
 
@@ -127,7 +127,7 @@ export default function OurServices() {
                   backdropFilter: "blur(8px)",
                 }}
               >
-                <h3 className="text-white font-bold text-2xl mb-4 tracking-wide">
+                <h3 className="text-white font-bold text-2xl mb-4 tracking-wide" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                   {service.title}
                 </h3>
 
@@ -149,7 +149,7 @@ export default function OurServices() {
       </div>
 
       {/* Required Custom CSS */}
-      <style jsx>{`
+      <style>{`
         .perspective {
           perspective: 1000px;
         }

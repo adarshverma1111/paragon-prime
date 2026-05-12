@@ -294,13 +294,14 @@ export default function TechStack() {
         transition={{ duration: 0.7 }}
         className="text-center mb-12 max-w-2xl relative z-10"
       >
-        <h2 className="text-3xl sm:text-5xl font-extrabold mb-4 leading-tight text-white">
+        <h2 className="text-3xl sm:text-5xl font-extrabold mb-4 leading-tight text-white" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
           Technology{" "}
           <span
             style={{
               background: `linear-gradient(90deg, ${THEME.blue}, ${THEME.orange})`,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
+              fontFamily: "'Bebas Neue', sans-serif",
             }}
           >
             Stack

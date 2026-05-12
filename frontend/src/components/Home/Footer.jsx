@@ -65,7 +65,7 @@ export default function ParagonFooter() {
 
           {/* Column 2 - Quick Links (col-span-1 on mobile = left half) */}
           <div className="col-span-1 text-left">
-            <h3 className="text-lg font-bold mb-2">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Quick Links</h3>
             <div className="w-10 h-0.5 bg-[#FF4400] mb-5"></div>
 
             <ul className="space-y-3">
@@ -111,7 +111,7 @@ export default function ParagonFooter() {
 
           {/* Column 3 - Services (col-span-1 on mobile = right half) */}
           <div className="col-span-1 text-left">
-            <h3 className="text-lg font-bold mb-2">Our Services</h3>
+            <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Our Services</h3>
             <div className="w-10 h-0.5 bg-[#FF4400] mb-5"></div>
 
             <ul className="space-y-3">
@@ -157,7 +157,7 @@ export default function ParagonFooter() {
 
           {/* Column 4 - Contact (full width on mobile) */}
           <div className="col-span-2 sm:col-span-1 text-left">
-            <h3 className="text-lg font-bold mb-2">Get In Touch</h3>
+            <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Get In Touch</h3>
             <div className="w-10 h-0.5 bg-[#FF4400] mb-5"></div>
 
             <div className="space-y-4 text-gray-300 text-sm">
