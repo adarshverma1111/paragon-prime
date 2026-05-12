@@ -125,20 +125,20 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="flex flex-wrap items-center justify-between gap-10 mt-10 text-gray-300 text-sm"
+            className="flex flex-wrap items-center gap-10 mt-10 text-gray-300 text-sm"
           >
 
-            <div className="flex items-center gap-2 min-w-[160px]">
+            <div className="flex items-center gap-2">
               <span className="text-xl font-bold text-white">{projects}+</span>
               <span>Projects Delivered</span>
             </div>
 
-            <div className="flex items-center gap-2 min-w-[160px]">
+            <div className="flex items-center gap-2">
               <span className="text-xl font-bold text-white">{clients}%</span>
               <span>Happy Clients</span>
             </div>
 
-            <div className="flex items-center gap-2 min-w-[160px]">
+            <div className="flex items-center gap-2">
               <span className="text-xl font-bold text-white">{experience}+</span>
               <span>Years Experience</span>
             </div>
