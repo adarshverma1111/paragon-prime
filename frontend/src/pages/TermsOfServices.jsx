@@ -51,6 +51,7 @@ export default function TermsOfServices() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-orange-400 to-blue-500 bg-clip-text text-transparent"
+                    style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                     Terms of Service
                 </motion.h1>
@@ -79,7 +80,7 @@ export default function TermsOfServices() {
                             {section.icon}
                         </div>
 
-                        <h3 className="text-xl font-semibold mb-3">
+                        <h3 className="text-xl font-semibold mb-3"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                             {section.title}
                         </h3>
 

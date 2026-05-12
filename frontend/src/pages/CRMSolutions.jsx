@@ -312,7 +312,7 @@ export default function CRMSolutions() {
                 {item.icon}
               </div>
 
-              <h3 className="text-xl font-semibold mb-3 group-hover:text-orange-400 transition">
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-orange-400 transition"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                 {item.title}
               </h3>
 

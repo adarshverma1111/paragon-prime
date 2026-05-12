@@ -258,7 +258,7 @@ export default function DigitalMarketing() {
                                 {item.icon}
                             </div>
 
-                            <h3 className="text-xl font-semibold mb-3">
+                            <h3 className="text-xl font-semibold mb-3"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                                 {item.title}
                             </h3>
 

@@ -80,6 +80,7 @@ export default function PrivacyPolicy() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-6xl font-bold"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
             Privacy <span className="text-orange-500">Policy</span>
           </motion.h1>
@@ -104,7 +105,7 @@ export default function PrivacyPolicy() {
               viewport={{ once: true }}
               className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-12 shadow-2xl hover:shadow-orange-500/20 transition"
             >
-              <h2 className="text-3xl font-semibold mb-8 flex items-center gap-4">
+              <h2 className="text-3xl font-semibold mb-8 flex items-center gap-4"style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                 <span className="text-orange-500 text-xl">
                   {(index + 1).toString().padStart(2, "0")}
                 </span>
@@ -138,7 +139,7 @@ export default function PrivacyPolicy() {
             {/* divider */}
             <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent mx-auto mb-10"></div>
 
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
               Have Questions About Your <span className="text-orange-500">Data?</span>
             </h3>
 
