@@ -62,7 +62,7 @@ export default function SoftwareSolutions() {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
             Software <span className="text-orange-500" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Solutions</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">

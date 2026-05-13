@@ -64,15 +64,15 @@ const HeroSection = () => {
      
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-5 flex items-center min-h-[85vh] md:min-h-screen">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 flex flex-col items-center justify-center min-h-[85vh] md:min-h-screen text-center">
 
-        <div className="lg:w-2/3 mt-32">
+        <div className="w-full lg:w-2/3 mx-auto mt-24 lg:mt-0">
 
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-sm tracking-widest text-gray-300 uppercase"
+            className="mx-auto text-sm tracking-widest text-gray-300 uppercase"
           >
             A Hub for Designers, Developers & Marketers.
           </motion.p>
@@ -94,8 +94,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="max-w-xl mt-6 text-lg text-gray-200"
-            
+            className="mx-auto max-w-xl mt-6 text-base sm:text-lg leading-relaxed text-gray-200"
           >
             We turn ideas into high-performance digital products. Our team builds
             smart, scalable, and user-focused software that solves real-world
@@ -107,14 +106,14 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex flex-wrap items-center gap-5 mt-12"
+            className="flex flex-wrap justify-center items-center gap-5 mt-12"
           >
 
-            <button className="px-8 py-3 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-blue-600 to-orange-500 hover:scale-105 transition-all duration-300">
+            <button className="w-full max-w-[220px] sm:w-auto sm:max-w-none px-8 py-4 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-blue-600 to-orange-500 hover:scale-105 transition-all duration-300">
               Learn More
             </button>
 
-            <button className="px-8 py-3 text-sm font-semibold text-white rounded-full border border-white/30 hover:bg-white hover:text-black transition">
+            <button className="w-full max-w-[220px] sm:w-auto sm:max-w-none px-8 py-4 text-sm font-semibold text-white rounded-full border border-white/30 hover:bg-white hover:text-black transition">
               Schedule Meeting
             </button>
 
@@ -125,7 +124,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="flex flex-wrap items-center gap-10 mt-10 text-gray-300 text-sm"
+            className="flex flex-wrap justify-center items-center gap-10 mt-10 text-gray-300 text-sm"
           >
 
             <div className="flex items-center gap-2">

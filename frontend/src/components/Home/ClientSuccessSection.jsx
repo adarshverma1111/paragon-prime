@@ -4,28 +4,28 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     id: 1,
-    name: "Darren",
+    name: "Abhishek sharma",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     stars: 5,
-    text: "I began my startup without any team. I soon realised that I need to invest in a technically sound team that can help me because I don't come from a technical background. Jamtech helped me build my entire product.",
+    text: "I was impressed by how fast loading our new site is; the responsive design ensures a seamless experience on every device.",
   },
   {
     id: 2,
-    name: "Peter",
+    name: "Sachin mishra",
     avatar: "https://randomuser.me/api/portraits/men/45.jpg",
     stars: 5,
     text: "We were having a lot of technical issues with our website. We didn't know where to turn to. Thanks to Paragon Prime, we have now successfully resolved all the issues.",
   },
   {
     id: 3,
-    name: "Sarah",
+    name: "Shruti verma",
     avatar: "https://randomuser.me/api/portraits/women/68.jpg",
     stars: 5,
     text: "Paragon prime transformed our entire digital infrastructure. Their team is incredibly knowledgeable and responsive.",
   },
   {
     id: 4,
-    name: "Michael",
+    name: "Rohit gupta",
     avatar: "https://randomuser.me/api/portraits/men/75.jpg",
     stars: 5,
     text: "Working with Paragon Prime has been an absolute pleasure.",
