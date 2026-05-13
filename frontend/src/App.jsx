@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { FaWhatsapp, FaArrowUp } from "react-icons/fa";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Home/Navbar";
 import Footer from "./components/Home/Footer";
 import WelcomePage from "./components/Home/WelcomePage";
@@ -22,6 +23,21 @@ import TermsOfServices from "./pages/TermsOfServices";
 import ContactHero from "./components/ContactUs/ContactHero";
 
 function App() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <Router>
       <style>{`
@@ -35,6 +51,19 @@ function App() {
         }
         .float-animation {
           animation: float 3s ease-in-out infinite;
+        }
+        @keyframes dropDown {
+          0% {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0px);
+          }
+        }
+        .drop-animation {
+          animation: dropDown 0.5s ease-out forwards;
         }
       `}</style>
       
@@ -76,14 +105,16 @@ function App() {
         <FaWhatsapp className="h-7 w-7" />
       </a>
 
-      {/* Scroll-to-top button */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed right-5 bottom-5 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-[0_12px_24px_rgba(249,115,22,0.25)] ring-1 ring-orange-400/30 transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0_16px_28px_rgba(249,115,22,0.35)]"
-        aria-label="Scroll to top"
-      >
-        <FaArrowUp className="h-3.5 w-3.5" />
-      </button>
+      {/* Scroll-to-top button - only shows after scroll */}
+      {isScrolled && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed right-5 bottom-5 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-[0_12px_24px_rgba(249,115,22,0.25)] ring-1 ring-orange-400/30 transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0_16px_28px_rgba(249,115,22,0.35)] drop-animation"
+          aria-label="Scroll to top"
+        >
+          <FaArrowUp className="h-3.5 w-3.5" />
+        </button>
+      )}
     </Router>
   );
 }
