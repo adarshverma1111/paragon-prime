@@ -21,6 +21,7 @@ import IndustriesPage from "./components/industries/IndustriesPage";
 import IntegrationsPage from "./components/Integrations/IntegrationsPage";
 import TermsOfServices from "./pages/TermsOfServices";
 import ContactHero from "./components/ContactUs/ContactHero";
+import ScheduleMeetingPopup from "./pages/ScheduleMeetingPopup";
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -87,7 +88,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfServices />} />
         <Route path="/support" element={<SupportSection />} />
-        <Route path="/meeting" element={<ConsultationPopup />} />
+        <Route path="/meeting" element={<ScheduleMeetingPopup/>} />
       </Routes>
 
       {/* Footer on all pages */}
