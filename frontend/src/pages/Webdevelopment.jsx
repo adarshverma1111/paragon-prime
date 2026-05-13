@@ -11,6 +11,11 @@ import {
     FaCogs,
     FaRocket
 } from "react-icons/fa";
+import web from "../assets/images/web.jpg";
+import custom from "../assets/images/custom.jpg";
+import responsive from "../assets/images/responsive.jpg";
+import seo from "../assets/images/seo.jpg";
+import launch from "../assets/images/launch.jpg";
 
 /* ---------------- SERVICES ---------------- */
 
@@ -26,7 +31,7 @@ const sections = [
             "Clean Code & Maintainable Structure",
             "API & Third-Party Integrations",
         ],
-        image: "https://wallpaperaccess.com/full/4635743.jpg",
+        image: custom,
     },
     {
         title: "Responsive & Mobile-First Design",
@@ -39,7 +44,7 @@ const sections = [
             "Optimized Touch Experience",
             "Fast Loading Interfaces",
         ],
-        image: "https://images.unsplash.com/photo-1551650975-87deedd944c3",
+        image: responsive,
     },
     {
         title: "SEO & Performance Optimization",
@@ -52,7 +57,7 @@ const sections = [
             "Structured Data Markup",
             "Speed & Image Optimization",
         ],
-        image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07",
+        image: seo,
     },
     {
         title: "Launch & Growth Strategy",
@@ -65,7 +70,7 @@ const sections = [
             "Analytics Integration",
             "Continuous Optimization",
         ],
-        image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+        image: launch,
     },
 ];
 
@@ -151,7 +156,7 @@ export default function WebsDevelopment() {
 
                 <div className="absolute inset-0">
                     <img
-                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                        src={web}
                         className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/80" />

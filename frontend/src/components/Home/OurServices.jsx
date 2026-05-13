@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import web from "../../assets/images/web.jpg";
+import app from "../../assets/images/app.jpg";
+import digital from "../../assets/images/digital.jpg";
 
 export default function OurServices() {
   const navigate = useNavigate();
@@ -12,7 +15,7 @@ export default function OurServices() {
       backText:
         "Get a high-performing website tailored to your brand and business goals.",
       tags: ["Responsive Design", "SEO Optimized", "Fast Loading", "Custom CMS"],
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      image: web,
       route: "/web-development",
     },
     {
@@ -22,7 +25,7 @@ export default function OurServices() {
       backText:
         "Launch scalable mobile apps with seamless user experiences.",
       tags: ["iOS & Android", "Cross-Platform", "Native Apps", "UI/UX Design"],
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3",
+      image: app,
       route: "/app-development",
     },
     {
@@ -32,7 +35,7 @@ export default function OurServices() {
       backText:
         "Boost your brand visibility and generate quality leads.",
       tags: ["SEO", "PPC Campaigns", "Content Marketing", "Analytics"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+      image: digital,
       route: "/digital-marketing",
     },
   ];
