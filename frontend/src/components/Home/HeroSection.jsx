@@ -94,7 +94,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="mx-auto max-w-xl mt-6 text-base sm:text-lg leading-relaxed text-gray-200"
+            className="mx-auto max-w-xl mt-5 text-sm sm:text-base leading-snug text-gray-300"
           >
             We turn ideas into high-performance digital products. Our team builds
             smart, scalable, and user-focused software that solves real-world
@@ -124,20 +124,20 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="flex flex-wrap justify-center items-center gap-10 mt-10 text-gray-300 text-sm"
+            className="flex flex-row flex-nowrap justify-center items-center gap-5 mt-10 text-gray-300 text-sm"
           >
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 min-w-[160px] justify-center whitespace-nowrap">
               <span className="text-xl font-bold text-white">{projects}+</span>
               <span>Projects Delivered</span>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 min-w-[160px] justify-center whitespace-nowrap">
               <span className="text-xl font-bold text-white">{clients}%</span>
               <span>Happy Clients</span>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="hidden md:flex items-center gap-2">
               <span className="text-xl font-bold text-white">{experience}+</span>
               <span>Years Experience</span>
             </div>
