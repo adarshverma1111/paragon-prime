@@ -269,7 +269,7 @@ export default function ConsultationPopup() {
                   >
                     ✅
                   </div>
-                  <h3 className="text-xl font-black text-gray-800 mb-2" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+                  <h3 className="text-xl font-black text-gray-800 mb-2">
                     Message Sent!
                   </h3>
                   <p className="text-gray-500 text-sm">
@@ -282,7 +282,7 @@ export default function ConsultationPopup() {
                     <p className="text-orange-500 text-xs font-semibold uppercase tracking-wider mb-1">
                       Are you planning?
                     </p>
-                    <h2 className="text-gray-900 text-xl font-black leading-tight" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+                    <h2 className="text-gray-900 text-xl font-black leading-tight">
                       Get free Consultation with one of our{" "}
                       <span className="text-orange-500">Experts</span>
                     </h2>
