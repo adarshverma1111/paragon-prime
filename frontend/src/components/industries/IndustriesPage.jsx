@@ -8,6 +8,7 @@ import {
   FaBullhorn, FaHandHoldingHeart, FaRocket, FaArrowRight,
   FaWrench, FaShieldAlt, FaUsers, FaGlobe,
 } from "react-icons/fa";
+import OurClients from "../Home/OurClients";
 
 /* ─── Google Fonts ─────────────────────────────────────────────────────── */
 const Fonts = () => (
@@ -586,6 +587,8 @@ export default function IndustriesPage() {
           <SectorBlock key={s.key} sector={s} />
         ))}
       </div>
+
+      <OurClients />
 
       {/* ── CTA ──────────────────────────────────────────────────────── */}
       <CTA />

@@ -6,6 +6,7 @@ import {
   FaUsers, FaWrench, FaShieldAlt, FaRocket,
   FaPencilRuler, FaArrowRight,
 } from "react-icons/fa";
+import OurClients from "../Home/OurClients";
 
 /* ─── Google Fonts ───────────────────────────────────────────────────────── */
 const Fonts = () => (
@@ -369,7 +370,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      
+      <OurClients />
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}
       <CTA />

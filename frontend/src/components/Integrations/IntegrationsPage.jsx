@@ -6,6 +6,7 @@ import {
   FaBullhorn, FaComments, FaWpforms, FaHeartbeat,
   FaChartLine, FaCoins, FaUsers,
 } from "react-icons/fa";
+import OurClients from "../Home/OurClients";
 
 /* ─── Fonts ─────────────────────────────────────────────────────────────── */
 const Fonts = () => (
@@ -1034,6 +1035,7 @@ export default function IntegrationsPage() {
           ))}
         </div>
       </section>
+      <OurClients />
 
       {/* ── CTA ──────────────────────────────────────────────────────── */}
       <CTA />

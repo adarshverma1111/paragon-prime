@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-
+import OurClients from "../Home/OurClients";
 
 const stats = [
     { value: "250+", label: "Projects Delivered" },
@@ -416,6 +416,11 @@ export default function AboutUs() {
                     </div>
                 </div>
             </section>
+              
+            <div>
+                <OurClients />
+            </div>
+
             {/* CTA */}
             <section className="py-12 px-6" style={{ background: "#020917" }}>
                 <div className="max-w-3xl mx-auto text-center rounded-3xl p-12 border border-white/10 relative overflow-hidden"
