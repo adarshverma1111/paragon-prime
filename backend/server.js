@@ -39,6 +39,9 @@
 // // ── Routes ────────────────────────────────────────────────────
 // app.use("/api/contact", contactRoutes);
 
+
+
+
 // // Health-check
 // app.get("/health", (_req, res) => res.json({ status: "ok" }));
 
@@ -56,6 +59,7 @@
 // app.listen(PORT, () => {
 //   console.log(`🚀  Server running on http://localhost:${PORT}`);
 // });
+
 require("dotenv").config();
 const express = require("express");
 const helmet = require("helmet");
@@ -70,10 +74,10 @@ const app = express();
 // ── Connect Database ─────────────────────────────
 connectDB();
 
-// ── Security ─────────────────────────────────────
+// ── Security Headers ──────────────────────────────
 app.use(helmet());
 
-// ── CORS ─────────────────────────────────────────
+// ── CORS ──────────────────────────────────────────
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || "")
   .split(",")
   .map((o) => o.trim())
@@ -84,45 +88,51 @@ app.use(
     origin: (origin, callback) => {
       if (!origin) return callback(null, true);
       if (allowedOrigins.includes(origin)) return callback(null, true);
-      return callback(new Error(`CORS: origin ${origin} not allowed`));
+      callback(new Error(`CORS: origin ${origin} not allowed`));
     },
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
   })
 );
 
-// ── Body Parser ──────────────────────────────────
+// ── Body Parser ───────────────────────────────────
 app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 
-// ── API ROUTES ───────────────────────────────────
+// ── API ROUTES ────────────────────────────────────
 app.use("/api/contact", contactRoutes);
 
-// ── HEALTH CHECK ─────────────────────────────────
-app.get("/health", (_req, res) => {
-  res.json({ status: "ok" });
-});
+// ── Health Check ──────────────────────────────────
+app.get("/health", (_req, res) =>
+  res.json({ status: "ok" })
+);
 
-// ──────────────────────────────────────────────────
-// 🔥 SERVE REACT FRONTEND (IMPORTANT FIX)
-// ──────────────────────────────────────────────────
+// ── SERVE REACT BUILD (IMPORTANT FIX FOR REFRESH) ─
+const clientBuildPath = path.join(__dirname, "../client/dist");
 
-// If CRA → build folder
-const frontendPath = path.join(__dirname, "frontend", "build");
+app.use(express.static(clientBuildPath));
 
-// If Vite use this instead:
-// const frontendPath = path.join(__dirname, "frontend", "dist");
-
-app.use(express.static(frontendPath));
-
-// React Router fix (THIS FIXES REFRESH ISSUE)
+// IMPORTANT: React Router fix (refresh /dashboard not broken)
 app.get("*", (req, res) => {
-  res.sendFile(path.join(frontendPath, "index.html"));
+  res.sendFile(path.join(clientBuildPath, "index.html"));
 });
 
-// ── START SERVER ─────────────────────────────────
+// ── ERROR HANDLERS ────────────────────────────────
+app.use((_req, res) =>
+  res.status(404).json({ success: false, message: "Route not found" })
+);
+
+app.use((err, _req, res, _next) => {
+  console.error("Unhandled error:", err.message);
+  res.status(500).json({
+    success: false,
+    message: "Internal server error",
+  });
+});
+
+// ── START SERVER ──────────────────────────────────
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
