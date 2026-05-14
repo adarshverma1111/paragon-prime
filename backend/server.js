@@ -108,7 +108,7 @@ app.get("/health", (_req, res) =>
 );
 
 // ── SERVE REACT BUILD (IMPORTANT FIX FOR REFRESH) ─
-const clientBuildPath = path.join(__dirname, "../client/dist");
+const clientBuildPath = path.join(__dirname, "client/dist");
 
 app.use(express.static(clientBuildPath));
 
