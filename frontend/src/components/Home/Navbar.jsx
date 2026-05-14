@@ -69,11 +69,11 @@ const Navbar = () => {
                 </button>
               </Link>
 
-              <Link to="/meeting">
+              {/* <Link to="/meeting">
                 <button className="px-6 py-2 text-sm font-semibold text-white bg-[#023A73] border border-[#023A73] rounded-full transition-all duration-300 hover:bg-[#012a55] hover:border-[#012a55] hover:shadow-[0_0_20px_rgba(2,58,115,0.4)]">
                   Schedule Meeting
                 </button>
-              </Link>
+              </Link> */}
 
             </nav>
 

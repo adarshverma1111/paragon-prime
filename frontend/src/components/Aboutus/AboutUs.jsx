@@ -147,11 +147,11 @@ export default function AboutUs() {
                        bg-[length:200%_auto]
                        bg-gradient-to-r from-[#fe8c00] via-[#f83600] to-[#fe8c00]
                        hover:bg-right">
-                            Explore Services
+                            Explore Our Services
                         </a>
-                        <a href="#" className="px-5 py-3 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all hover:scale-105 text-blue-200">
+                        {/* <a href="#" className="px-5 py-3 rounded-full font-semibold text-sm border border-white/20 hover:border-blue-400 transition-all hover:scale-105 text-blue-200">
                             Meet the Team →
-                        </a>
+                        </a> */}
                     </div>
                 </div>
 
