@@ -1,5 +1,115 @@
 
 
+// require("dotenv").config();
+// const express = require("express");
+// const helmet = require("helmet");
+// const cors = require("cors");
+// const path = require("path");
+// const fs = require("fs");
+
+// const connectDB = require("./config/db");
+// const contactRoutes = require("./routes/contact.routes");
+
+// const app = express();
+
+// // ─────────────────────────────────────────────
+// // DATABASE
+// // ─────────────────────────────────────────────
+// connectDB();
+
+// // ─────────────────────────────────────────────
+// // SECURITY
+// // ─────────────────────────────────────────────
+// app.use(helmet());
+
+// // ─────────────────────────────────────────────
+// // CORS
+// // ─────────────────────────────────────────────
+// const allowedOrigins = (process.env.ALLOWED_ORIGINS || "")
+//   .split(",")
+//   .map((o) => o.trim())
+//   .filter(Boolean);
+
+// app.use(
+//   cors({
+//     origin: (origin, callback) => {
+//       if (!origin) return callback(null, true);
+//       if (allowedOrigins.includes(origin)) return callback(null, true);
+//       callback(new Error(`CORS: origin ${origin} not allowed`));
+//     },
+//     methods: ["GET", "POST"],
+//     allowedHeaders: ["Content-Type"],
+//   })
+// );
+
+// // ─────────────────────────────────────────────
+// // BODY PARSER
+// // ─────────────────────────────────────────────
+// app.use(express.json({ limit: "10kb" }));
+// app.use(express.urlencoded({ extended: true, limit: "10kb" }));
+
+// // ─────────────────────────────────────────────
+// // API ROUTES
+// // ─────────────────────────────────────────────
+// app.use("/api/contact", contactRoutes);
+
+// // ─────────────────────────────────────────────
+// // HEALTH CHECK
+// // ─────────────────────────────────────────────
+// app.get("/health", (req, res) => {
+//   res.json({ status: "ok" });
+// });
+
+// // ─────────────────────────────────────────────
+// // REACT BUILD SETUP (IMPORTANT FIX)
+// // ─────────────────────────────────────────────
+// const clientBuildPath = path.join(__dirname, "dist");
+
+// console.log(
+//   "BUILD EXISTS:",
+//   fs.existsSync(path.join(clientBuildPath, "index.html"))
+// );
+
+// // Serve React static files
+// app.use(express.static(clientBuildPath));
+
+// // React Router fallback (fix refresh issue)
+// app.get("*", (req, res) => {
+//   const indexPath = path.join(clientBuildPath, "index.html");
+
+//   if (fs.existsSync(indexPath)) {
+//     res.sendFile(indexPath);
+//   } else {
+//     res.status(404).send("Frontend not built on server");
+//   }
+// });
+
+// // ─────────────────────────────────────────────
+// // ERROR HANDLING
+// // ─────────────────────────────────────────────
+// app.use((req, res) => {
+//   res.status(404).json({
+//     success: false,
+//     message: "Route not found",
+//   });
+// });
+
+// app.use((err, req, res, next) => {
+//   console.error("Unhandled error:", err.message);
+//   res.status(500).json({
+//     success: false,
+//     message: "Internal server error",
+//   });
+// });
+
+// // ─────────────────────────────────────────────
+// // START SERVER
+// // ─────────────────────────────────────────────
+// const PORT = process.env.PORT || 5000;
+
+// app.listen(PORT, () => {
+//   console.log(`🚀 Server running on http://localhost:${PORT}`);
+// });
 require("dotenv").config();
 const express = require("express");
 const helmet = require("helmet");
@@ -12,22 +122,22 @@ const contactRoutes = require("./routes/contact.routes");
 
 const app = express();
 
-// ─────────────────────────────────────────────
-// DATABASE
-// ─────────────────────────────────────────────
+// ─────────────────────────────
+// DB
+// ─────────────────────────────
 connectDB();
 
-// ─────────────────────────────────────────────
+// ─────────────────────────────
 // SECURITY
-// ─────────────────────────────────────────────
+// ─────────────────────────────
 app.use(helmet());
 
-// ─────────────────────────────────────────────
+// ─────────────────────────────
 // CORS
-// ─────────────────────────────────────────────
+// ─────────────────────────────
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || "")
   .split(",")
-  .map((o) => o.trim())
+  .map(o => o.trim())
   .filter(Boolean);
 
 app.use(
@@ -42,38 +152,41 @@ app.use(
   })
 );
 
-// ─────────────────────────────────────────────
-// BODY PARSER
-// ─────────────────────────────────────────────
+// ─────────────────────────────
+// BODY
+// ─────────────────────────────
 app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 
-// ─────────────────────────────────────────────
+// ─────────────────────────────
 // API ROUTES
-// ─────────────────────────────────────────────
+// ─────────────────────────────
 app.use("/api/contact", contactRoutes);
 
-// ─────────────────────────────────────────────
-// HEALTH CHECK
-// ─────────────────────────────────────────────
+// ─────────────────────────────
+// HEALTH
+// ─────────────────────────────
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
-// ─────────────────────────────────────────────
-// REACT BUILD SETUP (IMPORTANT FIX)
-// ─────────────────────────────────────────────
+// ─────────────────────────────
+// FRONTEND BUILD SETUP
+// ─────────────────────────────
+
+// IMPORTANT: Render-safe path
 const clientBuildPath = path.join(__dirname, "dist");
 
+console.log("DIRNAME:", __dirname);
 console.log(
   "BUILD EXISTS:",
   fs.existsSync(path.join(clientBuildPath, "index.html"))
 );
 
-// Serve React static files
+// Serve static files
 app.use(express.static(clientBuildPath));
 
-// React Router fallback (fix refresh issue)
+// React fallback (important for refresh)
 app.get("*", (req, res) => {
   const indexPath = path.join(clientBuildPath, "index.html");
 
@@ -84,9 +197,9 @@ app.get("*", (req, res) => {
   }
 });
 
-// ─────────────────────────────────────────────
-// ERROR HANDLING
-// ─────────────────────────────────────────────
+// ─────────────────────────────
+// ERROR HANDLER
+// ─────────────────────────────
 app.use((req, res) => {
   res.status(404).json({
     success: false,
@@ -102,9 +215,9 @@ app.use((err, req, res, next) => {
   });
 });
 
-// ─────────────────────────────────────────────
-// START SERVER
-// ─────────────────────────────────────────────
+// ─────────────────────────────
+// START
+// ─────────────────────────────
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
