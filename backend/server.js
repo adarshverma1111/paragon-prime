@@ -174,7 +174,7 @@ app.get("/health", (req, res) => {
 // ─────────────────────────────
 
 // THIS is your requested fix:
-const buildPath = path.join(__dirname, "../frontend/dist");
+const buildPath = path.join(__dirname, "dist");
 
 // Serve static files
 app.use(express.static(buildPath));
