@@ -2,18 +2,21 @@
 // const express = require("express");
 // const helmet = require("helmet");
 // const cors = require("cors");
+// const path = require("path");
+// const fs = require("fs");
+
 // const connectDB = require("./config/db");
 // const contactRoutes = require("./routes/contact.routes");
 
 // const app = express();
 
-// // ── Connect Database ──────────────────────────────────────────
+// // ── Connect Database ─────────────────────────────
 // connectDB();
 
-// // ── Security Headers ──────────────────────────────────────────
+// // ── Security Headers ──────────────────────────────
 // app.use(helmet());
 
-// // ── CORS ──────────────────────────────────────────────────────
+// // ── CORS ──────────────────────────────────────────
 // const allowedOrigins = (process.env.ALLOWED_ORIGINS || "")
 //   .split(",")
 //   .map((o) => o.trim())
@@ -22,7 +25,6 @@
 // app.use(
 //   cors({
 //     origin: (origin, callback) => {
-//       // Allow requests with no origin (e.g. Postman / server-to-server)
 //       if (!origin) return callback(null, true);
 //       if (allowedOrigins.includes(origin)) return callback(null, true);
 //       callback(new Error(`CORS: origin ${origin} not allowed`));
@@ -32,32 +34,64 @@
 //   })
 // );
 
-// // ── Body Parser ───────────────────────────────────────────────
+// // ── Body Parser ───────────────────────────────────
 // app.use(express.json({ limit: "10kb" }));
 // app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 
-// // ── Routes ────────────────────────────────────────────────────
+// // ── API ROUTES ────────────────────────────────────
 // app.use("/api/contact", contactRoutes);
 
 
+// //------------------------
+// const clientBuildPath = path.join(__dirname, "client/dist");
 
+// console.log("BUILD EXISTS:", fs.existsSync(path.join(clientBuildPath, "index.html")));
 
-// // Health-check
-// app.get("/health", (_req, res) => res.json({ status: "ok" }));
+// app.use(express.static(clientBuildPath));
 
-// // 404
-// app.use((_req, res) => res.status(404).json({ success: false, message: "Route not found" }));
+// app.get("*", (req, res) => {
+//   const filePath = path.join(clientBuildPath, "index.html");
 
-// // Global error handler
-// app.use((err, _req, res, _next) => {
-//   console.error("Unhandled error:", err.message);
-//   res.status(500).json({ success: false, message: "Internal server error" });
+//   if (fs.existsSync(filePath)) {
+//     res.sendFile(filePath);
+//   } else {
+//     res.status(404).send("Frontend not built on server");
+//   }
 // });
 
-// // ── Start ─────────────────────────────────────────────────────
+// // ── Health Check ──────────────────────────────────
+// app.get("/health", (_req, res) =>
+//   res.json({ status: "ok" })
+// );
+
+// // ── SERVE REACT BUILD (IMPORTANT FIX FOR REFRESH) ─
+// const clientBuildPath = path.join(__dirname, "client/dist");
+
+// app.use(express.static(clientBuildPath));
+
+// // IMPORTANT: React Router fix (refresh /dashboard not broken)
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(clientBuildPath, "index.html"));
+// });
+
+// // ── ERROR HANDLERS ────────────────────────────────
+// app.use((_req, res) =>
+//   res.status(404).json({ success: false, message: "Route not found" })
+// );
+
+// app.use((err, _req, res, _next) => {
+//   console.error("Unhandled error:", err.message);
+//   res.status(500).json({
+//     success: false,
+//     message: "Internal server error",
+//   });
+// });
+
+// // ── START SERVER ──────────────────────────────────
 // const PORT = process.env.PORT || 5000;
+
 // app.listen(PORT, () => {
-//   console.log(`🚀  Server running on http://localhost:${PORT}`);
+//   console.log(`🚀 Server running on http://localhost:${PORT}`);
 // });
 
 require("dotenv").config();
@@ -65,19 +99,26 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const path = require("path");
+const fs = require("fs");
 
 const connectDB = require("./config/db");
 const contactRoutes = require("./routes/contact.routes");
 
 const app = express();
 
-// ── Connect Database ─────────────────────────────
+// ─────────────────────────────────────────────
+// DATABASE
+// ─────────────────────────────────────────────
 connectDB();
 
-// ── Security Headers ──────────────────────────────
+// ─────────────────────────────────────────────
+// SECURITY
+// ─────────────────────────────────────────────
 app.use(helmet());
 
-// ── CORS ──────────────────────────────────────────
+// ─────────────────────────────────────────────
+// CORS
+// ─────────────────────────────────────────────
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || "")
   .split(",")
   .map((o) => o.trim())
@@ -95,34 +136,59 @@ app.use(
   })
 );
 
-// ── Body Parser ───────────────────────────────────
+// ─────────────────────────────────────────────
+// BODY PARSER
+// ─────────────────────────────────────────────
 app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 
-// ── API ROUTES ────────────────────────────────────
+// ─────────────────────────────────────────────
+// API ROUTES
+// ─────────────────────────────────────────────
 app.use("/api/contact", contactRoutes);
 
-// ── Health Check ──────────────────────────────────
-app.get("/health", (_req, res) =>
-  res.json({ status: "ok" })
-);
-
-// ── SERVE REACT BUILD (IMPORTANT FIX FOR REFRESH) ─
-const clientBuildPath = path.join(__dirname, "client/dist");
-
-app.use(express.static(clientBuildPath));
-
-// IMPORTANT: React Router fix (refresh /dashboard not broken)
-app.get("*", (req, res) => {
-  res.sendFile(path.join(clientBuildPath, "index.html"));
+// ─────────────────────────────────────────────
+// HEALTH CHECK
+// ─────────────────────────────────────────────
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" });
 });
 
-// ── ERROR HANDLERS ────────────────────────────────
-app.use((_req, res) =>
-  res.status(404).json({ success: false, message: "Route not found" })
+// ─────────────────────────────────────────────
+// REACT BUILD SETUP (IMPORTANT FIX)
+// ─────────────────────────────────────────────
+const clientBuildPath = path.join(__dirname, "client/dist");
+
+console.log(
+  "BUILD EXISTS:",
+  fs.existsSync(path.join(clientBuildPath, "index.html"))
 );
 
-app.use((err, _req, res, _next) => {
+// Serve React static files
+app.use(express.static(clientBuildPath));
+
+// React Router fallback (fix refresh issue)
+app.get("*", (req, res) => {
+  const indexPath = path.join(clientBuildPath, "index.html");
+
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    res.status(404).send("Frontend not built on server");
+  }
+});
+
+// ─────────────────────────────────────────────
+// ERROR HANDLING
+// ─────────────────────────────────────────────
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "Route not found",
+  });
+});
+
+app.use((err, req, res, next) => {
   console.error("Unhandled error:", err.message);
   res.status(500).json({
     success: false,
@@ -130,7 +196,9 @@ app.use((err, _req, res, _next) => {
   });
 });
 
-// ── START SERVER ──────────────────────────────────
+// ─────────────────────────────────────────────
+// START SERVER
+// ─────────────────────────────────────────────
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
