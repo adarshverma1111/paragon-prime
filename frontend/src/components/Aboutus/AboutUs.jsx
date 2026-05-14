@@ -306,6 +306,89 @@ export default function AboutUs() {
                 </div>
             </section>
 
+            {/* ABOUT TEXT SECTION */}
+            <section className="py-16 px-6 bg-[#020917]">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-12">
+                        <div className="text-orange-400 text-xs tracking-widest uppercase font-semibold mb-3">
+                            Our Story
+                        </div>
+                        <h2
+                            className="text-4xl md:text-5xl font-black mb-8"
+                            style={{
+                                fontFamily: "'Bebas Neue', sans-serif",
+                                letterSpacing: "2px"
+                            }}
+                        >
+                            Building the Future of{" "}
+                            <span
+                                style={{
+                                    background: "linear-gradient(90deg, #3b82f6, #60a5fa)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent"
+                                }}
+                            >
+                                Digital Innovation
+                            </span>
+                        </h2>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-16 items-start">
+                        <div className="space-y-8">
+                            <div className="space-y-4">
+                                <h3 className="text-xl font-bold text-white mb-3">Our Beginning</h3>
+                                <p className="text-blue-200 leading-relaxed text-base md:text-lg">
+                                    Founded in 2020, Paragon Prime emerged from a simple yet powerful vision: to bridge the gap between cutting-edge technology and real-world business needs. What started as a small team of passionate developers and designers has evolved into a full-service digital agency that serves clients across industries and continents.
+                                </p>
+                            </div>
+
+                            <div className="space-y-4">
+                                <h3 className="text-xl font-bold text-white mb-3">The Pandemic Pivot</h3>
+                                <p className="text-blue-200 leading-relaxed text-base md:text-lg">
+                                    Our journey began during the global pandemic when businesses were forced to adapt or perish. We witnessed firsthand how digital transformation could be the difference between survival and success. This experience shaped our approach — we don't just build websites or apps; we craft digital experiences that drive measurable results.
+                                </p>
+                            </div>
+
+                            <div className="space-y-4">
+                                <h3 className="text-xl font-bold text-white mb-3">Today & Tomorrow</h3>
+                                <p className="text-blue-200 leading-relaxed text-base md:text-lg">
+                                    Today, Paragon Prime stands as a testament to what happens when creativity meets technical excellence. Our team of over 40 specialists brings together diverse backgrounds in software engineering, user experience design, digital marketing, and business strategy. Each project we undertake is an opportunity to push boundaries and redefine what's possible in the digital realm.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="space-y-8">
+                            <div className="space-y-4">
+                                <h3 className="text-xl font-bold text-white mb-3">Our Philosophy</h3>
+                                <p className="text-blue-200 leading-relaxed text-base md:text-lg">
+                                    We believe that great digital products are born from deep understanding — not just of technology, but of human behavior, business objectives, and market dynamics. Our process begins with listening, continues with collaboration, and culminates in solutions that exceed expectations.
+                                </p>
+                            </div>
+
+                            <div className="space-y-4">
+                                <h3 className="text-xl font-bold text-white mb-3">Our Impact</h3>
+                                <p className="text-blue-200 leading-relaxed text-base md:text-lg">
+                                    From Fortune 500 enterprises to innovative startups, we've partnered with organizations at every stage of their digital journey. Our portfolio spans web applications that handle millions of users, mobile apps downloaded by hundreds of thousands, and marketing campaigns that have generated billions in revenue for our clients.
+                                </p>
+                            </div>
+
+                            <div className="space-y-4">
+                                <h3 className="text-xl font-bold text-white mb-3">Looking Ahead</h3>
+                                <p className="text-blue-200 leading-relaxed text-base md:text-lg">
+                                    As we look to the future, we're excited about emerging technologies like AI, blockchain, and immersive experiences. But our core philosophy remains unchanged: technology should serve humanity, not the other way around. Every line of code we write, every design we create, is guided by this principle.
+                                </p>
+                            </div>
+
+                            <div className="bg-gradient-to-r from-orange-500/10 to-blue-500/10 border border-orange-500/20 rounded-xl p-6 mt-8">
+                                <p className="text-blue-100 leading-relaxed text-base md:text-lg italic">
+                                    "Join us on this journey. Whether you're a startup looking to make your mark or an enterprise seeking to stay ahead, Paragon Prime is here to turn your digital aspirations into reality. Let's build something extraordinary together."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* SERVICES */}
             <section
                 className="py-12 px-6"

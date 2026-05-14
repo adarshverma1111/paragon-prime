@@ -61,7 +61,7 @@ const HeroSection = () => {
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/70 z-0"></div>
-     
+
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 flex flex-col items-center justify-center min-h-[85vh] md:min-h-screen text-center">
@@ -143,6 +143,35 @@ const HeroSection = () => {
             </div>
 
           </motion.div>
+
+    {/* Fully Responsive Curvy Badge */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 1, duration: 0.6 }}
+  className="mt-8 flex justify-center px-4"
+>
+  <div className="group relative overflow-hidden inline-flex items-center gap-3 px-5 sm:px-6 py-3 rounded-full border border-white/10 bg-white/10 backdrop-blur-xl shadow-[0_5px_30px_rgba(255,255,255,0.08)] hover:scale-105 transition-all duration-300 max-w-full whitespace-nowrap">
+
+    {/* Glow */}
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+    {/* Online Dot */}
+    <span className="relative flex h-3 w-3 shrink-0">
+      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+    </span>
+
+    {/* Text */}
+    <p className="relative text-[11px] sm:text-sm text-gray-200 tracking-wide">
+      Currently Building{" "}
+      <span className="font-semibold text-white">
+        AI-Powered Digital Experiences
+      </span>
+    </p>
+
+  </div>
+</motion.div>
 
         </div>
       </div>
